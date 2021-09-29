@@ -853,7 +853,6 @@ EMnify has announced its first 5G roaming agreements in August 2020 and since th
 === SIM Life Cycle Management
 
 
-
 === Endpoint Management & Policies
 
 === Regional Breakout
@@ -877,6 +876,27 @@ image:regional_breakout.png[Reduction in Network Latency due to EMnify Regional 
 ==== Events
 
 ==== Usage Data
+
+=== Security
+
+Security is a topic often considered in hindsight while developing an IoT solution, when it should be the first thing that is considered.
+
+Hackers use various attack vectors to access your IoT devices or applications. IoT devices can act as an abundundant computating resource for hackers due to their limited security policies. Moreover given the globally distributed nature of the devices, smaller footprints and lack of resources, it can get difficult to individually secure these devices.  
+
+.Why does IoT require SASE ?
+image:security_threats.png[IoT security threats]
+
+Secure Access Service Edge (<<sase,SASE>>) introduces a new architecture where networking and security functions are bundled in a cloud-delivered service. You can apply the same security standards across all your devices independent of the location. Moreover you can integrare security features in your solutions right from the beginning.
+
+Some of the features in a <<sase,SASE>> for IoT architecture are as follows:
+
+* Dynamic Data Routing with Software-Defined Wide Area Network (SD-WAN)
+* Firewall as a Service (FaaS) 
+* Cloud Access Security Broker (CASB)
+* DNS Security
+* Threat Detection
+
+In the following sections we will discuss some of the security features offered by EMnify. 
 
 === Cloud Connect
 
@@ -932,28 +952,6 @@ For detailed instructions please refer to our knowledge base articles
 . link:https://support.emnify.com/hc/en-us/articles/115001723273-OpenVPN-Integration-Guide-for-Windows[OpenVPN Integration Windows]
 . link:https://support.emnify.com/hc/en-us/articles/115001724434-OpenVPN-Integration-Guide-for-Linux[OpenVPN Integration Linux]
 
-
-=== Security
-
-Security is a topic often considered in hindsight while developing an IoT solution, when it should be the first thing that is considered.
-
-Hackers use various attack vectors to access your IoT devices or applications. IoT devices can act as an abundundant computating resource for hackers due to their limited security policies. Moreover given the globally distributed nature of the devices, smaller footprints and lack of resources, it can get difficult to individually secure these devices.  
-
-.Why does IoT require SASE ?
-image:security_threats.png[IoT security threats]
-
-Secure Access Service Edge (<<sase,SASE>>) introduces a new architecture where networking and security functions are bundled in a cloud-delivered service. You can apply the same security standards across all your devices independent of the location. Moreover you can integrare security features in your solutions right from the beginning.
-
-Some of the features in a <<sase,SASE>> for IoT architecture are as follows:
-
-* Dynamic Data Routing with Software-Defined Wide Area Network (SD-WAN)
-* Firewall as a Service (FaaS) 
-* Cloud Access Security Broker (CASB)
-* DNS Security
-* Threat Detection
-
-In the following sections we will discuss some of the security features offered by EMnify. 
-
 ==== DNS
 
 When a device establishes a connection it uses a Domain Name Service (DNS) to resolve a hostname to an IP address to which it can send data. For example a hostname such as *.iot.example.com will be mapped to the IP address e.g. 120.126.230.60. 
@@ -969,6 +967,20 @@ image:dns_setting.png[].Custom DNS setting configuration
 Utilizing a private DNS server which is not reachable via a public IP, requires to setup a private network with the machine or a network where the private DNS is located. This can be done using Cloud Connect either with Amazon Transit Gateway or IPsec. A tutorial on how to setup a DNS firewall based on a private DNS using Amazon Route 53 is available link:https://www.emnify.com/en/developer-hub/dns-filtering[here]
 
 ==== IMEI Lock
+
+=== SMS
+You can exchange SMSs with your endpoints through 2 different interfaces:
+
+. EMnify SMS REST API
+. SMPP bind to EMnify SMSC
+
+You can enable or disable SMS for your endpoint while defining the Service Policy of the device. In the service policy, SMS MO means Mobile originated SMS ot SMS originated from your device. SMS MT means Mobile Terminated SMS or SMS received by your device. 
+
+With the EMnify REST API, you can send an SMS, cancel a sent SMS, list sent and received SMS by an endpoint and check SMS details. You can test the EMnify SMS API in our link:https://cdn.emnify.net/api/doc/swagger.html#/Endpoint/EndpointSmsByIdPost[Swagger]. 
+
+You can exchange SMSs with your endpoints using the SMS console in your link:https://portal.emnify.com/login?utm_source=dev-hub[EMnify portal]. 
+
+If you want to integrate SMS via SMPP through your own application, your system will need to implement an ESME (client) and EMnify SMSC will act as server. To implement the ESME client in your application, please refer to this link:https://www.emnify.com/en/developer-hub/smpp-integration-guide[tutorial].
 
 === Identity and Access Management
 
