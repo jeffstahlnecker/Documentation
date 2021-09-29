@@ -886,9 +886,21 @@ With the EMnify Cloud Connect you can communicate with your <<vpc,Virtual Privat
 
 The EMnify platform is deployed on AWS. This allows you to create a fast and secure direct peering data path to your VPC / EC2 instances via the AWS Transit Gateway (TGW). 
 
-AWS Tansit Gateway is an AWS managed service which acts as a network transit hub that you can use to connect your VPC to your EMnify SIM cards. 
+AWS Tansit Gateway is an AWS managed service which acts as a network transit hub that you can use to connect your VPC to your EMnify SIM cards.
+
+.EMnify Cloud Connect with AWS Transit Gateway
+
+image:TGW.png[EMnify Cloud Connect with AWS Transit gateway]
+
+To integrate Cloud Connect into your application using Transit Gateway, you can follow this link:https://www.emnify.com/en/developer-hub/emnify-cloud-connect-into-aws-transit-gateway[tutorial] or follow this link:https://www.youtube.com/watch?v=Orb3Kvd9pZg[quick video]. 
 
 ==== IPSec
+
+If your application is not on AWS but on any other hosted cloud, you can implement Cloud Connect using IPSec. 
+
+With EMnify you can set up an IPSec tunnel to securely transfer your data into your application server/Database.
+
+To integrate Cloud Connect into your application using IPSec, you can follow this link:https://www.emnify.com/en/developer-hub/how-to-setup-an-ipsec-using-emnify-cloudconnect[tutorial]
 
 === OpenVPN
 
