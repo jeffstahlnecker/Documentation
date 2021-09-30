@@ -1076,7 +1076,7 @@ Response
 
 Unlike user and password authentication, only an `auth_token` is returned by the server and no `refresh_token` will be included in the response. This `auth_token` is valid for 240 minutes. 
 
-NOTE: It is NOT advisable to generate an `auth_token` before making every API call. You should reuse the generated `auth_token` for 240 minutes and update it after its expiration.
+NOTE: It is NOT advisable to generate an `auth_token` before making every API call. You should reuse the generated `auth_token` for 240 minutes after it is generated and update it after its expiration.
 
 === Working with SIMs and Endpoints
 
@@ -1085,10 +1085,39 @@ NOTE: It is NOT advisable to generate an `auth_token` before making every API ca
 === Endpoint Connectivity Status
 
 === Sending and receiving SMS
+You can perform the following SMS related operations using the `endpoint` API.
+
+. List sent and received SMS `GET /api/v1/endpoint/{endpoint_id}/sms`
+. Send SMS to and endpoint `POST /api/v1/endpoint/{endpoint_id}/sms`
+. Get details about an endpoitn SMS 'GET /api/v1/endpoint/{endpoint_id}/sms/{sms_id}'
+. Cancel a buffered SMS `DELETE /api/v1/endpoint/{endpoint_id}/sms/{sms_id}`
+
+Example:  Send SMS to an Endpoint
+
+'POST https://cdn.emnify.net/api/v1/endpoint/{endpoint_id}/sms'
+
+Request Body
+----
+{
+  "source_address": 12345689,
+  "payload": "This is the message text"
+}
+----
+Responses
+
+`201`
+
+The source address is the sender number that will appear on the receiving device. The payload is the actual text to be sent as SMS.
+
+.SMS window of the receiving device
+image:sms_console.png[sms received]
+
 
 === Retrieving Events and Statistics
 
 === API Reference
+
+The EMnify API is based on the OpenAPI Specification OAS3. You can find the API reference link:https://cdn.emnify.net/api/doc/swagger.html[here] where you can also try out our API.
 
 === Code Samples
 
