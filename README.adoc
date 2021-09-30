@@ -982,7 +982,27 @@ You can exchange SMSs with your endpoints using the SMS console in your link:htt
 
 If you want to integrate SMS via SMPP through your own application, your system will need to implement an ESME (client) and EMnify SMSC will act as server. To implement the ESME client in your application, please refer to this link:https://www.emnify.com/en/developer-hub/smpp-integration-guide[tutorial].
 
-=== Identity and Access Management
+=== User Management
+
+EMnify offers 3 levels of access to the use and manage EMnify Services
+.Admin (Has access to all services and user management)
+.Observer (Has access to limited services)
+.User (Has access to limited services)
+
+Below is a table that describes the permissions of the different users. 
+
+[cols="1,1,1,1"]
+|===
+|Action
+|Admin
+|Observer
+|User
+
+| Retrieve an endpoint by ID 
+| icon: yes[]
+|
+|
+|===
 
 === Business Intelligence and Analytics
 
