@@ -1002,6 +1002,8 @@ Now there are two ways to retreive this token:
 ==== Authenticate with User Credentials
 The `/api/v1/authenticate` API is used to generate a JWT `auth_token` which authenticates subsequent API calls. The request body must provide a `username` (typically the email address used when signing up) and the `user password` and in turn will receive an `auth_token` and `refresh_token`.
 
+`POST https://cdn.emnify.net/api/v1/authenticate`
+
 Request Body
 
 ----
@@ -1012,7 +1014,7 @@ Request Body
 
 ----
 
-NOTE: If users have signed up using the EMnify management portal, the password will need to be a SHA1 hashed string. The SHA1 of a password can be generated online or in the terminal via the following command: `echo -n "my_password" | openssl sha1`
+NOTE: If users have signed up using the link:https://portal.emnify.com[EMnify portal], the password will need to be a SHA1 hashed string. The SHA1 of a password can be generated online or in the terminal via the following command: `echo -n "my_password" | openssl sha1`
 
 Response
 ----
@@ -1021,13 +1023,60 @@ Response
   "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
 ----
-
+You can use this `auth_token` as the bearer token to authenticate all API calls. 
+This `auth_token` is valid for 240 minutes, so you don't need to retreive the `auth_token` before every API call. Once the `auth_token` expires, you can use the `refresh_token` to retreive the new `auth_token`.
 
 ==== Authenticate with an Application Token 
 
+If you don't want to store your EMnify user credentials on your application server, you can generate an `application_token` via the link:https://portal.emnify.com[EMnify portal] or via the API `/api/v1/application_token`. The request body should have description of the token usually used to indicate who is using the token and can have a `expiry_date` for the token. 
 
+`POST https://cdn.emnify.net/api/v1/application_token `
 
+Request header
 
+`Authorization: Bearer {auth_token}`
+
+Request body
+----
+{
+  "description": "Token with expiry date",
+  "expiry_date": "2021-10-29"
+}
+----
+Response
+----
+{
+  "application_token": "KAOp24TuMgjO2FpZmZ3ZFjSqpk7ea_mY8..."
+}
+----
+This calls returns an `application_token` which can then be used instead of the user/password combination and can be revoked at any time to get the `auth_token`. 
+
+You can alternatively generate the `application_token` in the EMnify portal. Login in to the link:https://portal.emnify.com/login[EMnify Portal] > Integrations > Application Tokens > Add Token. 
+
+.Generate Application Token using the EMnify Portal
+image:generate_app_token.png[generate application token]
+ 
+
+To get the `auth_token` using the `application_token`, use the `/api/v1/authenticate` API. The `auth_token` can be then used to authenticate all subsequent API calls.
+
+`POST https://cdn.emnify.net/api/v1/authenticate`
+
+Request body 
+----
+{
+  "application_token": "kNTktNTA1My00YzdhLT..."
+}
+----
+Response
+----
+{
+  "auth_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+----
+
+Unlike user and password authentication, only an `auth_token` is returned by the server and no `refresh_token` will be included in the response. This `auth_token` is valid for 240 minutes. 
+
+NOTE: It is NOT advisable to generate an `auth_token` before making every API call. You should reuse the generated `auth_token` for 240 minutes and update it after its expiration.
 
 === Working with SIMs and Endpoints
 
