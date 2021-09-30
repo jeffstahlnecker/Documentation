@@ -1014,7 +1014,7 @@ Request Body
 
 ----
 
-NOTE: If users have signed up using the link:https://portal.emnify.com[EMnify portal], the password will need to be a SHA1 hashed string. The SHA1 of a password can be generated online or in the terminal via the following command: `echo -n "my_password" | openssl sha1`
+NOTE: If users have signed up using the link:https://portal.emnify.com[EMnify portal], the password will need to be a SHA1 hashed string. The SHA1 of a password can be generated online or in the terminal via the following command: `echo -n "my_password" | openssl sha1`. If your password contains the characters `$` `'` `\` or `!` , you will have to add `\` before that character. So `$` becomes `\$`.
 
 Response
 ----
