@@ -1142,6 +1142,7 @@ h|User
 === API Reference
 
 === Code Samples
+Check out link:https://github.com/EMnify/API_Examples_JS[JavaScript Examples] with the EMnify API in our GitHub repository. 
 
 ==== Java SDK
 
