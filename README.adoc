@@ -956,6 +956,9 @@ Currently in the link:http://cdn.emnify.net/[EUI Portal] (Old EMnify portal) and
 We are constantly evaluating new tools to enhance the embedded dashboards and hope to provide our customers with more value and targeted insights for their businesses.
 
 === No-Code Workflow Automation
+Customers use EMnify to connect their devices into their IoT applications. EMnify already provides cloud-native APIs. However, a lot of customers don't know how to code, cannot use the API, or don’t have the resources or the time needed to do so. By using No Code/Low Code Integrations, customers can quickly spin up a POC or set up automation for the long haul to help propel their business to the next level.
+
+Powered by EMnify’s existing Data Streamers and API, we have translated our data and events into Zapier Triggers and Actions - allowing customers to integrate their SIM metadata with over 4000 different applications available in the Zapier ecosystem. To try out our integration with Zapier, you can start with this link:https://www.emnify.com/en/developer-hub/emnify-zapier-nocode[blog post] about automating SIM workflows with Zapier and Slack in 5 easy steps.
 
 == Connectivity as Code
 
