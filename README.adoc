@@ -953,7 +953,7 @@ Currently in the link:http://cdn.emnify.net/[EUI Portal] (Old EMnify portal) and
 *Traffic by Mobile Network
 *Usage by Endpoint
 
-With the release of the new portal, ourt teams are also in the process of evaluating new tools to completely redesign the embedded dashboards from the ground up which we hope will provide our customers with more value and targeted insights for their businesses.
+We are constantly evaluating new tools to enhance the embedded dashboards and hope to provide our customers with more value and targeted insights for their businesses.
 
 === No-Code Workflow Automation
 
