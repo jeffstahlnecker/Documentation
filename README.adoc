@@ -935,7 +935,25 @@ Utilizing a private DNS server which is not reachable via a public IP, requires 
 
 === Identity and Access Management
 
-=== Business Intelligence and Analytics
+=== Embedded Analytics
+Currently in the link:http://cdn.emnify.net/[EUI Portal] (Old EMnify portal) and our link:https://portal.emnify.com/[new Portal] we provide Embedded Analytics - powered by a tool called Periscope. Depending on the customer type, the analytics provides the customer with dashboards such as: 
+
+*CDR Export
+*Data Traffic Per Ratezone
+*Data Usage by Service Profile
+*Endpoint Repository
+*Global Distribution
+*KPI Number of SIMs online
+*Live Traffic
+*Network Activity
+*Network Utilisation
+*Overview Current Month
+*SIM Database
+*Traffic History
+*Traffic by Mobile Network
+*Usage by Endpoint
+
+We are constantly evaluating new tools to enhance the embedded dashboards and hope to provide our customers with more value and targeted insights for their businesses.
 
 === No-Code Workflow Automation
 
