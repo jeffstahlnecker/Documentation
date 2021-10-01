@@ -938,7 +938,7 @@ Utilizing a private DNS server which is not reachable via a public IP, requires 
 === Business Intelligence and Analytics
 
 === No-Code Workflow Automation
-Customers use EMnify to connect their devices into their IoT applications. EMnify provides cloud-native APIs already, however a lot of customers don't know how to code, cannot use the API, or don’t have the resources to do so. By using No Code/Low Code Integrators, customers can quickly spin up a POC or set up automation for the long haul to help propel their business to the next level.
+Customers use EMnify to connect their devices into their IoT applications. EMnify already provides cloud-native APIs. However, a lot of customers don't know how to code, cannot use the API, or don’t have the resources or the time needed to do so. By using No Code/Low Code Integrations, customers can quickly spin up a POC or set up automation for the long haul to help propel their business to the next level.
 
 Powered by our EMnify’s already existing Data Streamers and APIs, we’ve translated our data and events to Zapier’s Triggers and Actions - allowing customers to integrate their EMnify data with over +4000 different applications available on the Zapier ecosystem. You can find our first blog post on this subject link:https://www.emnify.com/en/developer-hub/emnify-zapier-nocode[here].
 
