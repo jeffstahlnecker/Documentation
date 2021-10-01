@@ -985,23 +985,140 @@ If you want to integrate SMS via SMPP through your own application, your system 
 === User Management
 
 EMnify offers 3 levels of access to the use and manage EMnify Services
-.Admin (Has access to all services and user management)
-.Observer (Has access to limited services)
-.User (Has access to limited services)
 
-Below is a table that describes the permissions of the different users. 
+. Admin (Has access to all services and user management)
+. Observer (Has access to limited services)
+. User (Has access to limited services)
 
-[cols="1,1,1,1"]
+Below is a table that describes the permissions for different users. 
+
+[cols="6,^,^,^"]
 |===
-|Action
-|Admin
-|Observer
-|User
+h|Action
+h|Admin
+h|Observer
+h|User
 
-| Retrieve an endpoint by ID 
-| icon: yes[]
-|
-|
+4+|ENDPOINT MANAGEMENT
+|Retrieve an endpoint by ID 
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+|Update, Delete an endpoint by ID 
+|icon:check[]
+|icon:uncheck[] 
+|icon:check[] 
+
+|Retrieve the blacklisted Operators for an Endpoint
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+|Add, Remove Operator from Blacklist of Endpoint by ID
+|icon:check[]
+|icon:uncheck[] 
+|icon:check[] 
+
+|List all Endpoints
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+|Create new endpoint
+|icon:check[]
+|icon:uncheck[] 
+|icon:check[] 
+
+|Retrieve connectivity information of an Endpoint
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+4+|SIM MANAGEMENT
+
+|Retrieve SIMs by ID
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+|Update, Delete SIMs by ID
+|icon:check[]
+|icon:uncheck[] 
+|icon:check[] 
+
+|List available SIM Statuses
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+|List of available SIMs
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+4+|SERVICE PROFILE
+
+|Retrieve list of available Countries
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+|Retrieve list of available Currencies
+|icon:check[]
+|icon:check[] 
+|icon:check[] 
+
+|Retrieve single Currency details by ID
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+|Retrieve List of available Services
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+|List available Traffic Limits for a Service by ID
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+|Retrieve Service Profiles
+|icon:check[]
+|icon:check[] 
+|icon:check[] 
+
+|Create Service Profiles
+|icon:check[]
+|icon:uncheck[]
+|icon:check[]
+
+|Retrieve Service Profiles by ID
+|icon:check[]
+|icon:check[]
+|icon:check[]
+
+|Update, Delete Service Profiles by ID
+|icon:check[]
+|icon:uncheck[]
+|icon:check[]
+
+|Add, Delete services from Service Profiles
+|icon:check[]
+|icon:uncheck[] 
+|icon:check[] 
+
+|Add, Delete Traffic Limit from Service
+|icon:check[]
+|icon:uncheck[]
+|icon:check[]
+
+|Retrieve the ESME interface types
+|icon:check[]
+|icon:uncheck[]
+|icon:check[]
+
 |===
 
 === Business Intelligence and Analytics
