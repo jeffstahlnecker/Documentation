@@ -936,7 +936,7 @@ Utilizing a private DNS server which is not reachable via a public IP, requires 
 === Identity and Access Management
 
 === Embedded Analytics
-Currently in our link:http://cdn.emnify.net/[EUI Portal] and our link:https://portal.emnify.com/[new Portal] we provide Embedded Analytics - powered by a tool called Periscope. Depending on the customer type, the analytics provides the customer with dashboards such as: 
+Currently in the link:http://cdn.emnify.net/[EUI Portal] (Old EMnify portal) and our link:https://portal.emnify.com/[new Portal] we provide Embedded Analytics - powered by a tool called Periscope. Depending on the customer type, the analytics provides the customer with dashboards such as: 
 
 *CDR Export
 *Data Traffic Per Ratezone
