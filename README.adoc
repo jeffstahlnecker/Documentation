@@ -1152,7 +1152,39 @@ Check out link:https://github.com/EMnify/API_Examples_JS[JavaScript Examples] wi
 
 == Integration Guides
 
-// link integrations on website
+EMnify Services can be easily integrated with your existing infrasctructures. Here are some step-by-step integration guides to help you along the process. 
+
+=== Amazon Web Services
+
+* link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-aws-s3[EMnify Data Streamer with AWS S3]
+* link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-aws-kinesis[EMnify Data Streamer with AWS Kinesis]
+* link:https://f.hubspotusercontent10.net/hubfs/4374869/Listing_Image_AWSCore.png?width=800&name=Listing_Image_AWSCore.png[EMnify Integration with AWS IoT Core]
+* link:https://www.emnify.com/en/developer-hub/emnify-cloud-connect-into-aws-transit-gateway[EMnify Cloud Connect integration with AWS Transit Gateway]
+
+=== Microsoft Azure
+
+* link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-azure-time-series-classic[EMnify Data Streamer with Azure Time Series Classic]
+* link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-azure-event-hub[EMnify Data Streamer integration with Azure Event Hub]
+* link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-power-bi[EMnify Data Streamer integration with Power BI]
+* link:https://www.emnify.com/en/developer-hub/emnify-and-azure-iot-hub-integration[EMnify integration with Azure IoT Hub]
+* link:https://www.emnify.com/en/developer-hub/emnify-cloud-connect-azure-integration[EMnify Cloud Connect integration with Azure Netrwork Gateway using IPsec]
+
+=== Google Cloud 
+
+* link:https://www.emnify.com/en/developer-hub/datastreamer-integration-google-bigquery[EMnify Data Streamer integration with Google BigQuery]
+* link:https://www.emnify.com/en/developer-hub/datastreamer-integration-into-google-cloud-pubsub[EMnify Data Streamer integration with Google Cloud Pub/Sub]
+* link:https://www.emnify.com/en/developer-hub/emnify-and-google-cloud-iot-core-integration[EMnify integration with Google Cloud IoT Core]
+* link:https://www.emnify.com/en/developer-hub/emnify-cloudconnect-integration-to-google-cloud-platform[EMnify Cloud Connect integration with Google Cloud Platform using IPsec]
+
+=== Webhooks
+* link:https://www.emnify.com/en/developer-hub/emnify-mcds-integromat-integration[EMnify Data Streamer webhook integration with Integromat]
+* link:https://www.emnify.com/en/developer-hub/how-to-receice-email-notifications-using-automate.io[EMnify Data Streamer webhook integration with Automate.io]
+
+=== Other Integrations
+
+* link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-keen.io[EMnify Data Streamer webhook integration with Keen.io]
+* link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-datadog[EMnify Data Streamer webhook integration with Datadog]
+
 
 == Blue Prints
 
