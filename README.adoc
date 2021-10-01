@@ -1180,11 +1180,12 @@ EMnify Services can be easily integrated with your existing infrasctructures. He
 * link:https://www.emnify.com/en/developer-hub/emnify-mcds-integromat-integration[EMnify Data Streamer webhook integration with Integromat]
 * link:https://www.emnify.com/en/developer-hub/how-to-receice-email-notifications-using-automate.io[EMnify Data Streamer webhook integration with Automate.io]
 
-=== Other Integrations
+=== More Integrations 
 
 * link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-keen.io[EMnify Data Streamer webhook integration with Keen.io]
 * link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-datadog[EMnify Data Streamer webhook integration with Datadog]
-
+* link:https://www.emnify.com/en/developer-hub/how-to-setup-an-ipsec-using-emnify-cloudconnect[EMnify Cloud Connect Integration with IPsec]
+* link:https://www.emnify.com/en/developer-hub/ussd-integration-guide[EMnify USSD integration]
 
 == Blue Prints
 
