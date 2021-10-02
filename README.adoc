@@ -8,7 +8,7 @@ EMnify is a IoT communications platform that enables you to connect your IoT sol
 
 - IoT SIM
 
-Using a single SIM, you can have multiple IMSIs, switch between multiple carriers and ensure uninterrupted connectivity. You can learn more about IMSI in <<Service Stack Overview>> section
+Using a single SIM, you can have multiple IMSIs, switch between multiple carriers and ensure uninterrupted connectivity. You can learn more about IMSI in <<Service Stack Overview, Service Stack Overview>> section
 
 - Highly available platform
 
@@ -16,7 +16,7 @@ Being able to connect to multiple operators over multiple partners increases con
 
 - Cloud Integration
 
-Given the cloud-native nature of our platform, you can easily integrate your cloud as well as on-premise IoT solutions. We allow you to connect through standard cloud services to establish a <<Cloud Connect, secure private network>> with your devices, get operational connectivity metadata delivered to your favorite << Multi Cloud Data Streamer, streaming analytics service>> or use your <<No-Code Workflow, low-code environment>>  to automate your device logistics and operation processes.
+Given the cloud-native nature of our platform, you can easily integrate your cloud as well as on-premise IoT solutions. We allow you to connect through standard cloud services to establish a <<Cloud Connect, secure private network>> with your devices, get operational connectivity metadata delivered to your favorite <<Multi Cloud Data Streamer, streaming analytics service>> or use your <<No-Code Workflow, low-code environment>> to automate your device logistics and operation processes.
 
 - EMnify API
 
@@ -139,7 +139,7 @@ For managing roaming Quectel also introduced the AT+QCFG command. The suggested 
 `AT+QCFG="roamservice",2,1`
 
 NOTE: Check your Quectel module AT command guide for more information.
-Further you can also read about AT commands in our <<AT command guide>>. 
+// Further you can also read about AT commands in our <<AT command guide>>. 
 
 ===== u-Blox cellular IoT modules
 
@@ -750,11 +750,10 @@ The Power Save mode has these characteristics
 * after the device wakes up it stays in idle mode for a configurable time (timer T3324) to listen for downlink messages (e.g. firmware updates)
 * the actual time the device is then in Power Save Mode is T3412 extended - T3324
 
-image:PSM.png[#PSM_Image].PSM and the 3412 and T3324 timers
+.PSM and the 3412 and T3324 timers
+image:PSM.png[#PSM_Image]
 
 NOTE: some modules (e.g. u-blox SARA-R4/SARA-N4) do not go into sleep mode when having a SIM enabled PIN. On EMnify SIMs the PIN is disabled. 
-
-
 
 [#PSM_ROAMING]
 Be aware that not all Nb-IoT and LTE-M networks have implemented PSM - and even when PSM is available with the local operator this does not mean that a roaming SIM can use it. This makes it very difficult for devices that are moving - in case they use PSM, and the new network does not support PSM - or only other timer configurations. We therefore regularly test the link:https://www.emnify.com/lte-m-coverage?hsLang=en[availability of PSM in our EMnify LTE-M roaming footprint.]
@@ -787,9 +786,10 @@ extended Discontinuous Reception (eDRX)
 * <<eDRX_AT_COMMANDS,AT Command examples for eDRX settings>>
 
 [#eDRX_WHAT]
-Whereas PSM is focused on uplink centric use cases, eDRX tries to reduce the power consumption for IoT Use cases that get downlink information. Regular smartphones are not continously listening on the radio for an incoming message but only every 1.28s or 2.56s which is called DRX (discontinous Reception). eDRX allows configuration of custom intervals of up to 40-175mins - depending on which configuration the visited network allows. 
+Whereas PSM is focused on uplink centric use cases, eDRX tries to reduce the power consumption for IoT Use cases that get downlink information. Regular smartphones are not continously listening on the radio for an incoming message but only every 1.28s or 2.56s which is called DRX (discontinous Reception). eDRX allows configuration of custom intervals of up to 40-175mins - depending on which configuration the visited network allows.
 
-image:eDRX.png[id=PSM].PSM and the 3412 and T3324 timers
+.PSM and the 3412 and T3324 timers
+image:eDRX.png[id=PSM]
 
 [#eDRX_ROAMING]
 As with PSM - not all NB-IoT and LTE-M networks support eDRX or the same timer configuration - and even if they do this does not guarantee that a roaming SIM card can utilize eDRX. We therefore also test and link:https://www.emnify.com/lte-m-coverage?hsLang=en[publish the eDRX availability on our LTE-M roaming footprint, window=read-later].  
@@ -853,7 +853,6 @@ EMnify has announced its first 5G roaming agreements in August 2020 and since th
 === SIM Life Cycle Management
 
 
-
 === Endpoint Management & Policies
 
 === Regional Breakout
@@ -862,14 +861,14 @@ Traditional connectivity providers normally have a centrally located network cor
 Let's take an example of a network provider which has its network core in Ireland. And the application as well as the device that is using the nework data is in USA. This data travels from the device in USA, to the network core in Ireland and then back to the application server in USA. This geographical distance between the application server and the core network will increase the network latency. However if the network core were to be in the USA, the network latency will be lesser.
 
 .Network Latency due to centrally located core network
-image:central_core_nw.jpeg[Network Latency due to centrally located core network, 700, 300] 
+image:traditional_operators.png[Network Latency due to centrally located core network, 700, 300] 
 
 EMnify's Regional Breakout is a solution for this network latency. 
 Because of EMnify's globally distributed cloud architecture, you can route endpoint traffic- either dynamically depending on the device’s location or through pre-defined system configuration. 
 Choosing "Regional Breakout” in your Device Service Policy will let the system dynamically choose the breakout region, based on the visited network’s location.
 
 .Reduction in Network Latency due to EMnify Regional Breakout regions
-image:Regional_Breakout_1.jpeg[Reduction in Network Latency due to EMnify Regional Breakout regions, 700, 300] 
+image:regional_breakout.png[Reduction in Network Latency due to EMnify Regional Breakout regions, 700, 300] 
 // Location based services
 
 === Multi Cloud Data Streamer
@@ -878,11 +877,50 @@ image:Regional_Breakout_1.jpeg[Reduction in Network Latency due to EMnify Region
 
 ==== Usage Data
 
+=== Security
+
+Security is a topic often considered in hindsight while developing an IoT solution, when it should be the first thing that is considered.
+
+Hackers use various attack vectors to access your IoT devices or applications. IoT devices can act as an abundundant computating resource for hackers due to their limited security policies. Moreover given the globally distributed nature of the devices, smaller footprints and lack of resources, it can get difficult to individually secure these devices.  
+
+.Why does IoT require SASE ?
+image:security_threats.png[IoT security threats]
+
+Secure Access Service Edge (<<sase,SASE>>) introduces a new architecture where networking and security functions are bundled in a cloud-delivered service. You can apply the same security standards across all your devices independent of the location. Moreover you can integrare security features in your solutions right from the beginning.
+
+Some of the features in a <<sase,SASE>> for IoT architecture are as follows:
+
+* Dynamic Data Routing with Software-Defined Wide Area Network (SD-WAN)
+* Firewall as a Service (FaaS) 
+* Cloud Access Security Broker (CASB)
+* DNS Security
+* Threat Detection
+
+In the following sections we will discuss some of the security features offered by EMnify. 
+
 === Cloud Connect
+
+With the EMnify Cloud Connect you can communicate with your <<vpc,Virtual Private Cloud>> through a secure private network. By eliminating the use of public IP addresses, Cloud Connect helps you better protect your application infrastructure against attacks like <<ddos,DDoS>> while giving you the possibility to remotely access the devices.
 
 ==== Transit Gateway
 
+The EMnify platform is deployed on AWS. This allows you to create a fast and secure direct peering data path to your VPC / EC2 instances via the AWS Transit Gateway (TGW). 
+
+AWS Tansit Gateway is an AWS managed service which acts as a network transit hub that you can use to connect your VPC to your EMnify SIM cards.
+
+.EMnify Cloud Connect with AWS Transit Gateway
+
+image:TGW.png[EMnify Cloud Connect with AWS Transit gateway]
+
+To integrate Cloud Connect into your application using Transit Gateway, you can follow this link:https://www.emnify.com/en/developer-hub/emnify-cloud-connect-into-aws-transit-gateway[tutorial] or follow this link:https://www.youtube.com/watch?v=Orb3Kvd9pZg[quick video]. 
+
 ==== IPSec
+
+If your application is not on AWS but on any other hosted cloud, you can implement Cloud Connect using IPSec. 
+
+With EMnify you can set up an IPSec tunnel to securely transfer your data into your application server/Database.
+
+To integrate Cloud Connect into your application using IPSec, you can follow this link:https://www.emnify.com/en/developer-hub/how-to-setup-an-ipsec-using-emnify-cloudconnect[tutorial]
 
 === OpenVPN
 
@@ -914,9 +952,6 @@ For detailed instructions please refer to our knowledge base articles
 . link:https://support.emnify.com/hc/en-us/articles/115001723273-OpenVPN-Integration-Guide-for-Windows[OpenVPN Integration Windows]
 . link:https://support.emnify.com/hc/en-us/articles/115001724434-OpenVPN-Integration-Guide-for-Linux[OpenVPN Integration Linux]
 
-
-=== Security
-
 ==== DNS
 
 When a device establishes a connection it uses a Domain Name Service (DNS) to resolve a hostname to an IP address to which it can send data. For example a hostname such as *.iot.example.com will be mapped to the IP address e.g. 120.126.230.60. 
@@ -932,6 +967,20 @@ image:dns_setting.png[].Custom DNS setting configuration
 Utilizing a private DNS server which is not reachable via a public IP, requires to setup a private network with the machine or a network where the private DNS is located. This can be done using Cloud Connect either with Amazon Transit Gateway or IPsec. A tutorial on how to setup a DNS firewall based on a private DNS using Amazon Route 53 is available link:https://www.emnify.com/en/developer-hub/dns-filtering[here]
 
 ==== IMEI Lock
+
+=== SMS
+You can exchange SMSs with your endpoints through 2 different interfaces:
+
+. EMnify SMS REST API
+. SMPP bind to EMnify SMSC
+
+You can enable or disable SMS for your endpoint while defining the Service Policy of the device. In the service policy, SMS MO means Mobile originated SMS ot SMS originated from your device. SMS MT means Mobile Terminated SMS or SMS received by your device. 
+
+With the EMnify REST API, you can send an SMS, cancel a sent SMS, list sent and received SMS by an endpoint and check SMS details. You can test the EMnify SMS API in our link:https://cdn.emnify.net/api/doc/swagger.html#/Endpoint/EndpointSmsByIdPost[Swagger]. 
+
+You can exchange SMSs with your endpoints using the SMS console in your link:https://portal.emnify.com/login?utm_source=dev-hub[EMnify portal]. 
+
+If you want to integrate SMS via SMPP through your own application, your system will need to implement an ESME (client) and EMnify SMSC will act as server. To implement the ESME client in your application, please refer to this link:https://www.emnify.com/en/developer-hub/smpp-integration-guide[tutorial].
 
 === Identity and Access Management
 
@@ -961,8 +1010,94 @@ Customers use EMnify to connect their devices into their IoT applications. EMnif
 Powered by EMnify’s existing Data Streamers and API, we have translated our data and events into Zapier Triggers and Actions - allowing customers to integrate their SIM metadata with over 4000 different applications available in the Zapier ecosystem. To try out our integration with Zapier, you can start with this link:https://www.emnify.com/en/developer-hub/emnify-zapier-nocode[blog post] about automating SIM workflows with Zapier and Slack in 5 easy steps.
 
 == Connectivity as Code
+REST APIs are one of the easiest way to integrate external services into your application. The EMnify API provides a variety of HTTP requests to integrate several EMnify services into your application. The sections below will describe the services available through the EMnify API. 
 
 === API Authentication
+
+To use the EMnify API, you need to authenticate it with an Authentication Token. We use JWTs as the authentication token.
+Now there are two ways to retreive this token:
+
+. *Authenticate with User Credentials*: You can use the username and password you used while signing up for the link:https://portal.emnify.com[EMnify Portal].
+. *Authenticate with an Application Token*: You can use the application token that you can generate in your EMnify account.
+
+==== Authenticate with User Credentials
+The `/api/v1/authenticate` API is used to generate a JWT `auth_token` which authenticates subsequent API calls. The request body must provide a `username` (typically the email address used when signing up) and the `user password` and in turn will receive an `auth_token` and `refresh_token`.
+
+`POST https://cdn.emnify.net/api/v1/authenticate`
+
+Request Body
+
+----
+{
+  "username": "user@domain.com",
+  "password": "2fd4e1c67a2d28fced849ee1bb76e7391b93eb12"
+}
+
+----
+
+NOTE: If users have signed up using the link:https://portal.emnify.com[EMnify portal], the password will need to be a SHA1 hashed string. The SHA1 of a password can be generated online or in the terminal via the following command: `echo -n "my_password" | openssl sha1`. If your password contains the characters `$` `'` `\` or `!` , you will have to add `\` before that character. So `$` becomes `\$`.
+
+Response
+----
+{
+  "auth_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+----
+You can use this `auth_token` as the bearer token to authenticate all API calls. 
+This `auth_token` is valid for 240 minutes, so you don't need to retreive the `auth_token` before every API call. Once the `auth_token` expires, you can use the `refresh_token` to retreive the new `auth_token`.
+
+==== Authenticate with an Application Token 
+
+If you don't want to store your EMnify user credentials on your application server, you can generate an `application_token` via the link:https://portal.emnify.com[EMnify portal] or via the API `/api/v1/application_token`. The request body should have description of the token usually used to indicate who is using the token and can have a `expiry_date` for the token. 
+
+`POST https://cdn.emnify.net/api/v1/application_token `
+
+Request header
+
+`Authorization: Bearer {auth_token}`
+
+Request body
+----
+{
+  "description": "Token with expiry date",
+  "expiry_date": "2021-10-29"
+}
+----
+Response
+----
+{
+  "application_token": "KAOp24TuMgjO2FpZmZ3ZFjSqpk7ea_mY8..."
+}
+----
+This calls returns an `application_token` which can then be used instead of the user/password combination and can be revoked at any time to get the `auth_token`. 
+
+You can alternatively generate the `application_token` in the EMnify portal. Login in to the link:https://portal.emnify.com/login[EMnify Portal] > Integrations > Application Tokens > Add Token. 
+
+.Generate Application Token using the EMnify Portal
+image:generate_app_token.png[generate application token]
+ 
+
+To get the `auth_token` using the `application_token`, use the `/api/v1/authenticate` API. The `auth_token` can be then used to authenticate all subsequent API calls.
+
+`POST https://cdn.emnify.net/api/v1/authenticate`
+
+Request body 
+----
+{
+  "application_token": "kNTktNTA1My00YzdhLT..."
+}
+----
+Response
+----
+{
+  "auth_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+----
+
+Unlike user and password authentication, only an `auth_token` is returned by the server and no `refresh_token` will be included in the response. This `auth_token` is valid for 240 minutes. 
+
+NOTE: It is NOT advisable to generate an `auth_token` before making every API call. You should reuse the generated `auth_token` for 240 minutes after it is generated and update it after its expiration.
 
 === Working with SIMs and Endpoints
 
@@ -971,10 +1106,39 @@ Powered by EMnify’s existing Data Streamers and API, we have translated our da
 === Endpoint Connectivity Status
 
 === Sending and receiving SMS
+You can perform the following SMS related operations using the `endpoint` API.
+
+. List sent and received SMS `GET /api/v1/endpoint/{endpoint_id}/sms`
+. Send SMS to and endpoint `POST /api/v1/endpoint/{endpoint_id}/sms`
+. Get details about an endpoitn SMS 'GET /api/v1/endpoint/{endpoint_id}/sms/{sms_id}'
+. Cancel a buffered SMS `DELETE /api/v1/endpoint/{endpoint_id}/sms/{sms_id}`
+
+Example:  Send SMS to an Endpoint
+
+'POST https://cdn.emnify.net/api/v1/endpoint/{endpoint_id}/sms'
+
+Request Body
+----
+{
+  "source_address": 12345689,
+  "payload": "This is the message text"
+}
+----
+Responses
+
+`201`
+
+The source address is the sender number that will appear on the receiving device. The payload is the actual text to be sent as SMS.
+
+.SMS window of the receiving device
+image:sms_console.png[sms received]
+
 
 === Retrieving Events and Statistics
 
 === API Reference
+
+The EMnify API is based on the OpenAPI Specification OAS3. You can find the API reference link:https://cdn.emnify.net/api/doc/swagger.html[here] where you can also try out our API.
 
 === Code Samples
 
@@ -1046,6 +1210,8 @@ Powered by EMnify’s existing Data Streamers and API, we have translated our da
 [[data-tx]]Data TX :: Data received by the device
 
 [[data-usage]]Data Usage (volume) :: The data that has been used by an endpoint
+
+[[ddos]]DDoS :: Distributed Denial of Service attack - an attack where the attacker sends multiple requests to a web resource with the aim of exceeding the website's capacity to handle multiple requests and prevent the website from functioning correctly.
 
 [[dns]]DNS Domain Name System ::  A hierarchical decentralized naming system for computers, services, or any resource connected to the Internet or a private network
 
@@ -1162,6 +1328,7 @@ Powered by EMnify’s existing Data Streamers and API, we have translated our da
 [[routing]]Routing :: The process of selecting a path for a network
 
 // S
+[[sase]]SASE Secure Access Service Edge :: SASE is a term coined by Gartner which combines Software Defined Networking (<<sdn,SDN>>) and Security as serves it as cloud-based Security-as-a-Service
 
 [[sdn]]SDN Software–Defined Networking :: An approach that allows network administrators to programmatically initialize, control, change, and manage network behavior dynamically via open interfaces
 
@@ -1219,8 +1386,10 @@ Powered by EMnify’s existing Data Streamers and API, we have translated our da
 [[ussd-gateway]]USSD gateway :: The collection of hardware and software required to interconnect two or more disparate networks, including performing protocol conversion
 
 // V
+[[vpc]]VPC :: Virtual Private Cloud - 
+A secure private cloud hosted within a public cloud where you can host websites, store data, run application etc. 
 
-[[vpn]]VPN ::  virtual private network
+[[vpn]]VPN ::  Virtual Private Network
 // W
 // X
 // Y
