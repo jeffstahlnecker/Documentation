@@ -903,7 +903,7 @@ Data Streamer can be managed by using the EMnify Portal or by using the EMnify A
 Portal:
 Managing data streams via the Portal is convenient when you are in the initial stages of building your application or if you do not plan to make configuration changes very often.
 
-ADD IMAGE
+image:integration.png[].Manage Integrations through the EMnify Portal
 
 API::
 The integration of the Data Streamer API becomes a faster and more secure approach when multiple data streams need to be managed as part of the daily business. It provides you a seamless integration into yout own applications.
