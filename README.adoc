@@ -840,7 +840,7 @@ EMnify has announced its first 5G roaming agreements in August 2020 and since th
 // Location based services
 
 === Data Streamer
-Before each device is able to send data to the application it needs to communicate with the mobile network to ensure that the data is allowed to be send over the network. This communication happens through signalling events which is usually hidden from the application.
+Before each device is able to send data to an application it needs to communicate with the mobile network to ensure that the data is allowed to be sent over the network. This communication happens through signalling events which are usually hidden from the application.
 With the EMnify Data Streamer this connectivity metadata is made available to your cloud platform and self-developed software stacks in near-real-time.
 
 The Data Streamer enables real-time streaming of connectivity data into the cloud,  and self-developed software stacks. These integrations empower you with complete network transparency to faster triage and resolve issues. 
