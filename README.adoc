@@ -901,7 +901,7 @@ Following connection types are currenly available::
 ==== Management Interfaces
 Data Streamer can be managed by using the EMnify Portal or by using the EMnify API.
 Portal:
-Managing data steams via the Portal is convenient when you are taking the first steps or if you do not expect configuration changes being needed often.
+Managing data streams via the Portal is convenient when you are in the initial stages of building your application or if you do not plan to make configuration changes very often.
 
 ADD IMAGE
 
