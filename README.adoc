@@ -906,7 +906,7 @@ Managing data streams via the Portal is convenient when you are in the initial s
 image:integration.png[].Manage Integrations through the EMnify Portal
 
 API:
-The integration of the Data Streamer API becomes a faster and more secure approach when multiple data streams need to be managed as part of the daily business. It provides you a seamless integration into yout own applications.
+Integrating the Data Streamer through the link:https://cdn.emnify.net/api/doc/swagger.html#/Integrations[EMnify API] becomes a faster and secure approach when multiple data streams need to be managed as part of the daily business. It provides you a seamless integration into your own applications.
 
 
 === Cloud Connect
