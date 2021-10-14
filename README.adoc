@@ -2,63 +2,50 @@
 :imagesdir: assets
 :icons: image
 :iconsdir: assets
+:figure-caption!:
 
 == Cellular IoT
-EMnify is a IoT communications platform that enables you to connect your IoT solutions over the best networks in the country - anywhere with the EMnify Global IoT SIM. Not only do you get global cellular access but with our cloud-native platform, we provide you with control over your device connectivity and tools so that you can better operate and secure your solution.
+Cellular is the most used wireless network technology for connecting things. Cellular is superior to any other technology in terms of network availability, security and improves end customer experience by instantly delivering data at the customer site without any integration. This makes cellular connectivity not only ideal for mobile use cases but also for stationary devices. 
 
-- IoT SIM
+EMnify specializes in businesses utilizing cellular connectivity for the Internet of Things. EMnify has developed a communication platform which aggregates and enriches traditional cellular connectivity so that businesses can easily connect, integrate, operate and secure hundreds and thousands of devices with a single global IoT SIM. 
 
-Using a single SIM, you can have multiple IMSIs, switch between multiple carriers and ensure uninterrupted connectivity. You can learn more about IMSI in <<Service Stack Overview, Service Stack Overview>> section
+[.text-center]
+.EMnify Communication Platform
+image::Cellular_IoT.png[300,500, align="center"]
 
-- Highly available platform
-
-Being able to connect to multiple operators over multiple partners increases connectivity availability. EMnify's platform (consisting of a mobile core network and a communication platform dedicated for IoT) has been built up cloud-natively, which means that it is deployed in 3 cloud regions within 2-3 availability zones per region / data centers. Even when one cloud data center becomes unavailable you can still transport your data over the EMnify network.
-
-- Cloud Integration
-
-Given the cloud-native nature of our platform, you can easily integrate your cloud as well as on-premise IoT solutions. We allow you to connect through standard cloud services to establish a <<Cloud Connect, secure private network>> with your devices, get operational connectivity metadata delivered to your favorite <<Multi Cloud Data Streamer, streaming analytics service>> or use your <<No-Code Workflow, low-code environment>> to automate your device logistics and operation processes.
-
-- EMnify API
-
-With the EMnify API, you can control your SIM cards from your own applications using HTTP requests - for example to align your SIM contract with your device lifecycle, build own prepaid models or to send or receive configuration SMS. The complete functionality available is documented in the <<API Reference, API Reference>> section. 
-
-In the following sections of the guide, you will find more information about our technology stack, integrations to several cloud platforms, the EMmnify API as well as several examples to help you in your IoT solutions building journey.
 
 == Quickstart
 To begin developing your IoT solutions with EMnify, you will need an EMnify account. link:https://portal.emnify.com/sign/up?utm_source=dev-hub[Sign up] for free to a 60-day trial to use all functionalities.
 
 === Order a free evaluation SIM package
-Before you begin the production of your IoT solution  with your EMnify SIM cards, you may want to test the service. You can order your free Evaluation SIM package  on the EMnify portal with which you can test all EMnify services. Whereas you can download the  eSIM for your smartphone for free - shipping costs may apply for the 3 physical SIM cards, depending on your location.
+
+Before you begin the production of your IoT solution with your EMnify SIM cards, you may want to test the service. You can order your free Evaluation SIM package on the EMnify portal with which you can test all EMnify services. Whereas you can download the eSIM for your smartphone for free - shipping costs may apply for the 3 physical SIM cards, depending on your location.
 
 Log into your link:https://portal.emnify.com[EMnify account] and follow these steps:
 
 1. On the dashboard, click on order on *Get your FREE SIMs* 
-+
-image::order-SIM_step1.png[width=500, float="center"]
+  image:order-SIM_step1.png[width=500, align="center"]
 2. Select the SIM cards of your choice. 
-+
-image::order-SIM_step2.png[width=500, float="center"]
-.. If you select physical SIM cards, you can further choose between 3in1 (no nano SIM) or 4in1 (with nano SIM).
-+
-image::order-SIM_step2.1.png[width=500, float="center"]
-.. If you select the developer eSIM, you can directly download it into your eSIM compatible phone. You can find the instructions to do so in this link:https://www.emnify.com/en/developer-hub/emnify-developer-esim[blog post]
+  +
+  image:order-SIM_step2.png[width=500, align="center"]
+  If you select physical SIM cards, you can further choose between 3in1 (no nano SIM) or 4in1 (with nano SIM).
+  +
+  image:order-SIM_step2.1.png[width=500, align="center"]
+  If you select the developer eSIM, you can directly download it into your eSIM compatible phone. You can find the instructions to do so in this link:https://www.emnify.com/en/developer-hub/emnify-developer-esim[blog post]
 3. For the physical SIM cards, proceed to fill in your shipping details.
-+
-image::order-SIM_step3.png[width=500, float="center"]
+  image:order-SIM_step3.png[width=500, align="center"]
 
 4. Proceed to pay the shipping charges and you will be notified when the SIM cards will be shipped.
-+
-image::order-SIM_step4.png[width=500, float="center"]
+  image:order-SIM_step4.png[width=500, align="center"]
 
 === Registering SIMs
 
 Once you get your EMnify SIMs, you need to register them before you can start using them. 
 
 . If you have the evaluation SIM cards, you will have to register them one by one.
-+
-Scan the QR code on the SIM card and click on register. The scanner will copy the BIC and take you to the EMnify portal to register the SIM.
-+
-image::QRScan.png[width=500, float="center"]
+  Scan the QR code on the SIM card and click on register. The scanner will copy the BIC and take you to the EMnify portal to register the SIM.
+  +
+  image::QRScan.png[width=500, float="center"]
 
 . If you do not have a QR reader or want to do this on a desktop without a camera, register using the BIC
 +
@@ -941,7 +928,7 @@ Security is a topic often considered in hindsight while developing an IoT soluti
 Hackers use various attack vectors to access your IoT devices or applications. IoT devices can act as an abundundant computating resource for hackers due to their limited security policies. Moreover given the globally distributed nature of the devices, smaller footprints and lack of resources, it can get difficult to individually secure these devices.  
 
 .Why does IoT require SASE ?
-image:security_threats.png[IoT security threats]
+image:security_threats.png[IoT security threats].IoT security threats
 
 Secure Access Service Edge (<<sase,SASE>>) introduces a new architecture where networking and security functions are bundled in a cloud-delivered service. You can apply the same security standards across all your devices independent of the location. Moreover you can integrare security features in your solutions right from the beginning.
 
