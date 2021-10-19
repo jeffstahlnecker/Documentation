@@ -395,7 +395,7 @@ setparam 0242 em; setparam 0917 1; setparam 0020 <MNC>; .....
 
 _Applies to RUT240, RUT950, RUT955, RUTX09, RUTX11, RUTX12, RUTX14, RUTXR1, RUT360_ 
 
-Newer firmware version of the Teltonika Routers should automatically detect the EMnify APN. Nevertheless, if the APN is not correctly detected it can be configured via 3 methods 
+Newer firmware version of the Teltonika Routers should automatically detect the EMnify APN. In case the APN is not correctly detected, it can be configured via 3 methods 
 
 1. With the Teltonika WebUI over Wifi, Ethernet 
 2. Via the SMS console through the EMnify Portal (most simple) 
@@ -412,20 +412,20 @@ Open the Teltonika WebUI http://192.168.1.1 and go to the Mobile configuration. 
 + 
 link:https://wiki.teltonika-networks.com/view/SMS_Commands[Teltonika Documentation Source]
 +
-Make sure that the Router is powered on, and the SIM card is inserted and activated. In the EMnify portal the device should show as `Attached`. 
+Make sure that the router is powered on, and the SIM card is inserted and activated. In the EMnify portal the device should show as `Attached`. 
 +
-The following SMS command needs to be sent to the device
+The following SMS command should be sent to the device
 ---- 
 cellular apn=em
 ----
 
 ==== Android
 
-When setting up an Android device with an EMnify SIM you need to follow these 5 steps
+When setting up an Android device with an EMnify IoT SIM, you need to follow these 4 steps
 
 . Go to Settings -> Mobile Network
 . Go to Mobile data
-. Enable roaming and go to Access Point Names (APN)
+. Enable roaming, and go to Access Point Names (APN)
 . Create a new APN with any name and configure the APN with "em"
 
 [.float-group]
@@ -442,7 +442,7 @@ image::Android_05_Configure_APN.jpg[400,200, float="left"]
 
 ==== iOS devices
 
-When setting up an iOS device with an EMnify IoT SIM you need to follow 4 steps
+When setting up an iOS device with an EMnify IoT SIM, you need to follow 4 steps
 
 . Go to Settings -> Mobile Data
 . Click on the EMnify Data Plan (first one if regular SIM or secondary in case of eSIM) 
@@ -467,10 +467,10 @@ The device will show different icons that indicate the status (`Offline`, `Attac
 For most of the troubleshooting, a look at Details->Events is necessary. 
 A usual event flow should look like this:
 
-. Update Location - the SIM card is (re)authenticating with a different network element. If successful, the device will show as `Attached` and can already receive SMS. 
-. Update GPRS location - the SIM card has successfully registered for data sessions with a different network element. 
-. Create PDP context - the device has started a data transfer. The device will show `Online` as long is there is no delete PDP context event. 
-. Delete PDP context - the device has ended a data transfer. The event details will also show the data transmitted and the device status will be set to `Offline` 
+. Update Location - The SIM card has (re)authenticated with a different network element. If successful, the device will show as `Attached` and can already receive SMS. 
+. Update GPRS Location - The SIM card has successfully registered for data sessions with a different network element. 
+. Create PDP context - The device has started a data transfer. The device will show `Online` as long is there is no delete PDP context event. 
+. Delete PDP context - The device has ended a data transfer. The event details will also show the data transmitted and the device status will be set to `Offline` 
 
 .Event Flow
 image::event_flow.png[250,500,align="center"]
@@ -479,15 +479,18 @@ There can be many location updates before or in between the data sessions.
 
 ==== icon:offline[width="20"] The device is offline 
 
-* Click on Details -> ensure that the device is enabled
-* Click on Details ->Events. Validate if there is any location update event created and rejected. The reasoning should indicate the resolution to the problem. If there is no location update event:
-* Ensure the device is powered on and searches for a network
-* Ensure that the device is in reception of any supported network
+* Click on Details -> Ensure that the device is enabled
+* Click on Details ->Events. Validate if there is any location update event created and rejected. The reason should indicate the resolution to the problem. 
+
+If there is no location update event:
+
+* Ensure the device is powered on, and searches for a network
+* Ensure that the device is in reception for any supported network
 
 ==== icon:att[width="20"] The device shows attached but does not transmit data 
 
-* Ensure that the APN is correctly set to 'em' or use alternatively 'emnify' as some devices do not support two-digit APNs. Guides for different devices can be found <<Getting the first device online, here>>
-* In case you changed your policy settings, make sure the radio types (2G,3G,4G) and data access is activated
+* Ensure that the APN is correctly set to 'em' or alternatively use 'emnify' as some devices do not support two-digit APNs. Guides for different devices can be found <<Getting the first device online, here>>
+* In case you changed your policy settings, make sure the radio types (2G,3G,4G) and data access is activated.
 * Ensure mobile data is enabled, as well as international roaming is allowed 
 * Click on Details -> Events. Validate if there was any PDP create event that was rejected. The reason and resolution should be in the event description. 
 
@@ -499,13 +502,14 @@ NOTE: The `Attached` status does not necessarily mean that the device is powered
 * Validate under Details->Events if any `Warn` or `Error` is detected
 * For NB-IoT and LTE-M this behavior can happen when the device automatically connects to a network - rather specify the network that shall be used with using the `AT+COPS`. Also verify that the network is on EMnify's link:https://www.emnify.com/nb-iot-coverage[NB-IoT coverage] or 
 link:https://www.emnify.com/lte-m-coverage[LTE-M network coverage] list
-* Ensure that your data destination and DNS server (default EMnify uses googles 8.8.8.8 DNS if your device does not specify a DNS) is not blocked for the device
+* Ensure that your data destination and DNS server is not blocked for the device.(EMnify uses google's 8.8.8.8 DNS by default if your device does not specify a DNS) 
 
 
 ==== Other general troubleshooting tips
-* After configuration changes make sure they are correctly applied on the device (e.g., with a reboot)
-* A reset connectivity icon:reset[width="20"] on Connected Devices can also reset the network state and allow your device to reattach  
-* The issue may only be present with one network or in a specific location (e.g., due to high interference for this network). You can use the 'Operator Blacklist' to block the network and force the change to a different network.   
+
+* After making the configuration changes, make sure they are correctly applied on the device (e.g., with a reboot)
+* Clicking reset connectivity icon:reset[width="20"] on Connected Devices, can also reset the network state and allow your device to reattach  
+* The issue may only be present with one network or in a specific location (e.g., due to high interference for this network). You can use the 'Operator Blacklist' to block the network and force the device to connect to a different network.   
 
 
 == Service Stack Overview
@@ -515,19 +519,20 @@ image::Service_Stack.png[350,700, align="center"]
 
 EMnify offers the following high-level services:
 
-* Programmable <<lGobal IoT SIM>> 
+* Programmable <<Global IoT SIM>> 
 * A reliable <<Global IoT Network>> using <<Mobile Network Aggregation>>
-** With access to all <<Radio Access Types>> including IoT optimized <<LPWAN LTE-M and NB-IOT>>
+** With access to all <<Radio Access Types>> including IoT optimized <<LPWAN: LTE-M/NB-IoT>>
 * The EMnify <<IoT Cloud Communication Platform>> including
 ** <<User Interface>> for operating and managing connectivity and SIMs 
-** <<Distributed Data plane>> with <<Regional Breakout>> to ensure data does not traverse continents
+** <<Distributed Data Plane>> with <<Regional Breakout>> to ensure data does not traverse continents
 ** The <<Data Streamer>> to integrate connectivity data into services for IoT operations
 ** <<Connectivity as Code, Rest API>> for automating <<SIM Life Cycle Management>> or <<SMS>> communication from the own application
-** Business enablers such as <<no-code integration>> to automate workflows between third party applications 
-** <<Cloud integrations>> to the infrastructure where the application or 3rd party services 
+** Business enablers such as <<No-Code Workflow Automation>> to automate workflows between third party applications 
+** <<Cloud Integrations>> to the infrastructure where the application or 3rd party services 
 **	A holistic SASE oriented approach for a central control over <<security>> and networks
 
 == Services  
+
 === Global IoT SIM
 
 EMnify IoT SIMs are more durable than regular SIM cards and come in different <<Form Factors, form factors>> and <<Quality Grades, quality grades>>. For testing the platform services quickly without any SIM hardware - EMnify offers an <<eSIM>> which can be downloaded directly onto a supported smartphone. 
@@ -839,7 +844,7 @@ As of today 5G is mainly adopted for eMBB use cases - using a 5G non-standalone 
 EMnify has announced its first 5G roaming agreements in August 2020 and since then has reached agreements with more than a dozen network operators worldwide.
 
 
-=== IoT Cloud Communication Patform
+=== IoT Cloud Communication Platform
  
 EMnify’s platform (consisting of a mobile core network and a communication platform dedicated for IoT) has been built up cloud-natively. Being deployed in 3 AWS cloud regions within 2-3 availability zones / data centers per region increases the availability of the solution - even when one cloud data center becomes unavailable, data will still be transported over the EMnify network. 
 
@@ -854,7 +859,7 @@ image::regional_breakout.png[200,450, float="left",align="center"]
 --
 The data plane of EMnify’s cloud communication platform is distributed across major cloud regions (Virgina/US, Ireland/Europe, Singapore/APAC) and directly connected to central peering points with the local operators.  
 
-=== Regional Breakout
+==== Regional Breakout
 
 EMnify’s distributed data plane enables device data to breakout locally, keeping the customer data within the same region. The configuration on where the customer data shall be routed can be configured for a group of devices on the EMnify Portal -> Service Profile. You can either select a specific breakout region or the network selects the closest breakout region to the device automatically. 
 
@@ -876,18 +881,18 @@ image::regional.png[250, 500, align="center"]
 // image:regional_breakout.png[Reduction in Network Latency due to EMnify Regional Breakout regions, 700, 300] 
 // Location based services
 
-=== AWS Intra-Cloud Connect 
+==== AWS Intra-Cloud Connect 
 EMnify’s communication platform is deployed on AWS which simplifies integrations for customers using AWS as an infrastructure. Without using the public internet – the integration is directly done with AWS services within minutes. To establish a secure private network between your devices and your application you only exchange a cross-account role of your AWS account -> read more on Intra-Cloud Connect in the <<AWS Transit Gateway>> section. If you want to know how it is done – check the link:https://www.emnify.com/en/developer-hub/emnify-cloud-connect-into-aws-transit-gateway[EMnify Cloud Connect integration with AWS Transit Gateway] integration guide.  
 
-=== Data Streamer
+==== Data Streamer
 The Data Streamer service provides a real-time feed of all relevant information about the device connectivity – essentially all information available in the EMnify portal. Using the, Data Streamer you can integrate this information into your operation management workflows and dashboards, to detect and fix device, application and connectivity issues. 
 
 The Data Streamer is provided as a webhook, or is pre-integrated in several big data event services like AWS link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-aws-kinesis[kinesis] and link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-aws-s3[S3], link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-azure-event-hub[Azure Event-Hubs], link:https://www.emnify.com/en/developer-hub/datastreamer-integration-into-google-cloud-pubsub[Google Pub-Sub], link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-keen.io[keen.io], and link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-datadog[DataDog]. 
 
-==== Events
+===== Events
 When devices try to establish a data connection, they first use signaling data to determine if they are connected to a network. This signaling information is rich because not only does it include which issues may prevent the device to go online (e.g., configured policies, roaming or tariff issues) but also detects from where a device is trying to connect, which radio access type is used and what may prevent the device to go online.  
 
-==== Usage Data
+===== Usage Data
 Usage data events are also called Call Data Records (CDRs). They contain the data volume or SMS consumed per device, per network on a connection.
 
  
@@ -954,12 +959,12 @@ Usage data events are also called Call Data Records (CDRs). They contain the dat
 // API:
 // Integrating the Data Streamer through the link:https://cdn.emnify.net/api/doc/swagger.html#/Integrations[EMnify API] becomes a faster and secure approach when multiple data streams need to be managed as part of the daily business. It provides you a seamless integration into your own applications.
 
-=== Security
+==== Security
 Given the globally distributed nature of the devices, smaller footprints and lack of resources, it can get difficult to individually secure IoT devices.
 
 EMnify uses a SASE approach to simplify securing devices – using several services specifically to protect customer data, filtering malicious content and preventing unauthorized access.    
 
-==== Why does IoT require SASE ?
+===== Why does IoT require SASE ?
 
 .IoT security threats
 image::security_threats.png[IoT security threats]
