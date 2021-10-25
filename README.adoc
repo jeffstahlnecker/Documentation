@@ -1,4 +1,5 @@
 :toc: left
+:toclevels: 3
 :imagesdir: assets
 :icons: image
 :iconsdir: assets
@@ -517,19 +518,32 @@ link:https://www.emnify.com/lte-m-coverage[LTE-M network coverage] list
 .EMnify Service Stack 
 image::Service_Stack.png[350,700, align="center"]
 
-EMnify offers the following high-level services:
+EMnify offers the following high-level products and services:
 
-* Programmable <<Global IoT SIM>> 
-* A reliable <<Global IoT Network>> using <<Mobile Network Aggregation>>
-** With access to all <<Radio Access Types>> including IoT optimized <<LPWAN: LTE-M/NB-IoT>>
-* The EMnify <<IoT Cloud Communication Platform>> including
-** <<User Interface>> for operating and managing connectivity and SIMs 
-** <<Distributed Data Plane>> with <<Regional Breakout>> to ensure data does not traverse continents
-** The <<Data Streamer>> to integrate connectivity data into services for IoT operations
-** <<Connectivity as Code, Rest API>> for automating <<SIM Life Cycle Management>> or <<SMS>> communication from the own application
-** Business enablers such as <<No-Code Workflow Automation>> to automate workflows between third party applications 
-** <<Cloud Integrations>> to the infrastructure where the application or 3rd party services 
-**	A holistic SASE oriented approach for a central control over <<security>> and networks
+* A programmable <<Global IoT SIM>>  
+** Including an <<eSIM>> for quick evaluation 
+* A reliable <<Global IoT Network>>  
+** With <<Mobile Network Aggregation>>  
+** Access to all <<Radio Access Types>> including IoT optimized <<LPWAN: LTE-M/NB-IoT>> 
+* The EMnify <<IoT Cloud Communication Platform>> including 
+** link:https://portal.emnify.com/sign/up?utm_source=dev-hub[User Interface,window=_blank] for operating and managing connectivity and SIMs  
+** <<Distributed Data Plane>>  
+** with <<Regional Breakout>> to ensure data does not traverse continents 
+* The <<Data Streamer>> to integrate connectivity data into services for IoT operations 
+* A holistic SASE oriented approach for a central control over <<Security>> and networks 
+** <<DNS>> 
+** <<IMEI Lock>> 
+* <<Cloud Connect>> for connecting with other cloud platforms 
+** <<AWS Intra-Cloud Connect>> 
+** <<IPsec>> 
+* <<OpenVPN>>  
+* <<SMS>> communication from the own application 
+* <<User Management>> 
+* <<Business Intelligence and Analytics Reports>> 
+* Business enablers such as <<No-Code Workflow Automation>> to automate workflows between third party applications  
+* API and tools for <<SIM Life Cycle Management>>  
+* <<Endpoint Management & Policies>> 
+* <<Integration Guides, Cloud Integrations>> to the infrastructure where your application or 3rd party services lie.  
 
 == Services  
 
@@ -622,7 +636,7 @@ The EMnify IoT SIM and platform supports all devices and modules using the follo
 * <<2G (GSM/GPRS/Edge)>> - in more than 370 networks
 * <<3G (UMTS/WCDMA/HPSA/HSDPA)>> - in more than 390 networks
 * <<4G (LTE/LTE-A/LTE-CATXX)>> - in more than 310 networks
-* <<5G (NR)>> - in 5+ networks
+* <<5G (New Radio)>> - in 5+ networks
 * <<LPWAN: LTE-M/NB-IoT, LTE-M (CAT-M1)>> - in more than 60 networks
 * <<LPWAN: LTE-M/NB-IoT, NB-IoT (CAT-NB1, CAT-NB2)>> - in 12+ networks
 
@@ -722,54 +736,48 @@ Check the EMnify link:https://www.emnify.com/lte-m-coverage[LTE-M coverage], ava
 [#PSM]
 Power-Save-Mode (PSM)
 
-Jump to:
-
-* <<PSM_CELL,Why cellular communication is not ideal for IoT>>
-* <<PSM_WHAT,How does Power Save Mode work>>
-* <<PSM_ROAMING, Roaming for Power Save mode>>
-* <<PSM_AT_COMMANDS,AT Command calculation and examples for PSM settings>>
-* 
-
-[#PSM_CELL]
+* Why cellular communication is not ideal for IoT?
++ 
 Cellular communication for smartphones usually requires low latency on downlink - in case you are being called your phone should ring right away. Because of this there are two things the device does which require power:
 
 . Continously listening to the radio if there is an incoming call
 . Transmitting location information to the network where it should be called - whenever it moves out of a tracking area and periodicly every 54 minutes 
-
-[#PSM_WHAT]
+* How does Power Save Mode work?
++
 For most IoT use cases a downlink-initiated channel is not required - it is usually the device that intiates the communication to send e.g. sensor data. Therefore, a Power Save Mode is introduced that allows the device to go to sleep in case it has nothing to send.
++
+The Power Save mode has the following characteristics
 
-The Power Save mode has these characteristics
-
-* The Power Save Mode is similar to a power off period during which the module only consumes a couple of &#x03BC;A
-* The device tells the network for how long it is going periodically into PSM (timer T3412 extended)
-* The device/module will not be reachable during PSM from the outside in downlink
-* The device can wake up the module and send data (e.g. powerkey, interrupt or pin triggered)
-* When the device wakes up it does not need to reattach and reestablishing a PDN connection (unless it has moved to a different tracking area)
-* After the device wakes up it stays in idle mode for a configurable time (timer T3324) to listen for downlink messages (e.g. firmware updates)
-* The actual time the device is then in Power Save Mode is T3412 extended - T3324
+** The Power Save Mode is similar to a power off period during which the module only consumes a couple of &#x03BC;A
+** The device tells the network for how long it is going periodically into PSM (timer T3412 extended)
+** The device/module will not be reachable during PSM from the outside in downlink
+** The device can wake up the module and send data (e.g. powerkey, interrupt or pin triggered)
+** When the device wakes up it does not need to reattach and reestablishing a PDN connection (unless it has moved to a different tracking area)
+** After the device wakes up it stays in idle mode for a configurable time (timer T3324) to listen for downlink messages (e.g. firmware updates)
+** The actual time the device is then in Power Save Mode is T3412 extended - T3324
++
 
 .PSM and the 3412 and T3324 timers
-image::PSM.png[#PSM_Image]
-
-NOTE: Some modules (e.g. u-blox SARA-R4/SARA-N4) do not go into sleep mode when having a SIM enabled PIN. On EMnify SIMs the PIN is disabled. 
-
-[#PSM_ROAMING]
+image::PSM.png[200,400,align=center,PSM_Image]
++
+NOTE: Some modules which have a SIM enabled PIN, (e.g. u-blox SARA-R4/SARA-N4) do not go into sleep mode. The PIN is disabled on EMnify SIMs
+* Roaming for Power Save mode
++
 Be aware that not all Nb-IoT and LTE-M networks have implemented PSM - and even when PSM is available with the local operator this does not mean that a roaming SIM can use it. This makes it very difficult for devices that are moving - in case they use PSM, and the new network does not support PSM - or only other timer configurations. We therefore regularly test the link:https://www.emnify.com/lte-m-coverage?hsLang=en[availability of PSM in our EMnify LTE-M roaming footprint.]
-
-[#PSM_AT_COMMANDS]
+* AT Command calculation and examples for PSM settings
++
 The 3GPP defined AT command to configure PSM is `AT+CPSMS`m which sets the T3412 extended and T3324 timers. 
-
++
 An example command is
-
++
 `AT+CPSMS=1,,,01001110,00000101`
-
++
 PSM will be enabled (`1`) and the desired value for T3412 extended is 140 hours (`01001110`) and the desired value for the T3324 timer is 10s (`01001110`). The network does not necessarily use the desired values but utilizes supported values that are close to the desired values. To read the effective PSM configuration use the command
-
++
 `AT+CPSMS?`
-
++
 There is a good calculator fon how to set the values for 3412 and T3324 available link:https://www.thalesgroup.com/en/markets/digital-identity-and-security/iot/resources/developers/psm-calculation-tool[from Thales, window=read-later]. 
-
++
 Module vendors have also implemented module specific commands, e.g. Quectel
 
 ** `AT+QPSMS` extends PSM settings 
@@ -778,31 +786,28 @@ Module vendors have also implemented module specific commands, e.g. Quectel
 
 [.lead]
 [#eDRX]
-extended Discontinuous Reception (eDRX)
+Extended Discontinuous Reception (eDRX)
 
-* <<eDRX_WHAT,How does eDRX work>>
-* <<eDRX_ROAMING, Roaming with eDRX>>
-* <<eDRX_AT_COMMANDS,AT Command examples for eDRX settings>>
+* How does eDRX work?
++
+While PSM is focused on uplink-centric use cases, eDRX tries to reduce the power consumption for IoT use cases that get downlink information. Regular smartphones do not continously listen on the radio for an incoming message. They do this only every 1.28s or 2.56s which is called DRX (discontinous Reception). eDRX allows configuration of custom intervals of up to 40-175mins - depending on the configuration the visited network allows.
++
 
-[#eDRX_WHAT]
-Whereas PSM is focused on uplink centric use cases, eDRX tries to reduce the power consumption for IoT Use cases that get downlink information. Regular smartphones are not continously listening on the radio for an incoming message but only every 1.28s or 2.56s which is called DRX (discontinous Reception). eDRX allows configuration of custom intervals of up to 40-175mins - depending on which configuration the visited network allows.
-
-.PSM and the 3412 and T3324 timers
-image:eDRX.png[id=PSM]
-
-[#eDRX_ROAMING]
+.eDRX and the 3412 and T3324 timers
+image::eDRX.png[200,400,align=center,eDRX]
+* Roaming with eDRX
++
 As with PSM - not all NB-IoT and LTE-M networks support eDRX or the same timer configuration - and even if they do this does not guarantee that a roaming SIM card can utilize eDRX. We therefore also test and link:https://www.emnify.com/lte-m-coverage?hsLang=en[publish the eDRX availability on our LTE-M roaming footprint, window=read-later].  
-
-[#eDRX_AT_COMMANDS]
-
+* <<eDRX_AT_COMMANDS,AT Command examples for eDRX settings>>
++
 The standard 3GPP defined AT-command to configure eDRX is `AT+CEDRXS`.
-
++
 As an example the below command enables (`1`) eDRX for LTE-M (`4`) and an eDRX cycle of 143.36s (`1000`).
-
++
 `AT+CEDRXS=1,4,"1000"`
-
++
 The setting for NB-IoT would be `5` and the timer values are shown in below table
-
++
 |===
 | 0 0 0 0 | 5.12 seconds  
 | 0 0 1 0  | 10.24 seconds
@@ -821,12 +826,12 @@ The setting for NB-IoT would be `5` and the timer values are shown in below tabl
 | 1 1 1 0 | 5242.88 seconds
 | 1 1 1 1 | 10485.76 seconds
 |===
-
++
 The network will respond with the actual effective interval. 
-
++
 `+CEDRXS: [4,"1000","1000","0111"]` 
 
-====== 5G (NR)
+===== 5G (New Radio)
 
 5G is the next major technology standard after LTE - which targets 3 different applications areas:
 
@@ -852,119 +857,89 @@ EMnify’s platform (consisting of a mobile core network and a communication pla
 ==== Distributed Data Plane  
 
 Traditional connectivity providers have a centrally located network core. All data is backhauled to the home country of the operator which means that customer data travels across the globe and distributed latency optimized application infrastructure is not possible. 
+
 [.float-group]
 --
 image::traditional_operators.png[200,450, float="left", align="center"]
 image::regional_breakout.png[200,450, float="left",align="center"]
 --
+.Traditional operators vs EMnify
+
 The data plane of EMnify’s cloud communication platform is distributed across major cloud regions (Virgina/US, Ireland/Europe, Singapore/APAC) and directly connected to central peering points with the local operators.  
 
 ==== Regional Breakout
 
-EMnify’s distributed data plane enables device data to breakout locally, keeping the customer data within the same region. The configuration on where the customer data shall be routed can be configured for a group of devices on the EMnify Portal -> Service Profile. You can either select a specific breakout region or the network selects the closest breakout region to the device automatically. 
+EMnify’s distributed data plane enables device data to breakout locally, keeping the customer data within the same region. Moreover, it also helps reduce network latency. You can either select a specific breakout region or the network automatically selects the breakout region closest to the device. This can be done on the EMnify Portal -> Service Profile which is applicable to a group of devices. 
 
 .Regional Breakout Setting in the EMnify Portal
 image::regional.png[250, 500, align="center"] 
 
-// Traditional connectivity providers normally have a centrally located network core which increases network latency. 
+=== Data Streamer
+Before each device is able to send data to an application, it needs to communicate with the mobile network to ensure that the data is allowed to be sent over the network. This communication happens through signalling events which are usually hidden from the application. 
 
-// Let's take an example of a network provider which has its network core in Ireland. And the application as well as the device that is using the nework data is in USA. This data travels from the device in USA, to the network core in Ireland and then back to the application server in USA. This geographical distance between the application server and the core network will increase the network latency. However if the network core were to be in the USA, the network latency will be lesser.
+With the EMnify Data Streamer this connectivity metadata is made available to your cloud platform and self-developed software stacks in near-real-time. 
 
-// .Network Latency due to centrally located core network
-// image:traditional_operators.png[Network Latency due to centrally located core network, 700, 300] 
+The Data Streamer enables real-time streaming of connectivity data into the cloud, as well as self-developed software stacks. These integrations provide you with complete network transparency to triage and resolve issues quickly.  
 
-// EMnify's Regional Breakout is a solution for this network latency. 
-// Because of EMnify's globally distributed cloud architecture, you can route endpoint traffic- either dynamically depending on the device’s location or through pre-defined system configuration. 
-// Choosing "Regional Breakout” in your Device Service Policy will let the system dynamically choose the breakout region, based on the visited network’s location.
+Moreover, this integration provides insights for IoT remote monitoring and anomaly detection or detailed information about service (data, SMS) usage and cost per device. 
+Additionally, data streams can also be configured to reflect events generated by the EMnify platform when your users perform billing related updates, order SIMs or perform other operations.  
 
-// .Reduction in Network Latency due to EMnify Regional Breakout regions
-// image:regional_breakout.png[Reduction in Network Latency due to EMnify Regional Breakout regions, 700, 300] 
-// Location based services
+Use cases: 
 
-==== AWS Intra-Cloud Connect 
-EMnify’s communication platform is deployed on AWS which simplifies integrations for customers using AWS as an infrastructure. Without using the public internet – the integration is directly done with AWS services within minutes. To establish a secure private network between your devices and your application you only exchange a cross-account role of your AWS account -> read more on Intra-Cloud Connect in the <<AWS Transit Gateway>> section. If you want to know how it is done – check the link:https://www.emnify.com/en/developer-hub/emnify-cloud-connect-into-aws-transit-gateway[EMnify Cloud Connect integration with AWS Transit Gateway] integration guide.  
+• Connectivity metadata integrated into operational dashboards for real-time monitoring 
+• Allows faster triaging between device, connectivity and application issue 
+• Get insights about network attachment, data and roaming issues or when the device has surpassed its service limit 
+• Get an overview of service usage and cost per device 
 
-==== Data Streamer
-The Data Streamer service provides a real-time feed of all relevant information about the device connectivity – essentially all information available in the EMnify portal. Using the, Data Streamer you can integrate this information into your operation management workflows and dashboards, to detect and fix device, application and connectivity issues. 
+You can configure the type of content delivered by the data stream. You may choose between receiving usage data or event data. 
 
-The Data Streamer is provided as a webhook, or is pre-integrated in several big data event services like AWS link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-aws-kinesis[kinesis] and link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-aws-s3[S3], link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-azure-event-hub[Azure Event-Hubs], link:https://www.emnify.com/en/developer-hub/datastreamer-integration-into-google-cloud-pubsub[Google Pub-Sub], link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-keen.io[keen.io], and link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-datadog[DataDog]. 
+==== Events 
+The EMnify platform generates different types of events. Events are often used as triggers for custom business processes, for monitoring and as an input for custom billing systems. They provide information about lifecycle transitions and configuration changes. Events can be distinguished as normal/expected, unusual, and critical events through the event severity (INFO, WARN, CRITICAL). 
 
-===== Events
-When devices try to establish a data connection, they first use signaling data to determine if they are connected to a network. This signaling information is rich because not only does it include which issues may prevent the device to go online (e.g., configured policies, roaming or tariff issues) but also detects from where a device is trying to connect, which radio access type is used and what may prevent the device to go online.  
+Events can be classified as follows: 
 
-===== Usage Data
-Usage data events are also called Call Data Records (CDRs). They contain the data volume or SMS consumed per device, per network on a connection.
+. Network attachment lifecycle events (SIM attaching/detaching to a visited network, failed attachment attempts with reason) 
+. Data connection lifecycle events (PDP context lifecycle; SIM on-/offline, failed attempts with reason) 
+. SIM lifecycle events (activation, suspension, deletion) 
+. Limit enforcement events (cost/volume limits, prepaid volume, endpoint quota lifecycle events such as quota threshold reached/quota used up, organisation wide or endpoint specific) 
+. Platform authentication events (user/application authentication failed, support access granded, MFA activated/deactivated, password reset requested,etc.) 
+. CloudConnect lifecycle events (resource-share created, breakout available, breakout terminated, state changed; for TGW, VPN, IpSec,etc.) 
+. OpenVPN lifecycle events (authentication, connected/disconnected) 
+. Organization and billing config related events (Self-Signup performed, new user invited, billing config updated, organization data updated, payment could not be settled, credit card will expire, etc.) 
+. Usage Tariff and Tariff Plan related events (Usage Tariff changed, end of evaluation period reached, inclusive volume booked/extended, etc.) 
+. SIM order events 
 
+Please visit the link:https://cdn.emnify.net/api/doc/event.html[EMnify API Documentation, window=_blank] to learn more about the event structure. 
+
+==== Usage Data 
+Usage data records get generated when endpoints consume data or SMS services. They provide information about the used service, visited network, volume and cost. Usage data streams are often used for monitoring and analyzing the data consumption and as input for custom billing system. 
+
+==== Connection Types 
+You can stream this data to your server, a third-party web-service or push the data to one of the pre-integrated cloud services. 
+
+Multiple independent data streams can be created using any connection type and all of them will operate in parallel. Each data stream can be configured to push data to a separate platform for consumption and processing. 
+
+For example, one stream may be connected to a network monitoring system, another can connect to a data analytics platform, and another can be synced with S3 for archiving, all at the same time. 
+
+The integration guides for the Data Streamer can be found <<Integration Guides, here>>
+
+==== Management Interfaces 
+Data Streamer can be managed by using the link:https://portal.emnify.com[EMnify Portal] or by using the link:https://cdn.emnify.net/api/doc/swagger.html[EMnify API]. 
+
+===== Portal
+Managing data streams via the Portal is convenient when you are in the initial stages of building your application or if you do not plan to make configuration changes very often. 
+
+image:integration.png[].Manage Integrations through the EMnify Portal 
+
+===== API
+If you have integrated the EMnify API with your dashboard, integrating the Data Streamer through the link:https://cdn.emnify.net/api/doc/swagger.html#/Integrations[EMnify API] becomes a faster and secure approach when multiple data streams need to be managed as part of the daily business. 
  
-
-// Before each device is able to send data to an application it needs to communicate with the mobile network to ensure that the data is allowed to be sent over the network. This communication happens through signalling events which are usually hidden from the application.
-// With the EMnify Data Streamer this connectivity metadata is made available to your cloud platform and self-developed software stacks in near-real-time.
-
-// The Data Streamer enables real-time streaming of connectivity data into the cloud, as well as self-developed software stacks. These integrations empower you with complete network transparency to triage and resolve issues quickly. 
-
-// This integration reveals a wealth of insights for IoT remote monitoring and anomaly detection or providing detailed information about service (data, SMS) usage and cost per device.
-
-// Additionally, data streams can also be configured to reflect events generated by the EMnify platform when your users perform billing related updates, order SIMs or perform other operations. 
-
-// Use cases:
-// • Connectivity metadata integrated into operational dashboards for real-time monitoring
-// • Allows faster triaging between device, connectivity and application issue
-// • Get insights about network attachment, data and roaming issues or when the device has surpassed its service limit
-// • Get an overview of service usage and cost per device
-
-// You can configure the type of content delivered by the data stream. You may choose between receiving usage data or event data.
-
-// ==== Events
-// The EMnify platform generates different types of events. Events are often used as triggers for custom business processes, for monitoring and as an input for custom billing systems. They provide information about lifecycle transitions and configuration changes. Events can be distinguished as normal/expected, unusual and critical events through the event severity (INFO, WARN, CRITICAL).
-
-// Events can be classified as follows:
-// . Network attachment lifecycle events (SIM attaching/detaching to a visited network, failed attachment attempts with reason)
-// . Data connection lifecycle events (PDP context lifecycle; SIM on-/offline, failed attempts with reason)
-// . SIM lifecycle events (activation, suspension, deletion)
-// . Limit enforcement events (cost/volume limits, prepaid volume, endpoint quota lifecycle events such as quota threshold reached/quota used up, organisation wide or endpoint specific)
-// . Platform authentication events (user/application authentication failed, support access granded, MFA activated/deactivated, password reset requested,etc.)
-// . CloudConnect lifecycle events (resource-share created, breakout available, breakout terminated, state changed; for TGW, VPN, IpSec,etc.)
-// . OpenVPN lifecycle events (authentication, connected/disconnected)
-// . Organization and billing config related events (Self-Signup performed, new user invited, billing config updated, organization data updated, payment could not be settled, credit card will expire, etc.)
-// . Usage Tariff and Tariff Plan related events (Usage Tariff changed, end of evaluation period reached, inclusive volume booked/extended, etc.)
-// . SIM order events
-
-// Please visit the link:https://cdn.emnify.net/api/doc/event.html[EMnify System Documentation] to learn more about the event structure.
-
-// ==== Usage Data
-// Usage data records get generated when endpoints consume data or SMS services. They provide information about the used service, visited network, volume and cost. Usage data streams are often used for monitoring and analyzing the data consumption and as input for custom billing system.
-
-// ==== Connection Types
-// You can stream this data to your server, a third-party web-service or push the data to one of the pre-integrated cloud services.
-// Multiple independent data streams can be created using any connection type and all of them will operate in parallel. Each data stream can be configured to push data to a separate platform for consumption and processing.
-// For example, one stream may be connected to a network monitoring system, another can connect to data analytics platform and another can be synced with S3 for archiving, all at the same time.
-
-// The following connection types are currenly available:
-// • link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-aws-kinesis[Amazon Kinesis Data Streams]
-// • link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-aws-s3[Amazon S3]
-// • link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-azure-event-hub[Azure Event Hubs]
-// • link:https://www.emnify.com/en/developer-hub/datastreamer-integration-into-google-cloud-pubsub[Google Cloud Pub/Sub]
-// • link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-keen.io[Keen.io]
-// • link:https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-datadog[DataDog]
-// • link:https://emnify.github.io/Documentation/index.html#_webhooks[Webhook]
-
-// ==== Management Interfaces
-// Data Streamer can be managed by using the link:https://portal.emnify.com[EMnify Portal] or by using the link:https://cdn.emnify.net/api/doc/swagger.html[EMnify API].
-
-// Portal:
-// Managing data streams via the Portal is convenient when you are in the initial stages of building your application or if you do not plan to make configuration changes very often.
-
-// image:integration.png[].Manage Integrations through the EMnify Portal
-
-// API:
-// Integrating the Data Streamer through the link:https://cdn.emnify.net/api/doc/swagger.html#/Integrations[EMnify API] becomes a faster and secure approach when multiple data streams need to be managed as part of the daily business. It provides you a seamless integration into your own applications.
-
-==== Security
+=== Security
 Given the globally distributed nature of the devices, smaller footprints and lack of resources, it can get difficult to individually secure IoT devices.
 
 EMnify uses a SASE approach to simplify securing devices – using several services specifically to protect customer data, filtering malicious content and preventing unauthorized access.    
 
-===== Why does IoT require SASE ?
+==== Why does IoT require SASE ?
 
 .IoT security threats
 image::security_threats.png[IoT security threats]
@@ -986,7 +961,26 @@ EMnify provides a firewall as a Service which limits the IP addresses that are r
 
 In the following sections we will discuss some of the security features offered by EMnify. 
 
-==== Cloud Connect
+==== DNS
+
+When a device establishes a connection it uses a Domain Name Service (DNS) to resolve a hostname to an IP address to which it can send data. For example a hostname such as *.iot.example.com will be mapped to the IP address e.g. 120.126.230.60. 
+
+The device itself can configure a DNS service that it uses to resolve domain names. If the device does not use a DNS then EMnify will provide a domain name service to the device. By default EMnify will route all DNS queries over Google's public DNS `8.8.8.8`. 
+
+Customers can also configure to use their own DNS - no matter if it is a public or a private one.
+The DNS settings can be changed in the Portal -> Device Policies -> Service Policies -> More Options -> DNS
+
+.Custom DNS setting configuration
+image::dns_setting.png[align="center"]
+
+
+Utilizing a private DNS server which is not reachable via a public IP, requires to setup a private network with the machine or a network where the private DNS is located. This can be done using Cloud Connect either with Amazon Transit Gateway or IPsec. A tutorial on how to setup a DNS firewall based on a private DNS using Amazon Route 53 is available link:https://www.emnify.com/en/developer-hub/dns-filtering[here]
+
+==== IMEI Lock
+For device manufacturers, SIM card theft is an issue because pluggable SIM cards can be removed from a device and then used to gain free Internet access. The IMEI lock feature prevents the use of SIM card in any other device by bounding the SIM to an IMEI. The <<imei,IMEI>> is a unique device identifier. When the automatic IMEI lock is configured, the EMnify platform will bind the SIM cards to the first device that establishes a data connection with it. All future device connection will only be allowed from this device.  
+
+
+=== Cloud Connect
 
 The data traffic of regular SIM cards is secured within the mobile network – but passes the public internet between the mobile network and the application, which makes the device and application susceptible to attacks and prohibits to easily establish a remote device session.   
 
@@ -995,10 +989,10 @@ With EMnify Cloud Connect your devices and application servers can communicate�
 By eliminating the use of the public internet, Cloud Connect helps you better protect your application infrastructure against attacks like DDoS, port scanning while giving you the possibility to remotely access the devices.
 
 // With the EMnify Cloud Connect you can communicate with your <<vpc,Virtual Private Cloud>> through a secure private network. By eliminating the use of public IP addresses, Cloud Connect helps you better protect your application infrastructure against attacks like <<ddos,DDoS>> while giving you the possibility to remotely access the devices.
+==== AWS Intra-Cloud Connect 
+EMnify’s communication platform is deployed on AWS, which simplifies integrations for customers using AWS as an infrastructure. Without having to use the public internet,  the integration is directly done with AWS services within minutes. To establish a secure private network between your devices and your application you only need to exchange a cross-account role of your AWS account.  
 
-==== AWS Transit Gateway
-
-The EMnify platform is deployed on AWS. This allows you to create a fast and secure direct peering data path to your VPC / EC2 instances via the AWS Transit Gateway (TGW). 
+As the EMnify platform is deployed on AWS, it allows you to create a fast and secure direct peering data path to your VPC / EC2 instances via the AWS Transit Gateway (TGW). 
 
 AWS Transit Gateway is a managed service with a SLA guarantee from AWS of 99.99%.    
 
@@ -1044,24 +1038,6 @@ For detailed instructions please refer to our knowledge base articles
 . link:https://support.emnify.com/hc/en-us/articles/360019625379-OpenVPN-Integration-Guide-for-MacOS[OpenVPN Integration MacOS]
 . link:https://support.emnify.com/hc/en-us/articles/115001723273-OpenVPN-Integration-Guide-for-Windows[OpenVPN Integration Windows]
 . link:https://support.emnify.com/hc/en-us/articles/115001724434-OpenVPN-Integration-Guide-for-Linux[OpenVPN Integration Linux]
-
-==== DNS
-
-When a device establishes a connection it uses a Domain Name Service (DNS) to resolve a hostname to an IP address to which it can send data. For example a hostname such as *.iot.example.com will be mapped to the IP address e.g. 120.126.230.60. 
-
-The device itself can configure a DNS service that it uses to resolve domain names. If the device does not use a DNS then EMnify will provide a domain name service to the device. By default EMnify will route all DNS queries over Google's public DNS `8.8.8.8`. 
-
-Customers can also configure to use their own DNS - no matter if it is a public or a private one.
-The DNS settings can be changed in the Portal -> Device Policies -> Service Policies -> More Options -> DNS
-
-.Custom DNS setting configuration
-image::dns_setting.png[align="center"]
-
-
-Utilizing a private DNS server which is not reachable via a public IP, requires to setup a private network with the machine or a network where the private DNS is located. This can be done using Cloud Connect either with Amazon Transit Gateway or IPsec. A tutorial on how to setup a DNS firewall based on a private DNS using Amazon Route 53 is available link:https://www.emnify.com/en/developer-hub/dns-filtering[here]
-
-==== IMEI Lock
-For device manufacturers, SIM card theft is an issue because pluggable SIM cards can be removed from a device and then used to gain free Internet access. The IMEI lock feature prevents the use of SIM card in any other device by bounding the SIM to an IMEI. The <<imei,IMEI>> is a unique device identifier. When the automatic IMEI lock is configured, the EMnify platform will bind the SIM cards to the first device that establishes a data connection with it. All future device connection will only be allowed from this device.   
 
 === SMS
 Short Message Services are one of the first cellular services made available after voice. SMS is still very relevant for IoT use cases – as SMS provides a simple, inexpensive way to configure the device remotely without the need for a data connection. A typical use case is the configuration of the APN setting via SMS.
@@ -1284,7 +1260,7 @@ The following actions are available:
 When selling connected devices, it is difficult to determine when devices will be in use and when not. Using SIM cards that cannot align with the device lifecycle incur unnecessary costs.  
  
 EMnify SIM cards do not incur any costs until actively used within a device.  
-The SIMs have 4 different states that can be configured via the EMnify Portal or Rest-API: 
+The SIMs have 4 different states that can be configured via the EMnify Portal or link:https://cdn.emnify.net/api/doc/swagger.html#/SIMs[Rest-API]: 
  
 * Issued – the SIM is not yet installed nor usable - no monthly charge is applied.  
 * Factory-Test- the SIM is enabled and can be used for a defined limit of data and SMS without charge before it automatically goes into active state. The SIM can stay in this state until it is used by the end customer. 
