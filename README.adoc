@@ -173,7 +173,7 @@ link:https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.
 |===
 |<<Teltonika GPS APN configuration, Teltonika>> |<<Ruptela GPS APN configuration,Ruptela>> | <<Concox GPS APN configuration, Concox>>  
 |<<Coban GPS APN configuration, Coban>>  | <<Meitrack GPS APN configuration, Meitrack>> | <<Elinz GPS APN configuration, Elinz>> 
-|<<Reachfar GPS APN configuratio, Reachfar>>  | <<Queclink GPS APN configuration, Queclink >> | <<Bitrek GPS APN configuration, Bitrek>>
+|<<Reachfar GPS APN configuration, Reachfar>>  | <<Queclink GPS APN configuration, Queclink >> | <<Bitrek GPS APN configuration, Bitrek>>
 |===
 
 TIP: For other GPS vendors, please consult the device manual and configure the APN to `em` or `emnify`.
@@ -430,21 +430,32 @@ When setting up an Android device with an EMnify IoT SIM, you need to follow the
 . Enable roaming, and go to Access Point Names (APN)
 . Create a new APN with any name and configure the APN with "em"
 
+[.float-group.center]
+--
+[.left]
+.Settings
+image::Android_01_Settings.png[400,200]
+
+[.left]
+.Mobile Network
+image::Android_02_Mobile_Network.png[400,200]
+[.left]
+.Mobile Data
+image::Android_03_Mobile_Data.png[400,200]
+--
 [.float-group]
 --
-image::Android_01_Settings.png[400,200, float="left", align="center"]
-image::Android_02_Mobile_Network.png[400,200, float="left"]
-image::Android_03_Mobile_Data.png[400,200, float="left"]
---
-[.float-group]
---
-image::Android_04_Create_Access_Point_name.png[400,200, float="left"]
-image::Android_05_Configure_APN.png[400,200, float="left"]
+[.left]
+.Access Point Name
+image::Android_04_Create_Access_Point_name.png[400,200]
+[.left]
+.Set APN
+image::Android_05_Configure_APN.png[400,200]
 --
 
 ==== iOS devices
 
-When setting up an iOS device with an EMnify IoT SIM, you need to follow 4 steps
+When setting up an iOS device with an EMnify IoT SIM, you need to follow 4 steps after inserting the SIM
 
 . Go to Settings -> Mobile Data
 . Click on the EMnify Data Plan (first one if regular SIM or secondary in case of eSIM) 
@@ -453,9 +464,17 @@ When setting up an iOS device with an EMnify IoT SIM, you need to follow 4 steps
 
 [.float-group]
 --
+[.left]
+.Settings
 image::iOS_01_Settings.png[400,200, float="left"]
+.Mobile Data
+[.left]
 image::iOS_02_Mobile_Data.png[400,200, float="left"]
+.Mobile Data Network
+[.left]
 image::iOS_03_Mobile_Network.png[400,200, float="left"]
+.Set APN
+[.left]
 image::iOS_04_APN.png[400,200, float="left"]
 --
 
@@ -471,11 +490,11 @@ A usual event flow should look like this:
 
 . Update Location - The SIM card has (re)authenticated with a different network element. If successful, the device will show as `Attached` and can already receive SMS. 
 . Update GPRS Location - The SIM card has successfully registered for data sessions with a different network element. 
-. Create PDP context - The device has started a data transfer. The device will show `Online` as long is there is no delete PDP context event. 
+. Create PDP context - The device has started transfering data. The device will show `Online` as long as there is no 'delete PDP context' event. 
 . Delete PDP context - The device has ended a data transfer. The event details will also show the data transmitted and the device status will be set to `Offline` 
 
 .Event Flow
-image::event_flow.png[250,500,align="center"]
+image::event_flow.png[300,500,align="center"]
 
 There can be many location updates before or in between the data sessions. 
 
@@ -492,7 +511,7 @@ If there is no location update event:
 ==== icon:att[width="20"] The device shows attached but does not transmit data 
 
 * Ensure that the APN is correctly set to 'em' or alternatively use 'emnify' as some devices do not support two-digit APNs. Guides for different devices can be found <<Getting the first device online, here>>
-* In case you changed your policy settings, make sure the radio types (2G,3G,4G) and data access is activated.
+* In case you have changed your policy settings, make sure the radio types (2G,3G,4G) and data access is activated.
 * Ensure mobile data is enabled, as well as international roaming is allowed 
 * Click on Details -> Events. Validate if there was any PDP create event that was rejected. The reason and resolution should be in the event description. 
 
@@ -501,9 +520,9 @@ NOTE: The `Attached` status does not necessarily mean that the device is powered
 ==== icon:online[width="20"] The device shows online but does not transmit data
 
 * Ensure mobile data is enabled, as well as international roaming is allowed 
-* Validate under Details->Events if any `Warn` or `Error` is detected
-* For NB-IoT and LTE-M this behavior can happen when the device automatically connects to a network - rather specify the network that shall be used with using the `AT+COPS`. Also verify that the network is on EMnify's link:https://www.emnify.com/nb-iot-coverage[NB-IoT coverage] or 
-link:https://www.emnify.com/lte-m-coverage[LTE-M network coverage] list
+* Check under Details->Events if you see `Warn` or `Error` in the Severity field, it indicates that there is a problem.
+* For NB-IoT and LTE-M this behavior can happen when the device automatically connects to a network. Specify the network that should be used with the `AT+COPS` command. This way the device will not attach to an unsupported network. Check the EMnify link:https://www.emnify.com/nb-iot-coverage[NB-IoT coverage] and 
+link:https://www.emnify.com/lte-m-coverage[LTE-M network coverage] lists.
 * Ensure that your data destination and DNS server is not blocked for the device.(EMnify uses google's 8.8.8.8 DNS by default if your device does not specify a DNS) 
 
 
@@ -538,7 +557,7 @@ EMnify offers the following high-level products and services:
 ** <<AWS Intra-Cloud Connect>> 
 ** <<IPsec>> 
 * <<OpenVPN>>  
-* <<SMS>> communication from the own application 
+* <<SMS>> communication
 * <<User Management>> 
 * <<Business Intelligence and Analytics Reports>> 
 * Business enablers such as <<No-Code Workflow Automation>> to automate workflows between third party applications  
@@ -555,17 +574,18 @@ EMnify also has a <<Multi-IMSI Application, multi-IMSI software application>> di
 
 ==== Form Factors 
 
-The traditional, plugable SIM card comes in 4 different form factors:
-* 1FF (approximately the size of a credit card - only used in first GSM phones) - 85 x 54 x 0,76mm 
+The traditional, pluggable SIM card comes in 4 different form factors:
+
+* 1FF (approximately the size of a credit card) - 85 x 54 x 0,76mm 
 * 2FF (mini SIM) - 25 x 15 x 0,76mm
 * 3FF (Micro SIM) - 15 x 12 x 0,76 mm
 * 4FF (Nano SIM) - 12,3 x 8,8 x 0,67 mm
 
-EMnify offers pre-punched SIM cards in different combinations  2-in-1 (1FF and 2FF), 3-in-1 (1FF,2FF,3FF) and 4-in-1 (1FF,2FF,3FF,4FF). Especially in use cases where the devices are moving it is advisable to use a SIM which exactly fits the device and does not have another smaller form factor punched-out. The SIMs are then more durable and the contact to the device is more firmly.  
+EMnify offers pre-punched SIM cards in different combinations  2-in-1 (1FF and 2FF), 3-in-1 (1FF,2FF,3FF) and 4-in-1 (1FF,2FF,3FF,4FF). Especially in use cases where the devices are moving it is advisable to use a SIM which exactly fits the device and does not have another smaller form factor punched out. The SIMs are then more durable and the contact to the device is more firmly.  
 
 Another form factor is MFF2 also called embedded SIM with the dimension 6 x 5 x 0.75-0.82mm. The embedded SIms are soldered onto a device and not removable. 
 
-Note: Often the term eSIM is used for the MFF2 factor. Nevertheless the eSIM term is also used for SIMs whose operator profiles can be updated over the air. These eUICC based eSIM can be in any of the described form factors - not only in MFF2. While eSIM/eUICC is widely adopted for consumer smartphone and watches - for IoT use cases (where the profile cannot be download via a screen or QR reader) the commercial and deployment model of the required infrastructure prohibits an easy change of operator profiles and is therefore not widely adopted.    
+Note: Often the term eSIM is used for the MFF2 factor. Nevertheless, the eSIM term is also used for SIMs whose operator profiles can be updated over the air. These eUICC based eSIMs can come in any of the described form factors, and not just MFF2. While eSIM/eUICC is widely adopted for consumer smartphone and watches - for IoT use cases (where the profile cannot be download via a screen or QR reader) the commercial and deployment model of the required infrastructure prohibits an easy change of operator profiles and is therefore not widely adopted.    
 
 ==== Quality Grades
 
@@ -601,28 +621,28 @@ The eSIM does not use a multi-IMSI applet (as on the physical SIM cards) and the
 
 The eSIM can be used to test and verify all EMnify functionalities including:
 
-* availability of networks
+* Availability of networks
 * API functionality
-* Cloud Connect and Datastreamer integration
+* Cloud Connect and Data Streamer integration
 * Zapier- No-Code Integrations
 
 ==== Multi-IMSI Application
 
-EMnify IoT SIM cards are equipped with a multi-IMSI applet that contains EMnify’s own and partner operator profiles. The different operator profiles are identified by the utilized <<imsi,IMSI>>. Each IMSI / partner operator usually has more than one network accessible per country. 
+EMnify IoT SIM cards are equipped with a multi-IMSI applet that contains EMnify's as well as our partner operators' profiles. Different operator profiles are identified by their <<imsi,IMSI>>. Each IMSI / partner operator usually has more than one network accessible per country. 
 
-The SIM applet utilizes a preferred IMSI list per country. When a device moves to a different country which has a different preferred IMSI configured (for e.g. because it gives access to more networks), then the applet dynamically overwrites the previously active IMSI with the preferred IMSI for this country. Likewise, when an operator’s service experiences outage, the SIM can automatically fall back to a fallback IMSI to ensure connection remains uninterrupted. 
+The SIM applet utilizes a preferred IMSI list per country. When a device moves to a different country which has a different preferred IMSI configured, the applet dynamically overwrites the previously active IMSI with the preferred IMSI for this country. Similarly, when an operator’s service experiences an outage, the SIM can automatically fall back to another IMSI to ensure that the connection remains uninterrupted. 
 
-The selection of the IMSI partner that is used for the countries is based on multiple factors. The preferred IMSI selected based on: 
+The selection of the preferred IMSI for each country is based on multiple factors including: 
 
-* allowance for permanent roaming in the country
-* the most network partners in the country
-* the best availability of radio access types (e.g. LTE) or availability of features (PSM/eDRX)
+* If permanent roaming is permitted in that country
+* IMSI that has the most network partners in the country
+* IMSI that has the best availability of radio access types (LTE, NB-IoT, LTE-M) or features (PSM/eDRX)
 
 The Multi-IMSI applet is transparent for the device and has no impact on the device operation. In order to analyze which IMSI is currently in use, you can either check in the EMnify portal -> Connected devices -> Details or also query the device directly using the AT-command `AT+CIMI?`. 
 
 === Global IoT Network 
 
-Even when IoT devices are more often only deployed at a single location and are not moving, for a vendor selling to multiple countries it is important to have a global connectivity solution, so that there is no need to have different SIM cards in stock or have multiple contracts and tariffs. For mobile use cases there is no other alternative than using an international SIM card.
+Even when IoT devices are more often only deployed at a single location and are not moving, for a vendor selling to multiple countries it is important to have a global connectivity solution, so that there is no need to have different SIM cards in stock or have multiple contracts and tariffs. 
 
 ==== Mobile Network Aggregation
 
