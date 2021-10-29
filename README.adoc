@@ -1,6 +1,6 @@
 :docinfo: shared
 :toc: left
-:toclevels: 3
+:toclevels: 2
 :imagesdir: assets
 :icons: image
 :iconsdir: assets
@@ -21,7 +21,7 @@ To begin developing your IoT solutions with EMnify, you will need an EMnify acco
 
 === Order a free evaluation SIM package
 
-Before you begin the production of your IoT solution with your EMnify SIM cards, you may want to test the service. You can order your free Evaluation SIM package on the EMnify portal with which you can test all EMnify services. Shipping costs may apply for the 3 physical SIM cards, depending on your location. On the other hand you can download the eSIM for your smartphone for free. 
+You can order your free Evaluation SIM package on the EMnify portal with which you can test all EMnify services. Shipping costs may apply for the 3 physical SIM cards, depending on your location. On the other hand you can download the eSIM for your smartphone or eSIM enabled tablets for free. 
 
 Log into your link:https://portal.emnify.com[EMnify account] and follow these steps:
 
@@ -36,7 +36,7 @@ If you select physical SIM cards, you can further choose between 3in1 (no nano S
 +
 image:order-SIM_step2.1.png[width=500, align="center"]
 +
-If you select the developer eSIM, you can directly download it into your eSIM compatible phone. You can find the instructions to do so in this link:https://www.emnify.com/en/developer-hub/emnify-developer-esim[blog post]
+If you select the eSIM, you can directly download it into your eSIM compatible phone. You can find the instructions to do so in this link:https://www.emnify.com/en/developer-hub/emnify-developer-esim[blog post]
 
 . For the physical SIM cards, proceed to fill in your shipping details.
 +
@@ -423,7 +423,7 @@ cellular apn=em
 
 ==== Android
 
-When setting up an Android device with an EMnify IoT SIM, you need to follow these 4 steps
+When setting up an Android device with an EMnify IoT SIM, you need to follow these 4 steps after inserting the SIM
 
 . Go to Settings -> Mobile Network
 . Go to Mobile data
@@ -432,14 +432,14 @@ When setting up an Android device with an EMnify IoT SIM, you need to follow the
 
 [.float-group]
 --
-image::Android_01_Settings.jpg[400,200, float="left", align="center"]
-image::Android_02_Mobile_Network.jpg[400,200, float="left"]
-image::Android_03_Mobile_Data.jpg[400,200, float="left"]
+image::Android_01_Settings.png[400,200, float="left", align="center"]
+image::Android_02_Mobile_Network.png[400,200, float="left"]
+image::Android_03_Mobile_Data.png[400,200, float="left"]
 --
 [.float-group]
 --
-image::Android_04_Create_Access_Point_name.jpg[400,200, float="left"]
-image::Android_05_Configure_APN.jpg[400,200, float="left"]
+image::Android_04_Create_Access_Point_name.png[400,200, float="left"]
+image::Android_05_Configure_APN.png[400,200, float="left"]
 --
 
 ==== iOS devices
