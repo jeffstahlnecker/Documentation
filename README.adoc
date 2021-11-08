@@ -101,10 +101,66 @@ Further, some Android / iOS-based devices and cellular modules also need to be c
 Select your device type and model below, to see how to configure the APN.  
 
 |===
-|<<Cellular modules>> |<<GPS tracker>> | <<Industrial Routers>>  
 |<<Android>> | <<iOS devices>> | 
+|<<Cellular modules>> |<<GPS tracker>> | <<Industrial Routers>>|
 |===
 
+==== Android
+
+When setting up an Android device with an EMnify IoT SIM, you need to follow these 4 steps after inserting the SIM
+
+. Go to Settings -> Mobile Network
+. Go to Mobile data
+. Enable roaming, and go to Access Point Names (APN)
+. Create a new APN with any name and configure the APN with "em"
+
+[.float-group.center]
+--
+[.left]
+.Settings
+image::Android_01_Settings.png[400,200]
+
+[.left]
+.Mobile Network
+image::Android_02_Mobile_Network.png[400,200]
+[.left]
+.Mobile Data
+image::Android_03_Mobile_Data.png[400,200]
+--
+[.float-group]
+--
+[.left]
+.Access Point Name
+image::Android_04_Create_Access_Point_name.png[400,200]
+[.left]
+.Set APN
+image::Android_05_Configure_APN.png[400,200]
+--
+
+==== iOS devices
+
+When setting up an iOS device with an EMnify IoT SIM, you need to follow 4 steps after inserting the SIM
+
+. Go to Settings -> Mobile Data
+. Click on the EMnify Data Plan (first one if regular SIM or secondary in case of eSIM) 
+. Enable Roaming and Click on Mobile Data Network
+. Set APN to em - leave anything else blank
+
+[.float-group]
+--
+[.left]
+.Settings
+image::iOS_01_Settings.png[400,200, float="left"]
+.Mobile Data
+[.left]
+image::iOS_02_Mobile_Data.png[400,200, float="left"]
+.Mobile Data Network
+[.left]
+image::iOS_03_Mobile_Network.png[400,200, float="left"]
+.Set APN
+[.left]
+image::iOS_04_APN.png[400,200, float="left"]
+--
 
 ==== Cellular modules
 
@@ -448,63 +504,6 @@ The following SMS command should be sent to the device
 ---- 
 cellular apn=em
 ----
-
-==== Android
-
-When setting up an Android device with an EMnify IoT SIM, you need to follow these 4 steps after inserting the SIM
-
-. Go to Settings -> Mobile Network
-. Go to Mobile data
-. Enable roaming, and go to Access Point Names (APN)
-. Create a new APN with any name and configure the APN with "em"
-
-[.float-group.center]
---
-[.left]
-.Settings
-image::Android_01_Settings.png[400,200]
-
-[.left]
-.Mobile Network
-image::Android_02_Mobile_Network.png[400,200]
-[.left]
-.Mobile Data
-image::Android_03_Mobile_Data.png[400,200]
---
-[.float-group]
---
-[.left]
-.Access Point Name
-image::Android_04_Create_Access_Point_name.png[400,200]
-[.left]
-.Set APN
-image::Android_05_Configure_APN.png[400,200]
---
-
-==== iOS devices
-
-When setting up an iOS device with an EMnify IoT SIM, you need to follow 4 steps after inserting the SIM
-
-. Go to Settings -> Mobile Data
-. Click on the EMnify Data Plan (first one if regular SIM or secondary in case of eSIM) 
-. Enable Roaming and Click on Mobile Data Network
-. Set APN to em - leave anything else blank
-
-[.float-group]
---
-[.left]
-.Settings
-image::iOS_01_Settings.png[400,200, float="left"]
-.Mobile Data
-[.left]
-image::iOS_02_Mobile_Data.png[400,200, float="left"]
-.Mobile Data Network
-[.left]
-image::iOS_03_Mobile_Network.png[400,200, float="left"]
-.Set APN
-[.left]
-image::iOS_04_APN.png[400,200, float="left"]
---
 
 === Troubleshooting
 
