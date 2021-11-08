@@ -377,7 +377,7 @@ The SMS command to set the APN for Queclink GPS trackers is:
 AT+GTBSI=[password],em,,,,,,,0002$
 ----
 
-The password default is device model, e.g., `gl200`
+The default password is the device model, e.g., `gl200`
 
 
 ===== Bitrek GPS APN configuration
