@@ -98,7 +98,7 @@ Any device equipped with a SIM card requires an APN (Access Point Name) configur
 
 Further, some Android / iOS-based devices and cellular modules also need to be configured to allow for roaming.
 
-Select below your device type and model to see how to configure the APN.  
+Select your device type and model below, to see how to configure the APN.  
 
 |===
 |<<Cellular modules>> |<<GPS tracker>> | <<Industrial Routers>>  
