@@ -7,9 +7,9 @@
 :figure-caption!:
 
 == Cellular IoT
-Cellular is the most used wireless network technology for connecting things. Cellular is superior to any other technology in terms of network availability, security and improves end customer experience by instantly delivering data at the customer site without any integration. This makes cellular connectivity not only ideal for mobile use cases but also for stationary devices. 
+Cellular is the most used wireless network technology for connecting things. It is superior to any other wireless technology in terms of network availability and security. Using cellular connectivity improves end customer experience by instantly delivering data at the customer site without any integration. This makes cellular connectivity not only ideal for mobile use cases but also for stationary devices.
 
-EMnify specializes in businesses utilizing cellular connectivity for the Internet of Things. EMnify has developed a communication platform which aggregates and enriches traditional cellular connectivity so that businesses can easily connect, integrate, operate, and secure hundreds and thousands of devices with a single global IoT SIM. 
+EMnify specializes in businesses utilizing cellular connectivity for the Internet of Things. EMnify has developed a communication platform which aggregates and enriches traditional cellular connectivity so that businesses can easily connect, integrate, operate, and secure hundreds and thousands of devices with a single global IoT SIM card.
 
 // [.text-center]
 .EMnify Communication Platform
@@ -21,7 +21,9 @@ To begin developing your IoT solutions with EMnify, you will need an EMnify acco
 
 === Order a free evaluation SIM package
 
-You can order your free Evaluation SIM package on the EMnify portal with which you can test all EMnify services. Shipping costs may apply for the 3 physical SIM cards, depending on your location. On the other hand you can download the eSIM for your smartphone or eSIM enabled tablets for free. 
+You can order your free Evaluation SIM package on the EMnify Portal with which you can test all EMnify services. Currently, the 3 physical SIM cards can be delivered to many destinations at no charge. For other destinations,  we do charge a small shipping fee. 
+
+To get started immediately, you can download the eSIM for your smartphone or eSIM enabled tablet for free.
 
 Log into your link:https://portal.emnify.com[EMnify account] and follow these steps:
 
@@ -36,7 +38,7 @@ If you select physical SIM cards, you can further choose between 3in1 (no nano S
 +
 image:order-SIM_step2.1.png[width=500, align="center"]
 +
-If you select the eSIM, you can directly download it into your eSIM compatible phone. You can find the instructions to do so in this link:https://www.emnify.com/en/developer-hub/emnify-developer-esim[blog post]
+If you select the eSIM, you can directly download it into your eSIM compatible phone. You can find the instructions to do so in this link:https://www.emnify.com/en/developer-hub/emnify-developer-esim[blog post].
 
 . For the physical SIM cards, proceed to fill in your shipping details.
 +
@@ -50,15 +52,15 @@ image:order-SIM_step4.png[width=500, align="center"]
 
 Once you get your EMnify SIMs, you need to register them before you can start using them. 
 
-. If you have the evaluation SIM cards, you will have to register them one by one. Scan the QR code on the SIM card and click on register. The scanner will copy the BIC and take you to the EMnify portal to register the SIM.
+. If you have ordered the 3 orange evaluation SIM cards, you will have to register them one by one. Scan the QR code printed on the SIM card with your QR code scanner app and follow the link to associate the SIM with your account. The link includes the *BIC* (Batch Identification Code) of the card.
 +
 .Scan QR Code
 image::QRScan.png[width=500,float="center",align="center"]
 
-. If you do not have a QR reader or want to do this on a desktop without a camera, register using the BIC
+. If you do not have a QR reader or want to do this on a desktop PC without a camera, register by manually entering the BIC.
 +
-Login to your link: https://portal.emnify.com?utm_source=dev-hub[EMnify account]
-On your dashboard, click *REGISTER* on the card - Register your SIM cards.
+Login to your https://portal.emnify.com?utm_source=dev-hub[EMnify account].
+On the dashboard, click the https://portal.emnify.com/sim-registration/single[REGISTER] link in the "Register your SIM cards" section.
 +
 [.float-group]
 --
@@ -66,7 +68,7 @@ image::register_sims.png[100,500,float="left", align="center"]
 image::register_single_sim.png[100,200,float="center", align="center"]
 --
 
-. Now enter the Batch Identification Code (*BIC* 1) in the prompt. You can find the BIC1 on the back of your SIM card. 
+. Enter the Batch Identification Code (*BIC* 1) in the prompt. You can find the BIC1 on the back of your SIM card.
 +
 image::BIC.png[100,200,align="center"]
 
@@ -94,9 +96,9 @@ Any device equipped with a SIM card requires an APN (Access Point Name) configur
 
 <<APN, APN>>: `em` (or alternatively use `emnify`)
 
-Further some Android / iOS-based devices and cellular modules also need to be configured to allow for roaming. 
+Further, some Android / iOS-based devices and cellular modules also need to be configured to allow for roaming.
 
-Select below your device type and model to see how to configure the APN.  
+Select your device type and model below, to see how to configure the APN.  
 
 |===
 |<<Cellular modules>> |<<GPS tracker>> | <<Industrial Routers>>  
@@ -180,19 +182,19 @@ TIP: For other GPS vendors, please consult the device manual and configure the A
 
 ===== Teltonika GPS APN configuration
 
-link:https://wiki.teltonika-gps.com/view/Universal_Device_Test_Guide_V3.2[Source Teltonika GPS documentation]
-
 _Applies to FMB110, FMB120, FM130, FMB140, FMC001, FMM001, FMC125, FMC130, FMC640, FMM125, FMM130, FMM640, FMP100, FMB001, FMB002, FMB003, FMB010_
+
+Source: link:https://wiki.teltonika-gps.com/view/Universal_Device_Test_Guide_V3.2[Teltonika GPS documentation]
 
 Configuring the APN for Teltonika GPS trackers can be done through
 
 . Teltonika Configurator over a USB, Bluetooth connection 
-. Via the SMS console through the EMnify Portal (most simple) 
-. via the EMnify SMS API or Zapier Integration (when automating the configuration) 
+. Via the SMS console through the EMnify Portal (most simple)
+. Via the EMnify SMS API or Zapier Integration (when automating the configuration)
 
 NOTE: Newer Teltonika GPS versions automatically detect the EMnify APN setting
 
-When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify portal. At this point the device can receive SMS but not establish a data session unless the APN is setup or detected. 
+When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is automtically detected or manually set up.
 
 The SMS command to set the APN is:
 ----
@@ -204,21 +206,21 @@ IMPORTANT: Please note the two leading spaces
 
 _Applies to HCV5, LCV5, Pro5, Trace5/NA, FM-Tco4 HCV/HCV 3G, FM-Tco4 LCV/LCV 3G, FM-Pro4/Pro4 3G, FM-Eco4/4+, FM-Eco4 light/light+/3G, FM-Eco4 S Series, FM-Eco4 T Series, FM-Plug4_ 
 
-link:https://doc.ruptela.lt/display/AB/Tracking+devices[Source Ruptela Documentation] 
+Source: link:https://doc.ruptela.lt/display/AB/Tracking+devices[Ruptela Documentation]
 
 Configuring the APN for Ruptela GPS trackers can be done through
 
 . Ruptela Device Center over a USB, Bluetooth connection 
-. Via the SMS console through the EMnify Portal (most simple) 
-. via the EMnify SMS API or Zapier Integration (when automating the configuration) 
+. Via the SMS console through the EMnify Portal (most simple)
+. Via the EMnify SMS API or Zapier Integration (when automating the configuration)
 
-When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify portal. At this point the device can receive SMS but not establish a data session unless the APN is setup or detected. 
+When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is automtically detected or manually set up.
 
 The SMS command to set the APN for Ruptela GPS trackers is:
 ----
 [SMSpassword] setconnection em
 ----
-The [SMSpassword] can be setup in the Ruptela device center. IF it is not set then the SMSpassword can be omitted, and the command is only
+The `[SMSpassword]` can be set up in the Ruptela device center. If it is not set, then the password can be omitted, and the command is only
 
 ----
 setconnection em
@@ -230,10 +232,10 @@ _Applies to JM-VL01, JM-VL02, JM-BL11, JM-VL03, JM-VL04, JM-LL01, JM-LL02, JM-LL
 
 Configuring the APN for Concox GPS trackers can be done 
 
-. Via the SMS console through the EMnify Portal (most simple) 
-. via the EMnify SMS API or Zapier Integration (when automating the configuration) 
+. Via the SMS console through the EMnify Portal (most simple)
+. Via the EMnify SMS API or Zapier Integration (when automating the configuration)
 
-When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify portal. At this point the device can receive SMS but not establish a data session unless the APN is setup.
+When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.
 
 The SMS command to set the APN for Concox GPS trackers is:
 ----
@@ -252,10 +254,10 @@ _Applies to Coban TK104, GPS303X, GPS103X, GPS306X, LK209, ..._
 
 Configuring the APN for Coban GPS trackers can be done 
 
-. Via the SMS console through the EMnify Portal (most simple) 
-. via the EMnify SMS API or Zapier Integration (when automating the configuration) 
+. Via the SMS console through the EMnify Portal (most simple)
+. Via the EMnify SMS API or Zapier Integration (when automating the configuration)
 
-When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify portal. At this point the device can receive SMS but not establish a data session unless the APN is setup and the GPRS service is activated.
+When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up and the GPRS service is activated.
 
 To turn on GPRS 
 ----
@@ -267,17 +269,22 @@ The SMS command to set the APN for Coban GPS trackers is:
 APN[your_password] em 
 ----
 
-The default password is 123456. There are no spaces between gprs/APN and the password. 
+The default password is 123456. There are no spaces between `gprs`/`APN` and the password, thus by default
+
+----
+APN123456 em
+----
 
 ===== Meitrack GPS APN configuration
 _Applies to P88L, P99, MT90, T663L, T333, T366, T399, TS299L, TC68L, TC68SG, T622, K211G, T355G_
+
 Configuring the APN for Meitrack GPS trackers can be done 
 
-. via the Meitrack manager when 
+. Via the Meitrack manager
 . Via the SMS console through the EMnify Portal (most simple) 
-. via the EMnify SMS API or Zapier Integration (when automating the configuration) 
+. Via the EMnify SMS API or Zapier Integration (when automating the configuration)
 
-When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify portal. At this point the device can receive SMS but not establish a data session unless the APN is setup. 
+When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.
 
 The SMS command to set the APN for Meitrack GPS trackers is:
 ----
@@ -299,9 +306,9 @@ Both SMS and Superpassword can be changed and would then need to be replaced in 
 Configuring the APN for Elinz GPS trackers can be done 
 
 . Via the SMS console through the EMnify Portal (most simple) 
-. via the EMnify SMS API or Zapier Integration (when automating the configuration) 
+. Via the EMnify SMS API or Zapier Integration (when automating the configuration)
 
-When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify portal. At this point the device can receive SMS but not establish a data session unless the APN is setup. 
+When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.
 
 The SMS command to set the APN for Elinz GPS trackers is:
 
@@ -320,16 +327,24 @@ Default password 123456.
 
 ===== Reachfar GPS APN configuration
 
-Configuring the APN for Reachfar GPS trackers can be done 
+Configuring the APN for Reachfar GPS trackers can be done
 
-When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify portal. At this point the device can receive SMS but not establish a data session unless the APN is setup. 
+. Via the SMS console through the EMnify Portal (simplest way)
+. Via the EMnify SMS API or Zapier Integration (when automating the configuration)
+
+When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.
 
 _Applies to RF-V6+, RF-V8, RF-V8S, RF-V13, RF-V16, RF-V18, RF-V20_
 
 The following two SMS commands should be sent
 ----
-123456,sos1,[yourphonenumber]# // Bind the tracker to a specific phone number e.g. 49173871878 (instead of +49173871878). 123456 is the default SMS password. 
-apn,em,plmn,90143#  // Send this SMS from the phone
+123456,sos1,[yourphonenumber]#
+----
+to bind the tracker to a specific phone number e.g. 49173871878 (instead of +49173871878). 123456 is the default SMS password.
+
+The SMS command to set the APN is:
+----
+apn,em,plmn,90143#
 ----
 
 123456 is the default password. After setting the APN the GPS tracker needs to be rebooted. 
@@ -338,7 +353,12 @@ _Applies to RF-V26, RF-V26+, RF-V28, RF-V30, RF-V32, RF-V34, RF-V36, RF-V36, RF-
 
 The following two SMS commands should be sent
 ----
-pw,123456,center,[yourphonenumber]# // Bind tracker to specific phone. 123456 is the default password. 
+pw,123456,center,[yourphonenumber]#
+----
+to bind the tracker to a specific phone number e.g. 49173871878 (instead of +49173871878). 123456 is the default SMS password.
+
+The SMS command to set the APN is:
+----
 apn,em# // Send this SMS from the phone
 ----
 
@@ -347,15 +367,17 @@ apn,em# // Send this SMS from the phone
 Configuring the APN for Queclink GPS trackers can be done 
 
 . Via the SMS console through the EMnify Portal (most simple) 
-. via the EMnify SMS API or Zapier Integration (when automating the configuration) 
+. Via the EMnify SMS API or Zapier Integration (when automating the configuration)
 
-When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify portal. At this point the device can receive SMS but not establish a data session unless the APN is setup. 
+When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.
 
 The SMS command to set the APN for Queclink GPS trackers is:
 
 ----
-AT+GTBSI=[password],em,,,,,,,0002$ // The password default is device model,e.g. gl200
+AT+GTBSI=[password],em,,,,,,,0002$
 ----
+
+The default password is the device model, e.g., `gl200`
 
 
 ===== Bitrek GPS APN configuration
@@ -364,9 +386,9 @@ AT+GTBSI=[password],em,,,,,,,0002$ // The password default is device model,e.g. 
 Configuring the APN for Bitrek GPS trackers can be done 
 
 . Via the SMS console through the EMnify Portal (most simple) 
-. via the EMnify SMS API or Zapier Integration (when automating the configuration) 
+. Via the EMnify SMS API or Zapier Integration (when automating the configuration)
 
-When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify portal. At this point the device can receive SMS but not establish a data session unless the APN is setup. 
+When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status `Attached` in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.
 
 
 The SMS command to set the APN for Bitrek GPS trackers is:
@@ -378,8 +400,14 @@ setparam 0242 em
 The Bitrek GPS tracker also utilizes a roaming command `setparam 0917` together with a list of enabled networks `setparam 0020-0099`. The following SMS commands should be sent
 
 ----
-setparam 0917 1 // enable roaming in all networks as defined in the next SMS
-setparam 0020 <MNC> // MNC is the mobile network code on which the device shall roam
+setparam 0917 1
+----
+to enable roaming in all networks as defined in the next SMS
+----
+setparam 0020 <MNC>
+----
+where `<MNC>` is the mobile network code on which the device shall roam
+----
 setparam 0021 <MNC>
 ....
 setparam 0099 <MNC>
@@ -401,20 +429,20 @@ Newer firmware version of the Teltonika Routers should automatically detect the 
 
 1. With the Teltonika WebUI over Wifi, Ethernet 
 2. Via the SMS console through the EMnify Portal (most simple) 
-3. via the EMnify SMS API or Zapier Integration (when automating the configuration)   
+3. Via the EMnify SMS API or Zapier Integration (when automating the configuration)
  
 [start=1]
 1. APN configuration through the Teltonika Router WebUI 
 +
-Connect your PC through the routers Wi-Fi using the credentials provided on the device.  
-Open the Teltonika WebUI http://192.168.1.1 and go to the Mobile configuration. Type in “em” in APN – there is no PIN configured on the SIM and no APN username or password required.  
+Connect your PC through the router's Wi-Fi using the credentials provided on the device.
+Open the Teltonika WebUI http://192.168.1.1 and go to the Mobile configuration. Type in `em` in APN – there is no PIN configured on the SIM and no APN username or password required.
  
 
 2. Teltonika Networks Router APN configuration via SMS console / API or Zapier
 + 
-link:https://wiki.teltonika-networks.com/view/SMS_Commands[Teltonika Documentation Source]
+Source: link:https://wiki.teltonika-networks.com/view/SMS_Commands[Teltonika Documentation]
 +
-Make sure that the router is powered on, and the SIM card is inserted and activated. In the EMnify portal the device should show as `Attached`. 
+Make sure that the router is powered on, and the SIM card is inserted and activated. In the EMnify Portal the device should show as `Attached`.
 +
 The following SMS command should be sent to the device
 ---- 
@@ -485,7 +513,7 @@ If you do not have an entry in the connected devices - go back to <<Creating a D
 
 The device will show different icons that indicate the status (`Offline`, `Attached`, `Online`, `Blocked`). If no icon is visible, assign a SIM to the device. 
 
-For most of the troubleshooting, a look at Details->Events is necessary. 
+For most of the troubleshooting, a look at Details -> Events is necessary.
 A usual event flow should look like this:
 
 . Update Location - The SIM card has (re)authenticated with a different network element. If successful, the device will show as `Attached` and can already receive SMS. 
@@ -501,7 +529,7 @@ There can be many location updates before or in between the data sessions.
 ==== icon:offline[width="20"] The device is offline 
 
 * Click on Details -> Ensure that the device is enabled
-* Click on Details ->Events. Validate if there is any location update event created and rejected. The reason should indicate the resolution to the problem. 
+* Click on Details -> Events. Validate if there is any location update event created and rejected. The reason should indicate the resolution to the problem.
 
 If there is no location update event:
 
@@ -510,7 +538,7 @@ If there is no location update event:
 
 ==== icon:att[width="20"] The device shows attached but does not transmit data 
 
-* Ensure that the APN is correctly set to 'em' or alternatively use 'emnify' as some devices do not support two-digit APNs. Guides for different devices can be found <<Getting the first device online, here>>
+* Ensure that the APN is correctly set to `em` or alternatively use `emnify` as some devices do not support short APNs. Guides for different devices can be found <<Getting the first device online, here>>
 * In case you have changed your policy settings, make sure the radio types (2G,3G,4G) and data access is activated.
 * Ensure mobile data is enabled, as well as international roaming is allowed 
 * Click on Details -> Events. Validate if there was any PDP create event that was rejected. The reason and resolution should be in the event description. 
@@ -520,10 +548,10 @@ NOTE: The `Attached` status does not necessarily mean that the device is powered
 ==== icon:online[width="20"] The device shows online but does not transmit data
 
 * Ensure mobile data is enabled, as well as international roaming is allowed 
-* Check under Details->Events if you see `Warn` or `Error` in the Severity field, it indicates that there is a problem.
+* Check under Details -> Events if you see `Warn` or `Error` in the Severity field, it indicates that there is a problem.
 * For NB-IoT and LTE-M this behavior can happen when the device automatically connects to a network. Specify the network that should be used with the `AT+COPS` command. This way the device will not attach to an unsupported network. Check the EMnify link:https://www.emnify.com/nb-iot-coverage[NB-IoT coverage] and 
 link:https://www.emnify.com/lte-m-coverage[LTE-M network coverage] lists.
-* Ensure that your data destination and DNS server is not blocked for the device.(EMnify uses google's 8.8.8.8 DNS by default if your device does not specify a DNS) 
+* Ensure that your data destination and DNS server is not blocked for the device. EMnify by default assigns Google's 8.8.8.8 DNS server, if your device does not specify a DNS.
 
 
 ==== Other general troubleshooting tips
@@ -583,7 +611,7 @@ The traditional, pluggable SIM card comes in 4 different form factors:
 
 EMnify offers pre-punched SIM cards in different combinations  2-in-1 (1FF and 2FF), 3-in-1 (1FF,2FF,3FF) and 4-in-1 (1FF,2FF,3FF,4FF). Especially in use cases where the devices are moving it is advisable to use a SIM which exactly fits the device and does not have another smaller form factor punched out. The SIMs are then more durable and the contact to the device is more firmly.  
 
-Another form factor is MFF2 also called embedded SIM with the dimension 6 x 5 x 0.75-0.82mm. The embedded SIms are soldered onto a device and not removable. 
+Another form factor is MFF2 also called embedded SIM with the dimension 6 x 5 x 0.75-0.82mm. The embedded SIMs are soldered onto a device and are not removable.
 
 Note: Often the term eSIM is used for the MFF2 factor. Nevertheless, the eSIM term is also used for SIMs whose operator profiles can be updated over the air. These eUICC based eSIMs can come in any of the described form factors, and not just MFF2. While eSIM/eUICC is widely adopted for consumer smartphone and watches - for IoT use cases (where the profile cannot be download via a screen or QR reader) the commercial and deployment model of the required infrastructure prohibits an easy change of operator profiles and is therefore not widely adopted.    
 
@@ -617,14 +645,14 @@ a|* Poll Interval negotiation
 
 EMnify offers an easy entry to test the services and platform by downloading an EMnify eSIM profile to an eSIM compatible phone or tablet. During the trial period every organization has the option to download one profile which can be used instantly. 
 
-The eSIM does not use a multi-IMSI applet (as on the physical SIM cards) and therefore has some differences in the network coverage. For a list of supported devices and limitations please refer to the link:https://support.emnify.com/hc/en-us/articles/360021545600-Evaluation-eSIM-device-support-and-restrictions#h_01F7V2BVKT0RQRVXK3VNSPYQMW[knowledge base] 
+The eSIM does not use a multi-IMSI applet (as on the physical SIM cards) and therefore has some differences in the network coverage. For a list of supported devices and limitations please refer to the link:https://support.emnify.com/hc/en-us/articles/360021545600-Evaluation-eSIM-device-support-and-restrictions#h_01F7V2BVKT0RQRVXK3VNSPYQMW[knowledge base].
 
 The eSIM can be used to test and verify all EMnify functionalities including:
 
 * Availability of networks
 * API functionality
 * Cloud Connect and Data Streamer integration
-* Zapier- No-Code Integrations
+* Zapier No-Code Integrations
 
 ==== Multi-IMSI Application
 
@@ -638,7 +666,7 @@ The selection of the preferred IMSI for each country is based on multiple factor
 * IMSI that has the most network partners in the country
 * IMSI that has the best availability of radio access types (LTE, NB-IoT, LTE-M) or features (PSM/eDRX)
 
-The Multi-IMSI applet is transparent for the device and has no impact on the device operation. In order to analyze which IMSI is currently in use, you can either check in the EMnify portal -> Connected devices -> Details or also query the device directly using the AT-command `AT+CIMI?`. 
+The Multi-IMSI applet is transparent for the device and has no impact on the device operation. In order to analyze which IMSI is currently in use, you can either check in the EMnify Portal -> Connected devices -> Details or also query the device directly using the AT-command `AT+CIMI?`.
 
 === Global IoT Network 
 
@@ -654,7 +682,7 @@ EMnify works with multiple partner operators across the globe to be able to offe
 
 The EMnify IoT SIM and platform supports all devices and modules using the following radio access technologies 
 
-* <<2G (GSM/GPRS/Edge)>> 
+* <<2G (GSM/GPRS/EDGE)>>
 * <<3G (UMTS/WCDMA/HPSA/HSDPA)>>
 * <<4G (LTE/LTE-A/LTE-CATXX)>>
 * <<5G (New Radio)>>
@@ -664,9 +692,9 @@ The EMnify IoT SIM and platform supports all devices and modules using the follo
 When a device wants to connect with any of these radio technologies, the network needs to support this technology as well as the device needs to support the network specifc frequency band for this technology.  
 
 
-===== 2G (GSM/GPRS/Edge)
+===== 2G (GSM/GPRS/EDGE)
 
-GSM/GPRS is still one of the most dominant IoT technologies. Although the throughput is limited (GPRS max. 120kbps, Edge max. 1Mbps) it is more than sufficient for many IoT use cases. The modules are cheap (<10$) and the coverage is widely available throughout the world in more than 200 countries.
+GSM/GPRS is still one of the most dominant IoT technologies. Although the throughput is limited (GPRS max. 120kbps, EDGE max. 1Mbps) it is more than sufficient for many IoT use cases. The modules are cheap (<10$) and the coverage is widely available throughout the world in more than 200 countries.
 
 GSM/GPRS is easy to deploy for IoT use cases because there are only 4 frequency bands utilized by operators for GSM/GPRS worldwide. 
 
@@ -733,7 +761,7 @@ While utilizing LTE infrastructure both NB-IoT and LTE-M are also part of the 5G
 * Low power utilization - for battery powered use cases that require years of operation 
 ** Introducing power saving features such as <<psm,PSM>> and <<edrx,eDRX>>
 ** Reducing the max. transmission power to less than 200mA to cater for battery max. current (GSM for example has 2A max power)
-* Wider coverage - (+14dB for LTE-M and +20 for Nb-IoT sensitivity) for rural/indoor/underground use cases
+* Wider coverage - (+14dB for LTE-M and +20dB for NB-IoT sensitivity) for rural/indoor/underground use cases
 ** Utilizing extended coverage feature with more retransmissions to ensure data gets delivered
 * Smaller module size - to enable smaller device use cases
 
@@ -896,9 +924,7 @@ image::regional.png[250, 500, align="center"]
 === Data Streamer
 Before each device can send data to an application, it needs to communicate with the mobile network to ensure that the data is allowed to be sent over the network. This communication happens through signaling events which are usually hidden from the application. 
 
-With the EMnify Data Streamer this connectivity metadata is made available to your cloud platform and self-developed software stacks in near-real-time. 
-
-The Data Streamer enables real-time streaming of connectivity data into the cloud, as well as self-developed software stacks. These integrations provide you with complete network transparency to triage and resolve issues quickly.  
+With the EMnify Data Streamer, this connectivity metadata is made available to your cloud platform or self-developed software stacks in near real-time. Using one of the many integrations provides you with complete network transparency, not only to triage and resolve issues quickly, but also to build your own application or business logic based on provided information.
 
 Moreover, this integration provides insights for IoT remote monitoring and anomaly detection or detailed information about service (data, SMS) usage and cost per device. 
 Additionally, data streams can also be configured to reflect events generated by the EMnify platform when your users perform billing related updates, order SIMs or perform other operations.  
@@ -938,16 +964,15 @@ You can stream this data to your server, a third-party web-service or push the d
 
 Multiple independent data streams can be created using any connection type and all of them will operate in parallel. Each data stream can be configured to push data to a separate platform for consumption and processing. 
 
-For example, one stream may be connected to a network monitoring system, another can connect to a data analytics platform, and another can be synced with S3 for archiving, all at the same time. 
+For example, one stream may be connected to a network monitoring system, another can connect to a data analytics platform, and another can be synced with Amazon S3 for archiving, all at the same time.
 
-The integration guides for the Data Streamer can be found <<Integration Guides, here>>
+The integration guides for the Data Streamer can be found <<Integration Guides, here>>.
 
 ==== Management Interfaces 
-Data Streamer can be managed by using the link:https://portal.emnify.com[EMnify Portal] or by using the link:https://cdn.emnify.net/api/doc/swagger.html[EMnify API]. 
+Data Streams can be managed by using the link:https://portal.emnify.com[EMnify Portal] or by using the link:https://cdn.emnify.net/api/doc/swagger.html[EMnify API].
 
-Managing data streams via the Portal is convenient when you are in the initial stages of building your application or if you do not plan to make configuration changes very often. 
-
-image:integration.png[].Manage Integrations through the EMnify Portal 
+.Manage Integrations through the EMnify Portal
+image::integration.png[align="center"]
 
 === Security
 Given the globally distributed nature of the devices, smaller footprints and lack of resources, it can get difficult to individually secure IoT devices.
@@ -963,55 +988,48 @@ Secure Access Service Edge (<<sase,SASE>>) introduces a new architecture where n
 
 Some of the features that <<sase,SASE>> for IoT architecture includes are as follows:
 
-* Dynamic Data Routing with Software-Defined Wide Area Network (SD-WAN)
-+
+* Dynamic Data Routing with Software-Defined Wide Area Network (SD-WAN) +
 EMnify utilizes a SD-WAN to route data to the closest cloud region using the <<Regional Breakout>> concept. In this way, latency and data stability is improved, and the end customer can be sure that data does not leave the continent and jurisdiction. 
-* Cloud Access Security Broker (CASB)
-+
+* Cloud Access Security Broker (CASB) +
 EMnify allows centrally defining policies for the devices such as: networks that can be accessed, allowed IP addresses through which authorized users can remotely access devices. 
 All configuration is done in the central platform and applied wherever the device is. 
-* Firewall as a Service (FaaS) 
-+
+* Firewall as a Service (FaaS) +
 EMnify provides a firewall as a Service which limits the IP addresses that are reachable for a device, making sure that the devices cannot be misused for other purposes.
 
 In the following sections we will discuss some of the security features offered by EMnify. 
 
 ==== DNS
 
-When a device establishes a connection, it uses a Domain Name Service (DNS) to resolve a hostname to an IP address to which it can send data. For example, a hostname such as *.iot.example.com will be mapped to the IP address e.g. 120.126.230.60. 
+When a device establishes a connection, it uses a Domain Name Service (DNS) server to resolve a hostname to an IP address to which it can send data. For example, a hostname such as `iot.example.com` will be mapped to an IP address like `192.0.2.1`.
 
 Cellular providers typically provide a DNS service. By default, EMnify routes all DNS queries over Google's public DNS `8.8.8.8`. 
 
 For some devices and modules, it is possible to configure the DNS service. For example, Quectel uses the `AT+QIDNSCFG` command, SIMcom `AT+CDNSCFG` command. This is useful to be able to use your own or private DNS servers to secure and have better control over the solution.  
 
-Customers can also configure to use their own DNS - no matter if it is a public or a private one.
-The DNS settings can be changed in the Portal -> Device Policies -> Service Policies -> More Options -> DNS
+Customers can also configure to use their own DNS, no matter if it is a public or a private one.
+The DNS settings can be changed in the Portal -> Device Policies -> Service Policies -> More Options -> DNS.
 
 .Custom DNS setting configuration
 image::dns_setting.png[align="center"]
 
 
-Utilizing a private DNS server which is not reachable via a public IP, requires to setup a private network with the machine or a network where the private DNS is located. This can be done using Cloud Connect either with Amazon Transit Gateway or IPsec. A tutorial on how to setup a DNS firewall based on a private DNS using Amazon Route 53 is available link:https://www.emnify.com/en/developer-hub/dns-filtering[here]
+Utilizing a private DNS server which is not reachable via the public Internet requires to set up a private network with the machine or a network where the private DNS server is located. This can be done using Cloud Connect either with Amazon Transit Gateway or IPsec. A tutorial on how to set up a DNS firewall based on a private DNS using Amazon Route 53 is available link:https://www.emnify.com/en/developer-hub/dns-filtering[here].
 
 ==== IMEI Lock
-For device manufacturers, SIM card theft is an issue because pluggable SIM cards can be removed from a device and then used to gain free Internet access. The IMEI lock feature prevents the use of SIM card in any other device by bounding the SIM to an IMEI. The <<imei,IMEI>> is a unique device identifier. When the automatic IMEI lock is configured, the EMnify platform will bind the SIM cards to the first device that establishes a data connection. All future device connectios will only be allowed from this device.  
+For device manufacturers, SIM card theft is an issue because pluggable SIM cards can be removed from a device and then used to gain free internet access. The IMEI lock feature prevents the use of SIM card in any other device by bounding the SIM to an IMEI. The <<imei,IMEI>> is a unique device identifier. When the automatic IMEI lock is configured, the EMnify platform will bind the SIM cards to the first device that establishes a data connection. All future device connections will only be allowed from this device.
 
 
 === Cloud Connect
 
-The data traffic of regular SIM cards is secured within the mobile network – but passes the public internet between the mobile network and the application, which makes the device and application susceptible to attacks and prohibits to easily establish a remote device session.   
+The data traffic of regular SIM cards is secured within the mobile network – but traverses the public internet between the mobile network and the application, which makes the device and application susceptible to attacks and prohibits to easily establish a remote device session.
 
-With EMnify Cloud Connect your devices and application servers can communicate through a secure private network – with a secure tunnel being established between the EMnify platform and your cloud or on-premises application.  
+With EMnify Cloud Connect your devices and application servers can communicate through a secure private network – with a secure tunnel being established between the EMnify platform and your cloud or on-premises application.
 
-By eliminating the use of the public internet, Cloud Connect helps you better protect your application infrastructure against attacks like DDoS, port scanning while giving you the possibility to remotely access the devices.
+By eliminating the use of the public internet, Cloud Connect helps you better protect your application infrastructure against attacks like DDoS, port scanning while giving you the possibility to remotely access the devices.
 
 // With the EMnify Cloud Connect you can communicate with your <<vpc,Virtual Private Cloud>> through a secure private network. By eliminating the use of public IP addresses, Cloud Connect helps you better protect your application infrastructure against attacks like <<ddos,DDoS>> while giving you the possibility to remotely access the devices.
 ==== AWS Intra-Cloud Connect 
-EMnify’s communication platform is deployed on AWS, which simplifies integrations for customers using AWS as an infrastructure. Without having to use the public internet,  the integration is directly done with AWS services. To establish a secure private network between your devices and your application you only need to exchange a cross-account role of your AWS account.  
-
-As the EMnify platform is deployed on AWS, it allows you to create a fast and secure direct peering data path to your VPC / EC2 instances via the AWS Transit Gateway (TGW). 
-
-AWS Transit Gateway is a managed service with an availability SLA guarantee of 99.99%.    
+EMnify's communication platform is deployed on AWS, which simplifies integrations for customers using AWS as an infrastructure. Without having to use the public internet, the integration is directly done with AWS services. To establish a secure private network between your devices and your application you only need to attach your VPC to EMnify's Transit Gateway.
 
 .EMnify Cloud Connect with AWS Transit Gateway
 image::TGW.png[EMnify Cloud Connect with AWS Transit gateway, align="center"]
@@ -1020,21 +1038,19 @@ To integrate Cloud Connect into your application using Transit Gateway, you can 
 
 ==== IPsec
 
-If your application is not on AWS but on any other cloud services or on-premise, you can implement Cloud Connect using IPsec. 
+If your application is not on AWS but on any other cloud services or on-premise, you can utilize Cloud Connect for establishing an IPsec VPN connection.
 
-With EMnify you can set up an IPsec tunnel to securely transfer your data into your application server/Database.
+With EMnify you can set up an IPsec tunnel to securely transfer your data into your application server.
 
-To integrate Cloud Connect into your application using IPsec, you can follow this link:https://www.emnify.com/en/developer-hub/how-to-setup-an-ipsec-using-emnify-cloudconnect[tutorial]. You can also find guide to setup IPsec for Azure and Google in the <<Integration Guides>> section. 
+To integrate Cloud Connect into your application using IPsec, you can follow this link:https://www.emnify.com/en/developer-hub/how-to-setup-an-ipsec-using-emnify-cloudconnect[tutorial]. You can also find guide to set up IPsec for Azure and Google Cloud in the <<Integration Guides>> section.
 
 === OpenVPN
 
-EMnify's communication platform hosts an OpenVPN service, that allows to establish a private network between the device and any remote client location. The remote client can either be on the application server itself, or on any machine that wants to remotely access the device (such as operational staff).
+EMnify's communication platform hosts an OpenVPN service that allows to establish a private network between the device and any remote client location. The remote client can either be on the application server itself, or on any machine that wants to remotely access the device (such as operational staff).
 
 ==== OpenVPN Overview
 
-To use the OpenVPN service the IoT device does not need any private APN, OpenVPN software or dynamic DNS resolution. Through the EMnify SIM, every device will get a private static IP address which can be used to identify and address the device.  
-
-You can connect from any machine using an OpenVPN client to the OpenVPN service on the EMnify communication platform. The machine can then use the private static IP address of the device to communicate with it remotely. 
+To use the OpenVPN service the IoT device does not need any private APN, OpenVPN software or dynamic DNS resolution. Through the EMnify SIM, every device will get a static private IP address which can be used to identify and address the device.
 
 .OpenVPN System Overview
 image::OpenVPN.png[OpenVPN System Overview] 
@@ -1043,12 +1059,12 @@ At the same time the IoT device can send data through the private tunnel to the 
 
 ==== OpenVPN setup
 
-In order to setup OpenVPN on your machine the following high-level steps are required. 
+In order to set up OpenVPN on your machine the following high-level steps are required.
 
-1. In the EMnify Portal -> Device Policies: Set the service profile to a VPN breakout region, eu-west-1 (VPN)
+1. In the EMnify Portal -> Device Policies: Set the Service Policy to a VPN breakout region, e.g., `eu-west-1 (VPN)`
 2. Portal -> Integrations -> OpenVPN: download the VPN configuration file for your region and operating system
-3. Create a credentials.txt with your username / password or organisation_id / application token.
-4. load the VPN configuration file and credentials.txt with your OpenVPN client 
+3. Create a `credentials.txt` with your username / password or organisation ID / application token (recommended).
+4. load the VPN configuration file and `credentials.txt` with your OpenVPN client
 
 For detailed instructions please refer to our knowledge base articles
 
@@ -1057,23 +1073,23 @@ For detailed instructions please refer to our knowledge base articles
 . link:https://support.emnify.com/hc/en-us/articles/115001724434-OpenVPN-Integration-Guide-for-Linux[OpenVPN Integration Linux]
 
 === SMS
-Short Message Services are one of the first cellular services made available after voice. SMS is still very relevant for IoT use cases – as SMS provides a simple, inexpensive way to configure the device remotely without the need for a data connection. A typical use case is the configuration of the APN setting via SMS.
+Short Message Services (SMS) were one of the first cellular services made available after voice. SMS is still very relevant for IoT use cases – as SMS provides a simple, inexpensive way to configure the device remotely without the need for a data connection. A typical use case is the configuration of the APN setting via SMS.
 
 The EMnify platform supports: 
 * Mobile originated (MO) SMS – SMS sent from the device with the EMnify SIM 
 * Mobile terminated (MT) SMS – SMS that are destined for a device with the EMnify SIM 
 * Peer-to-Peer (P2P) SMS – SMS sent from a device with any SIM to a device with the EMnify SIM 
-* Application- to-peer (A2P)  SMS – The SMS is sent and received on an application  
+* Application- to-peer (A2P) SMS – The SMS is sent and received on an application
 
 The above scenarios can be activated and deactivated in the device policies to prevent misuse (e.g. P2P SMS).
 
-You can send and receive SMSs of your devices through 3 different interfaces Portal, SMS-APIs and Zapier.
+You can send and receive SMSs of your devices through 3 different interfaces Portal, SMS APIs and Zapier.
 
 .SMS interfaces
 image::sms_options.png[align="center"]
 
 ==== EMnify Portal  
-In the Portal -> Connected devices you can select SMS console and directly send SMS to the devices. The sender can be configured as well as the console will show if the SMS is delivered or not. You will see all SMSs that the device receives sends out. 
+In the Portal -> Connected Devices you can access the SMS console and directly send SMS to the devices. The sender can be configured as well as the console will show if the SMS is delivered or not. You will see all SMSs that the device receives sends out.
 
 .SMS Console
 image::sms_console.png[400,200, align="center"]
@@ -1082,7 +1098,7 @@ image::sms_console.png[400,200, align="center"]
 
 For sending SMS through the REST API, check out the <<Sending and receiving SMS>> section.
 
-For receiving SMS and delivery notifications for SMS in your application, you can use the SMS webhook which can be configured under Device policies -> Service profiles -> SMS Interface. Select Webhook and configure the URL and optionally, secret token to where you want the SMS to be delivered.
+For receiving SMS and delivery notifications for SMS in your application, you can use the SMS webhook which can be configured under Device Policies -> Service Policies -> SMS Interface. Select Webhook and configure the URL and optionally, secret token to where you want the SMS to be delivered.
 
 .SMS Webhook
 image::sms_webhook.png[200,400, align="center"]
@@ -1096,18 +1112,18 @@ When you want to send an SMS from the device to your application, your device sh
 image::MOSMS.png[200,400, align="center"]
 ==== Zapier SMS integration
 
-Instead of implementing the APIs in your application EMnify and Zapier provide a no-code alternative to automate SMS workflows. Zapier has a concept of triggers and actions – when a trigger happens multiple actions can be based on it – taking content from previous steps.  
+Instead of implementing the APIs in your application, EMnify and Zapier provide a no-code alternative to automate SMS workflows. Zapier has a concept of triggers and actions – when a trigger happens multiple actions can be based on it – taking content from previous steps.
 Sending SMS to your devices is available as an action in Zapier.
 
 .SMS with Zapier
 image::sms_zap.png[200,400, align="center"]
 
-For acting upon SMS delivery notification or SMSs that are sent from a device, you need to set up a webhook in Zapier. Create a zap using “Webhook by Zapier” and select “Catch Hook” as trigger event. You will get a custom webhook URL which will be used in the next step. 
+For acting upon SMS delivery notification or SMSs that are sent from a device, you need to set up a webhook in Zapier. Create a zap using "Webhook by Zapier" and select "Catch Hook" as trigger event. You will get a custom webhook URL which will be used in the next step.
 
 .Catch Hook as a trigger
 image::catch_hook.png[200,400, align="center"]
 
-Now you need to enter this webhook URL in the EMnify portal -> device policies -> Choose SMS interface as webhook and create a webhook with the URL. All SMS delivery notification and device originated SMS with this service policy will then be delivered over the webhook. 
+Now you need to enter this webhook URL in the EMnify Portal -> Device Policies -> Choose SMS interface as webhook and create a webhook with the URL. All SMS delivery notification and device originated SMS with this service policy will then be delivered over the webhook.
 
 .EMnify Webhook as SMS interface
 image::zap_webhook.png[200,400, align="center"]
@@ -1128,9 +1144,9 @@ image::zap_webhook.png[200,400, align="center"]
 === User Management
 The EMnify platform is a powerful application to control the connectivity of devices of a production system. As different types of personas (operations, finance, development, product) use the portal, EMnify offers 3 levels of access to the use and manage EMnify features and functionality.
 
-. Admin (Has access to all services and user management)
-. Observer (Has access to limited services)
-. User (Has access to limited services)
+. Admin (has access to all services and user management)
+. Observer (has access to limited services)
+. User (has access to limited services)
 
 Below is a table that describes the permissions for different users. 
 
@@ -1264,7 +1280,7 @@ h|User
 |===
 
 === Business Intelligence and Analytics Reports 
-The EMnify portal provides detailed reports and on all connectivity aspects of a device. You can analyze the data consumption, events, location of the devices and compare them to previous time periods.  
+The EMnify Portal provides detailed reports on all connectivity aspects of a device. You can analyze the data consumption, events, location of the devices and compare them to previous time periods.
 // Currently in the link:http://cdn.emnify.net/[EUI Portal] (Old EMnify portal) and our link:https://portal.emnify.com/[new Portal] we provide Embedded Analytics - powered by a tool called Periscope. Depending on the customer type, the analytics provides the customer with dashboards such as: 
 
 * Data traffic per day, week, month 
@@ -1276,7 +1292,7 @@ The EMnify portal provides detailed reports and on all connectivity aspects of a
 
 === No-Code Workflow Automation
 
-Zapier is a service that allows you to connect more than 4000 applications – including EMnify - to automate workflows. With the available integrations you can automate device provisioning between EMnify and your application. For example, you can send configuration SMS to set the proper APN, when the device connects for the first time. Other use cases are - scheduled or application-triggered SIM activations/deactivations so that the SIM contract starts and ends with the device subscription of your customers. 
+Zapier is a service that allows you to connect more than 4000 applications - including EMnify - to automate workflows. With the available integrations you can automate device provisioning between EMnify and your application. For example, you can send configuration SMS to set the proper APN, when the device connects for the first time. Other use cases are scheduled or application-triggered SIM activations/deactivations so that the SIM contract starts and ends with the device subscription of your customers.
 The following events are available as triggers: 
 
 * All events in the Data Streamer 
@@ -1302,15 +1318,15 @@ Using the Zapier webhook, you can also use triggers from:
 When selling connected devices, it is difficult to determine when devices will be in use and when not. Using SIM cards that cannot align with the device lifecycle incur unnecessary costs.  
  
 EMnify SIM cards do not incur any costs until actively used within a device.  
-The SIMs have 4 different states that can be configured via the EMnify Portal or link:https://cdn.emnify.net/api/doc/swagger.html#/SIMs[Rest-API]: 
+The SIMs have 4 different states that can be configured via the EMnify Portal or link:https://cdn.emnify.net/api/doc/swagger.html#/SIMs[REST API]:
  
 * Issued – the SIM is not yet installed nor usable - no monthly charge is applied.  
-* Factory-Test- the SIM is enabled and can be used for a defined limit of data and SMS without charge before it automatically goes into active state. The SIM can stay in this state until it is used by the end customer. 
+* Factory-Test - the SIM is enabled and can be used for a defined limit of data and SMS without charge before it automatically goes into active state. The SIM can stay in this state until it is used by the end customer.
 * Active – the SIM is enabled, and the monthly charge is applied 
 * Suspended – an active SIM can be suspended when it is not used to save additional charges. The SIM can be activated anytime afterwards.  
 
 === Endpoint Management & Group Policies 
-Within the EMnify platform, there is a separation between SIM card and the device also called the endpoint. This allows you to configure policies on the device level rather than SIM level. The device policies can be applied on a device group as well as at an individual level. 
+Within the EMnify platform, there is a separation between SIM card and the device, also referred to as "endpoint". This allows you to configure policies on the device level rather than SIM level. The device policies can be applied on a device group as well as at an individual level.
 
 ==== Service Policies 
 Service policies define which services are available for a group of devices.  
@@ -1349,7 +1365,7 @@ The sections below will describe the services available through the EMnify API.
 
 === API Authentication
 
-To use the EMnify API, you need to authenticate it with an Authentication Token. We use JWTs as the authentication token.
+To use the EMnify API, you need to authenticate with an Authentication Token. We use JWTs as the authentication token.
 Now there are two ways to retreive this token:
 
 . *Authenticate with User Credentials*: You can use the username and password you used while signing up for the link:https://portal.emnify.com[EMnify Portal].
@@ -1370,7 +1386,7 @@ Request Body
 
 ----
 
-NOTE: If users have signed up using the link:https://portal.emnify.com[EMnify portal], the password will need to be a SHA1 hashed string. The SHA1 of a password can be generated online or in the terminal via the following command: `echo -n "my_password" | openssl sha1`. If your password contains the characters `$` `'` `\` or `!` , you will have to add `\` before that character. So `$` becomes `\$`.
+NOTE: If users have signed up using the link:https://portal.emnify.com[EMnify Portal], the password will need to be a SHA1 hashed string. The SHA1 of a password can be generated online or in the terminal via the following command: `echo -n 'my_password' | openssl sha1`.
 
 Response
 ----
@@ -1384,9 +1400,9 @@ This `auth_token` is valid for 240 minutes, so you don't need to retreive the `a
 
 ==== Authenticate with an Application Token 
 
-If you don't want to store your EMnify user credentials on your application server, you can generate an `application_token` via the link:https://portal.emnify.com[EMnify portal] or via the API `/api/v1/application_token`. The request body should have description of the token usually used to indicate who is using the token and can have a `expiry_date` for the token. 
+As you should not store your EMnify user credentials on your application server, you can generate an `application_token` via the link:https://portal.emnify.com[EMnify Portal] or via the API `/api/v1/application_token`. The request body should have description of the token usually used to indicate who is using the token and can have a `expiry_date` for the token.
 
-`POST https://cdn.emnify.net/api/v1/application_token `
+`POST https://cdn.emnify.net/api/v1/application_token`
 
 Request header
 
@@ -1407,7 +1423,7 @@ Response
 ----
 This calls returns an `application_token` which can then be used instead of the user/password combination and can be revoked at any time to get the `auth_token`. 
 
-You can alternatively generate the `application_token` in the EMnify portal. Login in to the link:https://portal.emnify.com/login[EMnify Portal] > Integrations > Application Tokens > Add Token. 
+You can alternatively generate the `application_token` in the EMnify Portal. Login in to the link:https://portal.emnify.com/login[EMnify Portal] -> Integrations -> Application Tokens -> Add Token.
 
 .Generate Application Token using the EMnify Portal
 image:generate_app_token.png[generate application token]
@@ -1445,12 +1461,12 @@ You can perform the following SMS related operations using the `endpoint` API.
 
 . List sent and received SMS `GET /api/v1/endpoint/{endpoint_id}/sms`
 . Send SMS to and endpoint `POST /api/v1/endpoint/{endpoint_id}/sms`
-. Get details about an endpoitn SMS 'GET /api/v1/endpoint/{endpoint_id}/sms/{sms_id}'
+. Get details about an endpoint SMS `GET /api/v1/endpoint/{endpoint_id}/sms/{sms_id}`
 . Cancel a buffered SMS `DELETE /api/v1/endpoint/{endpoint_id}/sms/{sms_id}`
 
 Example:  Send SMS to an Endpoint
 
-'POST https://cdn.emnify.net/api/v1/endpoint/{endpoint_id}/sms'
+`POST https://cdn.emnify.net/api/v1/endpoint/{endpoint_id}/sms`
 
 Request Body
 ----
@@ -1534,9 +1550,9 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 
 [[active-sim]]Active SIM :: When a SIM is in the active state, the charges for the SIM are applied. The device can send and receive data and SMS. 
 
-[[APN]]APN - Access point name ::  A gateway between a GSM, GPRS, 3G or 4G mobile network and another computer network, usually the Public Internet. The APN needs to be configured on the device. For EMnify it is “em” or “emnify”
+[[APN]]APN - Access point name ::  A gateway between a GSM, GPRS, 3G or 4G mobile network and another computer network, usually the Public Internet. The APN needs to be configured on the device. For EMnify it is `em` or `emnify`.
 
-[[app-token]]Application Token :: A unique identification key used to access EMnify’s VPN services
+[[app-token]]Application Token :: A unique identification key used to authenticate EMnify's APIs. Also used when authenticating the OpenVPN service.
 
 [[a2p-sms]]A2P SMS - Application–to–peer SMS :: SMS between an application and a device or vice-a-versa
 
@@ -1548,12 +1564,12 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 
 //  B
 
-[[BIC]]BIC - Batch Identification Code :: a code used to register the EMnify SIM cards on the EUI
+[[BIC]]BIC - Batch Identification Code :: a unique code for ordered SIM cards, used to register the SIM cards on the Portal.
 
 [[BTS]]BTS - Base Transceiver Station :: 
 // C
 
-[[callback-url]]Callback URL :: Computer programming practice of sending executable code to another web address
+[[callback-url]]Callback URL :: URL that will be called by a service to send and receive data related to an event that caused this action.
 
 [[ca-nw]]Carrier-agnostic network :: A network that provides routing consistency regardless of the roaming mobile network that the SIM is connected to.
 
@@ -1563,7 +1579,7 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 
   - Online :  Endpoint is transmitting data
   - Attached :  Endpoint is attached to a network but not transmitting any data
-  - Offline :  Endpoint isn’t attached to a network
+  - Offline :  Endpoint isn't attached to a network
 
 // D
 [[data-package]]Data package :: A data bundle that can be used by all SIM cards until the end of the calendar month
@@ -1620,18 +1636,18 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 
 [[HLR]]HLR - Home location register :: A part of GSM infrastructure, a database from a mobile network in which information from all mobile subscribers is stored
 
-[[post-request]]http POST request ::  A request method supported by the HTTP protocol
+[[post-request]]HTTP POST request ::  A request method supported by the HTTP protocol which typically includes data in the request body.
 // I
 
 [[iccid]]ICCID - Integrated Circuit Card Identifier :: A unique number used to identify a SIM card.
 
-[[imei]]IMEI - International Mobile Equipment Identification number :: A unique number used to identify mobile phones 
+[[imei]]IMEI - International Mobile Equipment Identification number :: A unique number used to identify cellular modems.
 
 [[imei-lock]]IMEI lock :: The practice of strictly associating a SIM to the device with a certain IMEI number
 
 [[imsi]]IMSI - International mobile subscriber identity :: A unique number used to identify a GSM subscriber
 
-[[Inactive]]Inactive SIM :: A SIM that doesn’t have any network activity at a certain time period
+[[Inactive]]Inactive SIM :: A SIM that doesn't have any network activity at a certain time period
 
 [[ipsec]]IPsec :: A protocol suite for Secure Internet Protocol (IP) communications that works by authenticating and encrypting each IP packet of a communication session
 
