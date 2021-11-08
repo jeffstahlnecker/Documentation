@@ -972,7 +972,7 @@ The integration guides for the Data Streamer can be found <<Integration Guides, 
 Data Streams can be managed by using the link:https://portal.emnify.com[EMnify Portal] or by using the link:https://cdn.emnify.net/api/doc/swagger.html[EMnify API].
 
 .Manage Integrations through the EMnify Portal
-image:integration.png[]
+image::integration.png[align="center"]
 
 === Security
 Given the globally distributed nature of the devices, smaller footprints and lack of resources, it can get difficult to individually secure IoT devices.
