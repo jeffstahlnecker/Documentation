@@ -29,24 +29,29 @@ Log into your link:https://portal.emnify.com[EMnify account] and follow these st
 
 . On the dashboard, click on order on *Get your FREE SIMs* 
 +
-image:order-SIM_step1.png[width=500, align="center"]
+.Order SIMs
+image::order-SIM_step1.png[width=500, align="center"]
 . Select the SIM cards of your choice.
 +
-image:order-SIM_step2.png[width=500,align="center"]
+.Select SIM type
+image::order-SIM_step2.png[width=500,align="center"]
 +
 If you select physical SIM cards, you can further choose between 3in1 (no nano SIM) or 4in1 (with nano SIM).
 +
-image:order-SIM_step2.1.png[width=500, align="center"]
+.Select SIM form
+image::order-SIM_step2.1.png[width=500, align="center"]
 +
 If you select the eSIM, you can directly download it into your eSIM compatible phone. You can find the instructions to do so in this link:https://www.emnify.com/en/developer-hub/emnify-developer-esim[blog post].
 
 . For the physical SIM cards, proceed to fill in your shipping details.
 +
-image:order-SIM_step3.png[width=500, align="center"]
+.Shipping details
+image::order-SIM_step3.png[width=500, align="center"]
 
 . Proceed to pay the shipping charges and you will be notified when the SIM cards will be shipped.
 +
-image:order-SIM_step4.png[width=500, align="center"]
+.Payment details
+image::order-SIM_step4.png[width=500, align="center"]
 
 === Registering SIMs
 
@@ -64,19 +69,24 @@ On the dashboard, click the https://portal.emnify.com/sim-registration/single[RE
 +
 [.float-group]
 --
+.Register SIM
 image::register_sims.png[100,500,float="left", align="center"]
+.Register single SIM
 image::register_single_sim.png[100,200,float="center", align="center"]
 --
 
 . Enter the Batch Identification Code (*BIC* 1) in the prompt. You can find the BIC1 on the back of your SIM card.
 +
+.BIC1
 image::BIC.png[100,200,align="center"]
 
 . If you have ordered more than 5 SIM cards, you need to batch register them using the *BIC2*.
 +
 [.float-group]
 --
+.BIC2
 image::register_batch_sim.png[100,200, float="left",align="center"]
+.Registration complete
 image::register_sim_complete.png[100,200,float="center",align="center"]
 --
 NOTE: If you have a developer eSIM, the downloading process of an eSIM automatically registers it in our portal. 
@@ -86,6 +96,7 @@ NOTE: If you have a developer eSIM, the downloading process of an eSIM automatic
 After you register a SIM, you need to create a virtual representation of the device associated with the SIM. To create a device, give it a name and assign a service and coverage policy. 
 // Add link to service and coverage policy
 
+.Create new device
 image::create_device.png[400,200, align="center"]
 
 If you plan on using your device right away, activate it. If you do not plan on using the device right away, select "leave disabled".
@@ -906,7 +917,9 @@ Traditional connectivity providers have a centrally located network core. All da
 
 [.float-group]
 --
+.Traditional operators
 image::traditional_operators.png[200,450, float="left", align="center"]
+.EMnify
 image::regional_breakout.png[200,450, float="left",align="center"]
 --
 .Traditional operators vs EMnify
@@ -918,7 +931,7 @@ The data plane of EMnify’s cloud communication platform is distributed across 
 EMnify’s distributed data plane enables device data to breakout locally, keeping the customer data within the same region. Moreover, it also helps reduce network latency. You can either select a specific breakout region or the network automatically selects the breakout region closest to the device. This can be done on the EMnify Portal -> Service Profile which is applicable to a group of devices. 
 
 .Regional Breakout Setting in the EMnify Portal
-image::regional.png[250, 500, align="center"] 
+image::regional.png[align="center"]
 
 === Data Streamer
 Before each device can send data to an application, it needs to communicate with the mobile network to ensure that the data is allowed to be sent over the network. This communication happens through signaling events which are usually hidden from the application. 
@@ -1052,7 +1065,7 @@ EMnify's communication platform hosts an OpenVPN service that allows to establis
 To use the OpenVPN service the IoT device does not need any private APN, OpenVPN software or dynamic DNS resolution. Through the EMnify SIM, every device will get a static private IP address which can be used to identify and address the device.
 
 .OpenVPN System Overview
-image::OpenVPN.png[OpenVPN System Overview] 
+image::OpenVPN.png[align="center"]
 
 At the same time the IoT device can send data through the private tunnel to the IP address of the remote machine.  
 
@@ -1316,7 +1329,7 @@ Using the Zapier webhook, you can also use triggers from:
 === SIM Life Cycle Management 
 When selling connected devices, it is difficult to determine when devices will be in use and when not. Using SIM cards that cannot align with the device lifecycle incur unnecessary costs.  
  
-EMnify SIM cards do not incur any costs until actively used within a device.  
+EMnify SIM cards do not incur any costs unless activated.  
 The SIMs have 4 different states that can be configured via the EMnify Portal or link:https://cdn.emnify.net/api/doc/swagger.html#/SIMs[REST API]:
  
 * Issued – the SIM is not yet installed nor usable - no monthly charge is applied.  
@@ -1583,11 +1596,11 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 // D
 [[data-package]]Data package :: A data bundle that can be used by all SIM cards until the end of the calendar month
 
-[[data-rx]]Data RX :: Data sent from the device
+[[data-rx]]Data RX :: Data received by the device
 
 [[data-session]]Data session :: A session between opening and closing a data connection to the network
 
-[[data-tx]]Data TX :: Data received by the device
+[[data-tx]]Data TX :: Data transmitted by the device
 
 [[data-usage]]Data Usage (volume) :: The data that has been used by an endpoint
 
@@ -1653,7 +1666,7 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 [[ip-subnet]]IP subnet :: A logical subdivision of an IP network
 // J
 
-[[json]]JSON - JavaScript Object Notation ::  a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate.
+[[json]]JSON - JavaScript Object Notation ::  a lightweight data-interchange format. It is easier for humans to read and write compared to other formats. It is easy for machines to parse and generate.
 // K
 // L
 
