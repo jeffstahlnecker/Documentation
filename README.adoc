@@ -1552,7 +1552,7 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 
 [[APN]]APN - Access point name ::  A gateway between a GSM, GPRS, 3G or 4G mobile network and another computer network, usually the Public Internet. The APN needs to be configured on the device. For EMnify it is `em` or `emnify`.
 
-[[app-token]]Application Token :: A unique identification key used to authenticate towards EMnify's APIs. Also used when authenticating towards the OpenVPN servce.
+[[app-token]]Application Token :: A unique identification key used to authenticate EMnify's APIs. Also used when authenticating the OpenVPN service.
 
 [[a2p-sms]]A2P SMS - Application–to–peer SMS :: SMS between an application and a device or vice-a-versa
 
