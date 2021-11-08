@@ -21,7 +21,7 @@ To begin developing your IoT solutions with EMnify, you will need an EMnify acco
 
 === Order a free evaluation SIM package
 
-You can order your free Evaluation SIM package on the EMnify Portal with which you can test all EMnify services. The 3 physical SIM cards can be delivered already at no charge to many destinations, for some we have to charge a small shipment fee.
+You can order your free Evaluation SIM package on the EMnify Portal with which you can test all EMnify services. Currently, the 3 physical SIM cards can be delivered to many destinations at no charge. For other destinations,  we do charge a small shipping fee. 
 
 To get started immediately, you can download the eSIM for your smartphone or eSIM enabled tablet for free.
 
