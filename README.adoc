@@ -1461,7 +1461,7 @@ You can perform the following SMS related operations using the `endpoint` API.
 
 . List sent and received SMS `GET /api/v1/endpoint/{endpoint_id}/sms`
 . Send SMS to and endpoint `POST /api/v1/endpoint/{endpoint_id}/sms`
-. Get details about an endpoitn SMS `GET /api/v1/endpoint/{endpoint_id}/sms/{sms_id}`
+. Get details about an endpoint SMS `GET /api/v1/endpoint/{endpoint_id}/sms/{sms_id}`
 . Cancel a buffered SMS `DELETE /api/v1/endpoint/{endpoint_id}/sms/{sms_id}`
 
 Example:  Send SMS to an Endpoint
