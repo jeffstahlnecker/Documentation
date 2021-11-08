@@ -611,7 +611,7 @@ The traditional, pluggable SIM card comes in 4 different form factors:
 
 EMnify offers pre-punched SIM cards in different combinations  2-in-1 (1FF and 2FF), 3-in-1 (1FF,2FF,3FF) and 4-in-1 (1FF,2FF,3FF,4FF). Especially in use cases where the devices are moving it is advisable to use a SIM which exactly fits the device and does not have another smaller form factor punched out. The SIMs are then more durable and the contact to the device is more firmly.  
 
-Another form factor is MFF2 also called embedded SIM with the dimension 6 x 5 x 0.75-0.82mm. The embedded SIMs are soldered onto a device and not removable.
+Another form factor is MFF2 also called embedded SIM with the dimension 6 x 5 x 0.75-0.82mm. The embedded SIMs are soldered onto a device and are not removable.
 
 Note: Often the term eSIM is used for the MFF2 factor. Nevertheless, the eSIM term is also used for SIMs whose operator profiles can be updated over the air. These eUICC based eSIMs can come in any of the described form factors, and not just MFF2. While eSIM/eUICC is widely adopted for consumer smartphone and watches - for IoT use cases (where the profile cannot be download via a screen or QR reader) the commercial and deployment model of the required infrastructure prohibits an easy change of operator profiles and is therefore not widely adopted.    
 
