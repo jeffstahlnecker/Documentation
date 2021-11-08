@@ -52,7 +52,7 @@ image:order-SIM_step4.png[width=500, align="center"]
 
 Once you get your EMnify SIMs, you need to register them before you can start using them. 
 
-. If you ordered the 3 orange evaluation SIM cards, you will register them one by one. Scan the QR code printed on the SIM card with your QR code scanner app and follow the link to associate the SIM with your account. The link includes the *BIC* (Batch Identification Code) of the card.
+. If you have ordered the 3 orange evaluation SIM cards, you will have to register them one by one. Scan the QR code printed on the SIM card with your QR code scanner app and follow the link to associate the SIM with your account. The link includes the *BIC* (Batch Identification Code) of the card.
 +
 .Scan QR Code
 image::QRScan.png[width=500,float="center",align="center"]
