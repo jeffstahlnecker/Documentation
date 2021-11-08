@@ -1569,7 +1569,7 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 [[BTS]]BTS - Base Transceiver Station :: 
 // C
 
-[[callback-url]]Callback URL :: URL that will be called by a service to and receive data related to an event that caused this action.
+[[callback-url]]Callback URL :: URL that will be called by a service to send and receive data related to an event that caused this action.
 
 [[ca-nw]]Carrier-agnostic network :: A network that provides routing consistency regardless of the roaming mobile network that the SIM is connected to.
 
