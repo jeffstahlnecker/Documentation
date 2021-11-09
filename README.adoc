@@ -918,9 +918,9 @@ Traditional connectivity providers have a centrally located network core. All da
 [.float-group]
 --
 .Traditional operators
-image::traditional_operators.png[200,450, float="left", align="center"]
+image::traditional_operators.png[200,450,align="center"]
 .EMnify
-image::regional_breakout.png[200,450, float="left",align="center"]
+image::regional_breakout.png[200,450,align="center"]
 --
 .Traditional operators vs EMnify
 
