@@ -1,0 +1,3991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.16">
+<title>Cellular IoT</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;-webkit-tap-highlight-color:transparent}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_cellular_iot">Cellular IoT</a></li>
+<li><a href="#_quickstart">Quickstart</a>
+<ul class="sectlevel2">
+<li><a href="#_order_a_free_evaluation_sim_package">Order a free evaluation SIM package</a></li>
+<li><a href="#_registering_sims">Registering SIMs</a></li>
+<li><a href="#_creating_a_device">Creating a Device</a></li>
+<li><a href="#_getting_the_first_device_online">Getting the first device online</a></li>
+<li><a href="#_troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li><a href="#_service_stack_overview">Service Stack Overview</a></li>
+<li><a href="#_services">Services</a>
+<ul class="sectlevel2">
+<li><a href="#_global_iot_sim">Global IoT SIM</a></li>
+<li><a href="#_global_iot_network">Global IoT Network</a></li>
+<li><a href="#_iot_cloud_communication_platform">IoT Cloud Communication Platform</a></li>
+<li><a href="#_data_streamer">Data Streamer</a></li>
+<li><a href="#_security">Security</a></li>
+<li><a href="#_cloud_connect">Cloud Connect</a></li>
+<li><a href="#_openvpn">OpenVPN</a></li>
+<li><a href="#_sms">SMS</a></li>
+<li><a href="#_user_management">User Management</a></li>
+<li><a href="#_business_intelligence_and_analytics_reports">Business Intelligence and Analytics Reports</a></li>
+<li><a href="#_no_code_workflow_automation">No-Code Workflow Automation</a></li>
+<li><a href="#_sim_life_cycle_management">SIM Life Cycle Management</a></li>
+<li><a href="#_endpoint_management_group_policies">Endpoint Management &amp; Group Policies</a></li>
+</ul>
+</li>
+<li><a href="#_rest_api">REST API</a>
+<ul class="sectlevel2">
+<li><a href="#_api_authentication">API Authentication</a></li>
+<li><a href="#_sending_and_receiving_sms">Sending and receiving SMS</a></li>
+<li><a href="#_code_samples">Code Samples</a></li>
+</ul>
+</li>
+<li><a href="#_integration_guides">Integration Guides</a>
+<ul class="sectlevel2">
+<li><a href="#_amazon_web_services">Amazon Web Services</a></li>
+<li><a href="#_microsoft_azure">Microsoft Azure</a></li>
+<li><a href="#_google_cloud">Google Cloud</a></li>
+<li><a href="#_webhooks">Webhooks</a></li>
+<li><a href="#_more_integrations">More Integrations</a></li>
+</ul>
+</li>
+<li><a href="#_glossary">Glossary</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_cellular_iot">Cellular IoT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cellular is the most used wireless network technology for connecting things. It is superior to any other wireless technology in terms of network availability and security. Using cellular connectivity improves end customer experience by instantly delivering data at the customer site without any integration. This makes cellular connectivity not only ideal for mobile use cases but also for stationary devices.</p>
+</div>
+<div class="paragraph">
+<p>EMnify specializes in businesses utilizing cellular connectivity for the Internet of Things. EMnify has developed a communication platform which aggregates and enriches traditional cellular connectivity so that businesses can easily connect, integrate, operate, and secure hundreds and thousands of devices with a single global IoT SIM card.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/Cellular_IoT.png" alt="Cellular IoT">
+</div>
+<div class="title">EMnify Communication Platform</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quickstart">Quickstart</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To begin developing your IoT solutions with EMnify, you will need an EMnify account. <a href="https://portal.emnify.com/sign/up?utm_source=dev-hub">Sign up</a> for free to a 60-day trial to use all functionalities.</p>
+</div>
+<div class="sect2">
+<h3 id="_order_a_free_evaluation_sim_package">Order a free evaluation SIM package</h3>
+<div class="paragraph">
+<p>You can order your free Evaluation SIM package on the EMnify Portal with which you can test all EMnify services. Currently, the 3 physical SIM cards can be delivered to many destinations at no charge. For other destinations,  we do charge a small shipping fee.</p>
+</div>
+<div class="paragraph">
+<p>To get started immediately, you can download the eSIM for your smartphone or eSIM enabled tablet for free.</p>
+</div>
+<div class="paragraph">
+<p>Log into your <a href="https://portal.emnify.com">EMnify account</a> and follow these steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>On the dashboard, click on order on <strong>Get your FREE SIMs</strong></p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/order-SIM_step1.png" alt="order SIM step1" width="500">
+</div>
+<div class="title">Order SIMs</div>
+</div>
+</li>
+<li>
+<p>Select the SIM cards of your choice.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/order-SIM_step2.png" alt="order SIM step2" width="500">
+</div>
+<div class="title">Select SIM type</div>
+</div>
+<div class="paragraph">
+<p>If you select physical SIM cards, you can further choose between 3in1 (no nano SIM) or 4in1 (with nano SIM).</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/order-SIM_step2.1.png" alt="order SIM step2.1" width="500">
+</div>
+<div class="title">Select SIM form</div>
+</div>
+<div class="paragraph">
+<p>If you select the eSIM, you can directly download it into your eSIM compatible phone. You can find the instructions to do so in this <a href="https://www.emnify.com/en/developer-hub/emnify-developer-esim">blog post</a>.</p>
+</div>
+</li>
+<li>
+<p>For the physical SIM cards, proceed to fill in your shipping details.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/order-SIM_step3.png" alt="order SIM step3" width="500">
+</div>
+<div class="title">Shipping details</div>
+</div>
+</li>
+<li>
+<p>Proceed to pay the shipping charges and you will be notified when the SIM cards will be shipped.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/order-SIM_step4.png" alt="order SIM step4" width="500">
+</div>
+<div class="title">Payment details</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_registering_sims">Registering SIMs</h3>
+<div class="paragraph">
+<p>Once you get your EMnify SIMs, you need to register them before you can start using them.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If you have ordered the 3 orange evaluation SIM cards, you will have to register them one by one. Scan the QR code printed on the SIM card with your QR code scanner app and follow the link to associate the SIM with your account. The link includes the <strong>BIC</strong> (Batch Identification Code) of the card.</p>
+<div class="imageblock center text-center">
+<div class="content">
+<img src="assets/QRScan.png" alt="QRScan" width="500">
+</div>
+<div class="title">Scan QR Code</div>
+</div>
+</li>
+<li>
+<p>If you do not have a QR reader or want to do this on a desktop PC without a camera, register by manually entering the BIC.</p>
+<div class="paragraph">
+<p>Login to your <a href="https://portal.emnify.com?utm_source=dev-hub">EMnify account</a>.
+On the dashboard, click the <a href="https://portal.emnify.com/sim-registration/single">REGISTER</a> link in the "Register your SIM cards" section.</p>
+</div>
+<div class="openblock float-group">
+<div class="content">
+<div class="imageblock left text-center">
+<div class="content">
+<img src="assets/register_sims.png" alt="100" width="500">
+</div>
+<div class="title">Register SIM</div>
+</div>
+<div class="imageblock center text-center">
+<div class="content">
+<img src="assets/register_single_sim.png" alt="100" width="200">
+</div>
+<div class="title">Register single SIM</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Enter the Batch Identification Code (<strong>BIC</strong> 1) in the prompt. You can find the BIC1 on the back of your SIM card.</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/BIC.png" alt="100" width="200">
+</div>
+<div class="title">BIC1</div>
+</div>
+</li>
+<li>
+<p>If you have ordered more than 5 SIM cards, you need to batch register them using the <strong>BIC2</strong>.</p>
+<div class="openblock float-group">
+<div class="content">
+<div class="imageblock left text-center">
+<div class="content">
+<img src="assets/register_batch_sim.png" alt="100" width="200">
+</div>
+<div class="title">BIC2</div>
+</div>
+<div class="imageblock center text-center">
+<div class="content">
+<img src="assets/register_sim_complete.png" alt="100" width="200">
+</div>
+<div class="title">Registration complete</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/note.png" alt="Note">
+</td>
+<td class="content">
+If you have a developer eSIM, the downloading process of an eSIM automatically registers it in our portal.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_creating_a_device">Creating a Device</h3>
+<div class="paragraph">
+<p>After you register a SIM, you need to create a virtual representation of the device associated with the SIM. To create a device, give it a name and assign a service and coverage policy.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/create_device.png" alt="400" width="200">
+</div>
+<div class="title">Create new device</div>
+</div>
+<div class="paragraph">
+<p>If you plan on using your device right away, activate it. If you do not plan on using the device right away, select "leave disabled".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_getting_the_first_device_online">Getting the first device online</h3>
+<div class="paragraph">
+<p>Any device equipped with a SIM card requires an APN (Access Point Name) configuration to establish a data session. Some devices and networks auto-detect the APN but for most cases you need to configure it.</p>
+</div>
+<div class="paragraph">
+<p><a href="#APN">APN</a>: <code>em</code> (or alternatively use <code>emnify</code>)</p>
+</div>
+<div class="paragraph">
+<p>Further, some Android / iOS-based devices and cellular modules also need to be configured to allow for roaming.</p>
+</div>
+<div class="paragraph">
+<p>Select your device type and model below, to see how to configure the APN.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_android">Android</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_ios_devices">iOS devices</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_cellular_modules">Cellular modules</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_gps_tracker">GPS tracker</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_industrial_routers">Industrial Routers</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_android">Android</h4>
+<div class="paragraph">
+<p>When setting up an Android device with an EMnify IoT SIM, you need to follow these 4 steps after inserting the SIM</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to Settings &#8594; Mobile Network</p>
+</li>
+<li>
+<p>Go to Mobile data</p>
+</li>
+<li>
+<p>Enable roaming, and go to Access Point Names (APN)</p>
+</li>
+<li>
+<p>Create a new APN with any name and configure the APN with "em"</p>
+</li>
+</ol>
+</div>
+<div class="openblock float-group center">
+<div class="content">
+<div class="imageblock left">
+<div class="content">
+<img src="assets/Android_01_Settings.png" alt="400" width="200">
+</div>
+<div class="title">Settings</div>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="assets/Android_02_Mobile_Network.png" alt="400" width="200">
+</div>
+<div class="title">Mobile Network</div>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="assets/Android_03_Mobile_Data.png" alt="400" width="200">
+</div>
+<div class="title">Mobile Data</div>
+</div>
+</div>
+</div>
+<div class="openblock float-group">
+<div class="content">
+<div class="imageblock left">
+<div class="content">
+<img src="assets/Android_04_Create_Access_Point_name.png" alt="400" width="200">
+</div>
+<div class="title">Access Point Name</div>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="assets/Android_05_Configure_APN.png" alt="400" width="200">
+</div>
+<div class="title">Set APN</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ios_devices">iOS devices</h4>
+<div class="paragraph">
+<p>When setting up an iOS device with an EMnify IoT SIM, you need to follow 4 steps after inserting the SIM</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to Settings &#8594; Mobile Data</p>
+</li>
+<li>
+<p>Click on the EMnify Data Plan (first one if regular SIM or secondary in case of eSIM)</p>
+</li>
+<li>
+<p>Enable Roaming and Click on Mobile Data Network</p>
+</li>
+<li>
+<p>Set APN to em - leave anything else blank</p>
+</li>
+</ol>
+</div>
+<div class="openblock float-group">
+<div class="content">
+<div class="imageblock left left">
+<div class="content">
+<img src="assets/iOS_01_Settings.png" alt="400" width="200">
+</div>
+<div class="title">Settings</div>
+</div>
+<div class="imageblock left left">
+<div class="content">
+<img src="assets/iOS_02_Mobile_Data.png" alt="400" width="200">
+</div>
+<div class="title">Mobile Data</div>
+</div>
+<div class="imageblock left left">
+<div class="content">
+<img src="assets/iOS_03_Mobile_Network.png" alt="400" width="200">
+</div>
+<div class="title">Mobile Data Network</div>
+</div>
+<div class="imageblock left left">
+<div class="content">
+<img src="assets/iOS_04_APN.png" alt="400" width="200">
+</div>
+<div class="title">Set APN</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cellular_modules">Cellular modules</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_quectel_cellular_iot_modules">Quectel</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_u_blox_cellular_iot_modules">u-Blox</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_cellular_iot_modules">Fibocom</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_cellular_iot_modules">Telit</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_cellular_iot_modules">Sierra Wireless</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_cellular_iot_modules">Cinterion/Gemalto/Thales</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_cellular_iot_modules">SIMcom</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_general_cellular_iot_modules">Sequans</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_quectel_cellular_iot_modules">Quectel cellular IoT modules</h5>
+<div class="paragraph">
+<p><em>Applies to all Quectel modules: BG95, BG96, EG25, EG91, EG95, EC21, EC25, M65, M66, M95, MC60, BG77, BG600L</em></p>
+</div>
+<div class="paragraph">
+<p>With Quectel modules the APN can be set with the 3GPP standard command AT+CGDCONT</p>
+</div>
+<div class="paragraph">
+<p><code>AT+CGDCONT=1,"IP","em",,</code></p>
+</div>
+<div class="paragraph">
+<p>Quectel also utilizes a vendor specific Command AT+QICSGP</p>
+</div>
+<div class="paragraph">
+<p><code>AT+QICSGP=1,1,"em","","",1</code></p>
+</div>
+<div class="paragraph">
+<p>According to <a href="https://www.quectel.com/faqs/12-8-what-is-the-difference-between-cgdcont-and-qicsgp/">Quectel</a> the command AT+QICSGP shall be used when the internal TCP/UDP stack should be used – and it also allows to configure which bearer (CSD or GPRS) is used. GPRS must be used.</p>
+</div>
+<div class="paragraph">
+<p>For managing roaming, Quectel also introduced the AT+QCFG command. The suggested setting is:</p>
+</div>
+<div class="paragraph">
+<p><code>AT+QCFG="roamservice",2,1</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/note.png" alt="Note">
+</td>
+<td class="content">
+Check your Quectel module AT command guide for more information.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_u_blox_cellular_iot_modules">u-Blox cellular IoT modules</h5>
+<div class="paragraph">
+<p>u-Blox supports the standard 3GPP command to set APNs via AT+CGDCONT</p>
+</div>
+<div class="paragraph">
+<p><code>AT+CGDCONT=1,"IP","em",,</code></p>
+</div>
+<div class="paragraph">
+<p>u-Blox also supports a vendor specific command to configure the APN for the initial EPS bearer.</p>
+</div>
+<div class="paragraph">
+<p><code>AT+UCGDFLT=1,"IP","em"</code></p>
+</div>
+<div class="paragraph">
+<p>For roaming configuration, u-blox modules utilize a vendor specific <code>AT+UDCONF</code> command. This enables automatic search in case the device is not able to attach to a specific network.</p>
+</div>
+<div class="paragraph">
+<p><code>AT+UDCONF=20,2</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/note.png" alt="Note">
+</td>
+<td class="content">
+Check your u-Blox module AT command guide for more information.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_general_cellular_iot_modules">General cellular IoT modules</h5>
+<div class="paragraph">
+<p><em>Applies to cellular module vendors: Fibocom, Telit, Sierra Wireless, SIMcom, Cinterion, Gemalto, Thales, Sequans</em></p>
+</div>
+<div class="paragraph">
+<p>The commands for configuring the APN settings are 3GPP standardized and all major cellular module manufacturers support these commands.
+The <code>AT+CGDCONT</code> command is used to set the APN.</p>
+</div>
+<div class="paragraph">
+<p><code>AT+CGDCONT=1,"IP","em",,</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/note.png" alt="Note">
+</td>
+<td class="content">
+Check your manufacturer&#8217;s AT command guide for further information or read
+<a href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1515">3GPP Technical Specification 27.007</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gps_tracker">GPS tracker</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_teltonika_gps_apn_configuration">Teltonika</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_ruptela_gps_apn_configuration">Ruptela</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_concox_gps_apn_configuration">Concox</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_coban_gps_apn_configuration">Coban</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_meitrack_gps_apn_configuration">Meitrack</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_elinz_gps_apn_configuration">Elinz</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_reachfar_gps_apn_configuration">Reachfar</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_queclink_gps_apn_configuration">Queclink </a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_bitrek_gps_apn_configuration">Bitrek</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/tip.png" alt="Tip">
+</td>
+<td class="content">
+For other GPS vendors, please consult the device manual and configure the APN to <code>em</code> or <code>emnify</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_teltonika_gps_apn_configuration">Teltonika GPS APN configuration</h5>
+<div class="paragraph">
+<p><em>Applies to FMB110, FMB120, FM130, FMB140, FMC001, FMM001, FMC125, FMC130, FMC640, FMM125, FMM130, FMM640, FMP100, FMB001, FMB002, FMB003, FMB010</em></p>
+</div>
+<div class="paragraph">
+<p>Source: <a href="https://wiki.teltonika-gps.com/view/Universal_Device_Test_Guide_V3.2">Teltonika GPS documentation</a></p>
+</div>
+<div class="paragraph">
+<p>Configuring the APN for Teltonika GPS trackers can be done through</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Teltonika Configurator over a USB, Bluetooth connection</p>
+</li>
+<li>
+<p>Via the SMS console through the EMnify Portal (most simple)</p>
+</li>
+<li>
+<p>Via the EMnify SMS API or Zapier Integration (when automating the configuration)</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/note.png" alt="Note">
+</td>
+<td class="content">
+Newer Teltonika GPS versions automatically detect the EMnify APN setting
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status <code>Attached</code> in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is automtically detected or manually set up.</p>
+</div>
+<div class="paragraph">
+<p>The SMS command to set the APN is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  setparam 2001:em</pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/important.png" alt="Important">
+</td>
+<td class="content">
+Please note the two leading spaces
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ruptela_gps_apn_configuration">Ruptela GPS APN configuration</h5>
+<div class="paragraph">
+<p><em>Applies to HCV5, LCV5, Pro5, Trace5/NA, FM-Tco4 HCV/HCV 3G, FM-Tco4 LCV/LCV 3G, FM-Pro4/Pro4 3G, FM-Eco4/4+, FM-Eco4 light/light+/3G, FM-Eco4 S Series, FM-Eco4 T Series, FM-Plug4</em></p>
+</div>
+<div class="paragraph">
+<p>Source: <a href="https://doc.ruptela.lt/display/AB/Tracking+devices">Ruptela Documentation</a></p>
+</div>
+<div class="paragraph">
+<p>Configuring the APN for Ruptela GPS trackers can be done through</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ruptela Device Center over a USB, Bluetooth connection</p>
+</li>
+<li>
+<p>Via the SMS console through the EMnify Portal (most simple)</p>
+</li>
+<li>
+<p>Via the EMnify SMS API or Zapier Integration (when automating the configuration)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status <code>Attached</code> in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is automtically detected or manually set up.</p>
+</div>
+<div class="paragraph">
+<p>The SMS command to set the APN for Ruptela GPS trackers is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[SMSpassword] setconnection em</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>[SMSpassword]</code> can be set up in the Ruptela device center. If it is not set, then the password can be omitted, and the command is only</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>setconnection em</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_concox_gps_apn_configuration">Concox GPS APN configuration</h5>
+<div class="paragraph">
+<p><em>Applies to JM-VL01, JM-VL02, JM-BL11, JM-VL03, JM-VL04, JM-LL01, JM-LL02, JM-LL301, X3, Wetrack140, Wetrack2, Wetrack lite, Bl10, GT06N, OB22, ET25, HVT001, EG02, JM-VG01U, JM-VG02U, JM-VG04Q, AT1-AT6, CT10, JM-LG01, JM-LG05, TBT100</em></p>
+</div>
+<div class="paragraph">
+<p>Configuring the APN for Concox GPS trackers can be done</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Via the SMS console through the EMnify Portal (most simple)</p>
+</li>
+<li>
+<p>Via the EMnify SMS API or Zapier Integration (when automating the configuration)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status <code>Attached</code> in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.</p>
+</div>
+<div class="paragraph">
+<p>The SMS command to set the APN for Concox GPS trackers is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>APN em#</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For some Concox models (e.g., TR02) the password (default 666666) needs to be sent with the command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>APN,666666,em#</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_coban_gps_apn_configuration">Coban GPS APN configuration</h5>
+<div class="paragraph">
+<p><em>Applies to Coban TK104, GPS303X, GPS103X, GPS306X, LK209, &#8230;&#8203;</em></p>
+</div>
+<div class="paragraph">
+<p>Configuring the APN for Coban GPS trackers can be done</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Via the SMS console through the EMnify Portal (most simple)</p>
+</li>
+<li>
+<p>Via the EMnify SMS API or Zapier Integration (when automating the configuration)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status <code>Attached</code> in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up and the GPRS service is activated.</p>
+</div>
+<div class="paragraph">
+<p>To turn on GPRS</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gprs[your_password]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The SMS command to set the APN for Coban GPS trackers is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>APN[your_password] em</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The default password is 123456. There are no spaces between <code>gprs</code>/<code>APN</code> and the password, thus by default</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>APN123456 em</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_meitrack_gps_apn_configuration">Meitrack GPS APN configuration</h5>
+<div class="paragraph">
+<p><em>Applies to P88L, P99, MT90, T663L, T333, T366, T399, TS299L, TC68L, TC68SG, T622, K211G, T355G</em></p>
+</div>
+<div class="paragraph">
+<p>Configuring the APN for Meitrack GPS trackers can be done</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Via the Meitrack manager</p>
+</li>
+<li>
+<p>Via the SMS console through the EMnify Portal (most simple)</p>
+</li>
+<li>
+<p>Via the EMnify SMS API or Zapier Integration (when automating the configuration)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status <code>Attached</code> in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.</p>
+</div>
+<div class="paragraph">
+<p>The SMS command to set the APN for Meitrack GPS trackers is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>0000,A81,em,,</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where 0000 is the default SMS password.</p>
+</div>
+<div class="paragraph">
+<p>On other devices the APN setting is done via the A21 command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>666888,A21,1,server.meigps.com,8800,em,,</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where 666888 is the default superpassword (not the SMS password).</p>
+</div>
+<div class="paragraph">
+<p>Both SMS and Superpassword can be changed and would then need to be replaced in the SMS command.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_elinz_gps_apn_configuration">Elinz GPS APN configuration</h5>
+<div class="paragraph">
+<p>Configuring the APN for Elinz GPS trackers can be done</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Via the SMS console through the EMnify Portal (most simple)</p>
+</li>
+<li>
+<p>Via the EMnify SMS API or Zapier Integration (when automating the configuration)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status <code>Attached</code> in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.</p>
+</div>
+<div class="paragraph">
+<p>The SMS command to set the APN for Elinz GPS trackers is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>APN,em#</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Other models have a slightly different APN configuration</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>apn[password] em</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Default password 123456.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_reachfar_gps_apn_configuration">Reachfar GPS APN configuration</h5>
+<div class="paragraph">
+<p>Configuring the APN for Reachfar GPS trackers can be done</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Via the SMS console through the EMnify Portal (simplest way)</p>
+</li>
+<li>
+<p>Via the EMnify SMS API or Zapier Integration (when automating the configuration)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status <code>Attached</code> in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.</p>
+</div>
+<div class="paragraph">
+<p><em>Applies to RF-V6+, RF-V8, RF-V8S, RF-V13, RF-V16, RF-V18, RF-V20</em></p>
+</div>
+<div class="paragraph">
+<p>The following two SMS commands should be sent</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>123456,sos1,[yourphonenumber]#</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to bind the tracker to a specific phone number e.g. 49173871878 (instead of +49173871878). 123456 is the default SMS password.</p>
+</div>
+<div class="paragraph">
+<p>The SMS command to set the APN is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>apn,em,plmn,90143#</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>123456 is the default password. After setting the APN the GPS tracker needs to be rebooted.</p>
+</div>
+<div class="paragraph">
+<p><em>Applies to RF-V26, RF-V26+, RF-V28, RF-V30, RF-V32, RF-V34, RF-V36, RF-V36, RF-V38, RF-V40, RF-V42, RF-V43，RF-V44, RF-V46</em></p>
+</div>
+<div class="paragraph">
+<p>The following two SMS commands should be sent</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>pw,123456,center,[yourphonenumber]#</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to bind the tracker to a specific phone number e.g. 49173871878 (instead of +49173871878). 123456 is the default SMS password.</p>
+</div>
+<div class="paragraph">
+<p>The SMS command to set the APN is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>apn,em# // Send this SMS from the phone</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_queclink_gps_apn_configuration">Queclink GPS APN configuration</h5>
+<div class="paragraph">
+<p>Configuring the APN for Queclink GPS trackers can be done</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Via the SMS console through the EMnify Portal (most simple)</p>
+</li>
+<li>
+<p>Via the EMnify SMS API or Zapier Integration (when automating the configuration)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status <code>Attached</code> in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.</p>
+</div>
+<div class="paragraph">
+<p>The SMS command to set the APN for Queclink GPS trackers is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>AT+GTBSI=[password],em,,,,,,,0002$</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The default password is the device model, e.g., <code>gl200</code></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_bitrek_gps_apn_configuration">Bitrek GPS APN configuration</h5>
+<div class="paragraph">
+<p>Configuring the APN for Bitrek GPS trackers can be done</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Via the SMS console through the EMnify Portal (most simple)</p>
+</li>
+<li>
+<p>Via the EMnify SMS API or Zapier Integration (when automating the configuration)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When the GPS tracker is turned on for the first time after the SIM is installed, it shows the status <code>Attached</code> in the EMnify Portal. At this point the device can receive SMS but not establish a data session unless the APN is set up.</p>
+</div>
+<div class="paragraph">
+<p>The SMS command to set the APN for Bitrek GPS trackers is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>setparam 0242 em</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Bitrek GPS tracker also utilizes a roaming command <code>setparam 0917</code> together with a list of enabled networks <code>setparam 0020-0099</code>. The following SMS commands should be sent</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>setparam 0917 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to enable roaming in all networks as defined in the next SMS</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>setparam 0020 &lt;MNC&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>&lt;MNC&gt;</code> is the mobile network code on which the device shall roam</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>setparam 0021 &lt;MNC&gt;
+....
+setparam 0099 &lt;MNC&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All commands can be concatenated into one SMS (max. 160 characters) by using <code>;</code> as a delimiter.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>setparam 0242 em; setparam 0917 1; setparam 0020 &lt;MNC&gt;; .....</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_industrial_routers">Industrial Routers</h4>
+<div class="sect4">
+<h5 id="_teltonika_routers">Teltonika Routers</h5>
+<div class="paragraph">
+<p><em>Applies to RUT240, RUT950, RUT955, RUTX09, RUTX11, RUTX12, RUTX14, RUTXR1, RUT360</em></p>
+</div>
+<div class="paragraph">
+<p>Newer firmware version of the Teltonika Routers should automatically detect the EMnify APN. In case the APN is not correctly detected, it can be configured via 3 methods</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>With the Teltonika WebUI over Wifi, Ethernet</p>
+</li>
+<li>
+<p>Via the SMS console through the EMnify Portal (most simple)</p>
+</li>
+<li>
+<p>Via the EMnify SMS API or Zapier Integration (when automating the configuration)</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="1">
+<li>
+<p>APN configuration through the Teltonika Router WebUI</p>
+<div class="paragraph">
+<p>Connect your PC through the router&#8217;s Wi-Fi using the credentials provided on the device.
+Open the Teltonika WebUI <a href="http://192.168.1.1" class="bare">http://192.168.1.1</a> and go to the Mobile configuration. Type in <code>em</code> in APN – there is no PIN configured on the SIM and no APN username or password required.</p>
+</div>
+</li>
+<li>
+<p>Teltonika Networks Router APN configuration via SMS console / API or Zapier</p>
+<div class="paragraph">
+<p>Source: <a href="https://wiki.teltonika-networks.com/view/SMS_Commands">Teltonika Documentation</a></p>
+</div>
+<div class="paragraph">
+<p>Make sure that the router is powered on, and the SIM card is inserted and activated. In the EMnify Portal the device should show as <code>Attached</code>.</p>
+</div>
+<div class="paragraph">
+<p>The following SMS command should be sent to the device</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cellular apn=em</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_troubleshooting">Troubleshooting</h3>
+<div class="paragraph">
+<p>When you experience issues while connecting your device for the first time, there are several common patterns that can be identified by looking at the connected device section in the portal.
+If you do not have an entry in the connected devices - go back to <a href="#_creating_a_device">Creating a Device</a> and assign the SIM.</p>
+</div>
+<div class="paragraph">
+<p>The device will show different icons that indicate the status (<code>Offline</code>, <code>Attached</code>, <code>Online</code>, <code>Blocked</code>). If no icon is visible, assign a SIM to the device.</p>
+</div>
+<div class="paragraph">
+<p>For most of the troubleshooting, a look at Details &#8594; Events is necessary.
+A usual event flow should look like this:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Update Location - The SIM card has (re)authenticated with a different network element. If successful, the device will show as <code>Attached</code> and can already receive SMS.</p>
+</li>
+<li>
+<p>Update GPRS Location - The SIM card has successfully registered for data sessions with a different network element.</p>
+</li>
+<li>
+<p>Create PDP context - The device has started transfering data. The device will show <code>Online</code> as long as there is no 'delete PDP context' event.</p>
+</li>
+<li>
+<p>Delete PDP context - The device has ended a data transfer. The event details will also show the data transmitted and the device status will be set to <code>Offline</code></p>
+</li>
+</ol>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/event_flow.png" alt="300" width="500">
+</div>
+<div class="title">Event Flow</div>
+</div>
+<div class="paragraph">
+<p>There can be many location updates before or in between the data sessions.</p>
+</div>
+<div class="sect3">
+<h4 id="_the_device_is_offline"><span class="icon"><img src="assets/offline.png" alt="offline" width="20"></span> The device is offline</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on Details &#8594; Ensure that the device is enabled</p>
+</li>
+<li>
+<p>Click on Details &#8594; Events. Validate if there is any location update event created and rejected. The reason should indicate the resolution to the problem.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If there is no location update event:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ensure the device is powered on, and searches for a network</p>
+</li>
+<li>
+<p>Ensure that the device is in reception for any supported network</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_device_shows_attached_but_does_not_transmit_data"><span class="icon"><img src="assets/att.png" alt="att" width="20"></span> The device shows attached but does not transmit data</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Ensure that the APN is correctly set to <code>em</code> or alternatively use <code>emnify</code> as some devices do not support short APNs. Guides for different devices can be found <a href="#_getting_the_first_device_online">here</a></p>
+</li>
+<li>
+<p>In case you have changed your policy settings, make sure the radio types (2G,3G,4G) and data access is activated.</p>
+</li>
+<li>
+<p>Ensure mobile data is enabled, as well as international roaming is allowed</p>
+</li>
+<li>
+<p>Click on Details &#8594; Events. Validate if there was any PDP create event that was rejected. The reason and resolution should be in the event description.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/note.png" alt="Note">
+</td>
+<td class="content">
+The <code>Attached</code> status does not necessarily mean that the device is powered on. If the device first attaches to a network and then powers off - there is no information towards the EMnify network that would allow to detect this.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_the_device_shows_online_but_does_not_transmit_data"><span class="icon"><img src="assets/online.png" alt="online" width="20"></span> The device shows online but does not transmit data</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Ensure mobile data is enabled, as well as international roaming is allowed</p>
+</li>
+<li>
+<p>Check under Details &#8594; Events if you see <code>Warn</code> or <code>Error</code> in the Severity field, it indicates that there is a problem.</p>
+</li>
+<li>
+<p>For NB-IoT and LTE-M this behavior can happen when the device automatically connects to a network. Specify the network that should be used with the <code>AT+COPS</code> command. This way the device will not attach to an unsupported network. Check the EMnify <a href="https://www.emnify.com/nb-iot-coverage">NB-IoT coverage</a> and
+<a href="https://www.emnify.com/lte-m-coverage">LTE-M network coverage</a> lists.</p>
+</li>
+<li>
+<p>Ensure that your data destination and DNS server is not blocked for the device. EMnify by default assigns Google&#8217;s 8.8.8.8 DNS server, if your device does not specify a DNS.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_other_general_troubleshooting_tips">Other general troubleshooting tips</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>After making the configuration changes, make sure they are correctly applied on the device (e.g., with a reboot)</p>
+</li>
+<li>
+<p>Clicking reset connectivity <span class="icon"><img src="assets/reset.png" alt="reset" width="20"></span> on Connected Devices, can also reset the network state and allow your device to reattach</p>
+</li>
+<li>
+<p>The issue may only be present with one network or in a specific location (e.g., due to high interference for this network). You can use the 'Operator Blacklist' to block the network and force the device to connect to a different network.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_service_stack_overview">Service Stack Overview</h2>
+<div class="sectionbody">
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/Service_Stack.png" alt="350" width="700">
+</div>
+<div class="title">EMnify Service Stack</div>
+</div>
+<div class="paragraph">
+<p>EMnify offers the following high-level products and services:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A programmable <a href="#_global_iot_sim">Global IoT SIM</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Including an <a href="#_esim">eSIM</a> for quick evaluation</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A reliable <a href="#_global_iot_network">Global IoT Network</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>With <a href="#_mobile_network_aggregation">Mobile Network Aggregation</a></p>
+</li>
+<li>
+<p>Access to all <a href="#_radio_access_types">Radio Access Types</a> including IoT optimized <a href="#_lpwan_lte_mnb_iot">LPWAN: LTE-M/NB-IoT</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The EMnify <a href="#_iot_cloud_communication_platform">IoT Cloud Communication Platform</a> including</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://portal.emnify.com/sign/up?utm_source=dev-hub" target="_blank" rel="noopener">User Interface</a> for operating and managing connectivity and SIMs</p>
+</li>
+<li>
+<p><a href="#_distributed_data_plane">Distributed Data Plane</a></p>
+</li>
+<li>
+<p>with <a href="#_regional_breakout">Regional Breakout</a> to ensure data does not traverse continents</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <a href="#_data_streamer">Data Streamer</a> to integrate connectivity data into services for IoT operations</p>
+</li>
+<li>
+<p>A holistic SASE oriented approach for a central control over <a href="#_security">Security</a> and networks</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_dns">DNS</a></p>
+</li>
+<li>
+<p><a href="#_imei_lock">IMEI Lock</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#_cloud_connect">Cloud Connect</a> for connecting with other cloud platforms</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_aws_intra_cloud_connect">AWS Intra-Cloud Connect</a></p>
+</li>
+<li>
+<p><a href="#_ipsec">IPsec</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="#_openvpn">OpenVPN</a></p>
+</li>
+<li>
+<p><a href="#_sms">SMS</a> communication</p>
+</li>
+<li>
+<p><a href="#_user_management">User Management</a></p>
+</li>
+<li>
+<p><a href="#_business_intelligence_and_analytics_reports">Business Intelligence and Analytics Reports</a></p>
+</li>
+<li>
+<p>Business enablers such as <a href="#_no_code_workflow_automation">No-Code Workflow Automation</a> to automate workflows between third party applications</p>
+</li>
+<li>
+<p>API and tools for <a href="#_sim_life_cycle_management">SIM Life Cycle Management</a></p>
+</li>
+<li>
+<p><a href="#_endpoint_management_group_policies">Endpoint Management &amp; Group Policies</a></p>
+</li>
+<li>
+<p><a href="#_integration_guides">Cloud Integrations</a> to the infrastructure where your application or 3rd party services lie.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_services">Services</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_global_iot_sim">Global IoT SIM</h3>
+<div class="paragraph">
+<p>EMnify IoT SIMs are more durable than regular SIM cards and come in different <a href="#_form_factors">form factors</a> and <a href="#_quality_grades">quality grades</a>. For testing the platform services quickly without any SIM hardware - EMnify offers an <a href="#_esim">eSIM</a> which can be downloaded directly onto a supported smartphone.
+EMnify also has a <a href="#_multi_imsi_application">multi-IMSI software application</a> directly on the SIM so different operator profiles can be used based on the location of the device. Using this technology EMnify can provide a superset of roaming networks from traditional operators.</p>
+</div>
+<div class="sect3">
+<h4 id="_form_factors">Form Factors</h4>
+<div class="paragraph">
+<p>The traditional, pluggable SIM card comes in 4 different form factors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1FF (approximately the size of a credit card) - 85 x 54 x 0,76mm</p>
+</li>
+<li>
+<p>2FF (mini SIM) - 25 x 15 x 0,76mm</p>
+</li>
+<li>
+<p>3FF (Micro SIM) - 15 x 12 x 0,76 mm</p>
+</li>
+<li>
+<p>4FF (Nano SIM) - 12,3 x 8,8 x 0,67 mm</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>EMnify offers pre-punched SIM cards in different combinations  2-in-1 (1FF and 2FF), 3-in-1 (1FF,2FF,3FF) and 4-in-1 (1FF,2FF,3FF,4FF). Especially in use cases where the devices are moving it is advisable to use a SIM which exactly fits the device and does not have another smaller form factor punched out. The SIMs are then more durable and the contact to the device is more firmly.</p>
+</div>
+<div class="paragraph">
+<p>Another form factor is MFF2 also called embedded SIM with the dimension 6 x 5 x 0.75-0.82mm. The embedded SIMs are soldered onto a device and are not removable.</p>
+</div>
+<div class="paragraph">
+<p>Note: Often the term eSIM is used for the MFF2 factor. Nevertheless, the eSIM term is also used for SIMs whose operator profiles can be updated over the air. These eUICC based eSIMs can come in any of the described form factors, and not just MFF2. While eSIM/eUICC is widely adopted for consumer smartphone and watches - for IoT use cases (where the profile cannot be download via a screen or QR reader) the commercial and deployment model of the required infrastructure prohibits an easy change of operator profiles and is therefore not widely adopted.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_quality_grades">Quality Grades</h4>
+<div class="paragraph">
+<p>The EMnify SIM cards come in two different quality grades Commercial and Industrial. In below table a comparison to a standard consumer SIM is made.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Consumer SIM</th>
+<th class="tableblock halign-left valign-top">Commercial</th>
+<th class="tableblock halign-left valign-top">Industrial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Available form factors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2FF, 3FF, 4FF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2FF, 3FF, 4FF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MFF2, 2FF, 3FF (2-in-1 or 3-in-1)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Temperature Range</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25° - 85°C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-40° - 105°C</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Retention</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 years</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 years</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15 years at 85°C</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Write Cycles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1,000,000</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Memory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64-128kB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">128kB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">128KB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corrosion Resistance Jedec JSD22-A107</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CC</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Moisture Resistance Jedec JESD22-A102</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">110°C / 85% RH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">130°C / 85% RH</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Humidity Resistance Jedec JESD22-A101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vibration Jedec JESD22-B103</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mechnical Shock Jedec JESD22-B104</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SA</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Low Power features</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Poll Interval negotiation</p>
+</li>
+<li>
+<p>UICC suspension and resume</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Poll Interval negotiation</p>
+</li>
+<li>
+<p>UICC suspension and resume</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_esim">eSIM</h4>
+<div class="paragraph">
+<p>EMnify offers an easy entry to test the services and platform by downloading an EMnify eSIM profile to an eSIM compatible phone or tablet. During the trial period every organization has the option to download one profile which can be used instantly.</p>
+</div>
+<div class="paragraph">
+<p>The eSIM does not use a multi-IMSI applet (as on the physical SIM cards) and therefore has some differences in the network coverage. For a list of supported devices and limitations please refer to the <a href="https://support.emnify.com/hc/en-us/articles/360021545600-Evaluation-eSIM-device-support-and-restrictions#h_01F7V2BVKT0RQRVXK3VNSPYQMW">knowledge base</a>.</p>
+</div>
+<div class="paragraph">
+<p>The eSIM can be used to test and verify all EMnify functionalities including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Availability of networks</p>
+</li>
+<li>
+<p>API functionality</p>
+</li>
+<li>
+<p>Cloud Connect and Data Streamer integration</p>
+</li>
+<li>
+<p>Zapier No-Code Integrations</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_multi_imsi_application">Multi-IMSI Application</h4>
+<div class="paragraph">
+<p>EMnify IoT SIM cards are equipped with a multi-IMSI applet that contains EMnify&#8217;s as well as our partner operators' profiles. Different operator profiles are identified by their <a href="#imsi">IMSI</a>. Each IMSI / partner operator usually has more than one network accessible per country.</p>
+</div>
+<div class="paragraph">
+<p>The SIM applet utilizes a preferred IMSI list per country. When a device moves to a different country which has a different preferred IMSI configured, the applet dynamically overwrites the previously active IMSI with the preferred IMSI for this country. Similarly, when an operator’s service experiences an outage, the SIM can automatically fall back to another IMSI to ensure that the connection remains uninterrupted.</p>
+</div>
+<div class="paragraph">
+<p>The selection of the preferred IMSI for each country is based on multiple factors including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If permanent roaming is permitted in that country</p>
+</li>
+<li>
+<p>IMSI that has the most network partners in the country</p>
+</li>
+<li>
+<p>IMSI that has the best availability of radio access types (LTE, NB-IoT, LTE-M) or features (PSM/eDRX)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Multi-IMSI applet is transparent for the device and has no impact on the device operation. In order to analyze which IMSI is currently in use, you can either check in the EMnify Portal &#8594; Connected devices &#8594; Details or also query the device directly using the AT-command <code>AT+CIMI?</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_global_iot_network">Global IoT Network</h3>
+<div class="paragraph">
+<p>Even when IoT devices are more often only deployed at a single location and are not moving, for a vendor selling to multiple countries it is important to have a global connectivity solution, so that there is no need to have different SIM cards in stock or have multiple contracts and tariffs.</p>
+</div>
+<div class="sect3">
+<h4 id="_mobile_network_aggregation">Mobile Network Aggregation</h4>
+<div class="paragraph">
+<p>EMnify uses an approach to aggregate the roaming footprint of multiple operators with the goal of offering access to every network in the world.
+Mobile operators utilize roaming in foreign countries so their subscribers can stay connected when traveling. Often operators do not have roaming agreements with all countries or only have a roaming agreement for one network – which is sufficient for roaming travelers but not ideal for devices that could be anywhere in the country.
+EMnify works with multiple partner operators across the globe to be able to offer more networks at a commercially viable rate. The EMnify <a href="#_multi_imsi_application">multi-IMSI applet</a> makes it completely transparent for the device to identify which roaming agreement of which operator is being utilized.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_radio_access_types">Radio Access Types</h4>
+<div class="paragraph">
+<p>The EMnify IoT SIM and platform supports all devices and modules using the following radio access technologies</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#_2g_gsmgprsedge">2G (GSM/GPRS/EDGE)</a></p>
+</li>
+<li>
+<p><a href="#_3g_umtswcdmahpsahsdpa">3G (UMTS/WCDMA/HPSA/HSDPA)</a></p>
+</li>
+<li>
+<p><a href="#_4g_ltelte_alte_catxx">4G (LTE/LTE-A/LTE-CATXX)</a></p>
+</li>
+<li>
+<p><a href="#_5g_new_radio">5G (New Radio)</a></p>
+</li>
+<li>
+<p><a href="#_lpwan_lte_mnb_iot">LTE-M (CAT-M1)</a></p>
+</li>
+<li>
+<p><a href="#_lpwan_lte_mnb_iot">NB-IoT (CAT-NB1, CAT-NB2)</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When a device wants to connect with any of these radio technologies, the network needs to support this technology as well as the device needs to support the network specifc frequency band for this technology.</p>
+</div>
+<div class="sect4">
+<h5 id="_2g_gsmgprsedge">2G (GSM/GPRS/EDGE)</h5>
+<div class="paragraph">
+<p>GSM/GPRS is still one of the most dominant IoT technologies. Although the throughput is limited (GPRS max. 120kbps, EDGE max. 1Mbps) it is more than sufficient for many IoT use cases. The modules are cheap (&lt;10$) and the coverage is widely available throughout the world in more than 200 countries.</p>
+</div>
+<div class="paragraph">
+<p>GSM/GPRS is easy to deploy for IoT use cases because there are only 4 frequency bands utilized by operators for GSM/GPRS worldwide.</p>
+</div>
+<div class="paragraph">
+<p>In Americas</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>B2 (1900MHz)</p>
+</li>
+<li>
+<p>B5 (850MHz)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the rest of world</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>B3 (1800MHz)</p>
+</li>
+<li>
+<p>B8 (900MHz)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Therefore, module manufacturers offer dual-band modules that can be used either in Americas or Rest of World - or Quadband modules that can be deployed globally.</p>
+</div>
+<div class="paragraph">
+<p>Nevertheless GSM/GPRS is being phased out in several countries to free up frequency band for newer technologies. <a href="https://www.emnify.com/en/resources/global-2g-phase-out">More than 60 networks have discontinued or announced to discontinue GSM technology</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_3g_umtswcdmahpsahsdpa">3G (UMTS/WCDMA/HPSA/HSDPA)</h5>
+<div class="paragraph">
+<p>3G technologies like UMTS, WCDMA, HSDPA, HSUPA have been driven by the surge for more data speed. As an evolution of GSM, many parts of the GSM/GPRS core network and signaling are reused, where the most difference is in the radio part.</p>
+</div>
+<div class="paragraph">
+<p>Like 2G, 3G modules are easy to deploy, as there are only 5 different frequency bands utilized by operators worldwide (with exception of Japan and China). Most UMTS modules therefore can be deployed worldwide.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>B1 (2100MHz) - main UMTS band in the world</p>
+</li>
+<li>
+<p>B2 (1900MHz) - used in Americas</p>
+</li>
+<li>
+<p>B4 (1700MHz) - used in Americas</p>
+</li>
+<li>
+<p>B5 (850MHz) - Australia / Americas</p>
+</li>
+<li>
+<p>B8 (900MHz) - Europe</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For Europe, a 900/2100 MHz dual-band module is required.
+For Americas a 850/1900 MHz dual-band module is required.</p>
+</div>
+<div class="paragraph">
+<p>3G/UMTS is also being phased out by several network operators to make space for newer technologies - also check here the article on <a href="https://www.emnify.com/en/resources/global-2g-phase-out">GMS and UMTS networks that are being discontinued</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_4g_ltelte_alte_catxx">4G (LTE/LTE-A/LTE-CATXX)</h5>
+<div class="paragraph">
+<p>LTE is a 4G technology (another one would be WiMAX - which never succeeded). With the evolution of LTE there have been different LTE categories established such as CAT-1, CAT-3, CAT-4, CAT-6, CAT-9, CAT-12 - mainly with increasing data throughput per category.
+While for consumer phones and broadband use cases the increase of throughput is relevant - the increasing costs for the modules have demanded a lightweight LTE module for IoT use cases - which first led to CAT-1.</p>
+</div>
+<div class="paragraph">
+<p>LTE CAT-1 offers 10Mbps in downlink and 5Mbps in uplink - and is available with network operators wherever LTE is deployed. Because of its wide availability and the possibility to roam between operators without limitation LTE CAT-1 is widely used in IoT use cases.</p>
+</div>
+<div class="paragraph">
+<p>The deployment of LTE devices on a global scale is more challenging than with GSM and UMTS because network operators worldwide have been using more than 27 different frequency bands. Most modules therefore only support specific regions where the device can be deployed.</p>
+</div>
+<div class="paragraph">
+<p>Some main LTE-bands are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>B3 (1800 MHz) - Europe, Africa, APAC</p>
+</li>
+<li>
+<p>B7 (2600 MHz) - used in Americas, Europe, APAC</p>
+</li>
+<li>
+<p>B20 (800 MHz) - used in Europe, Asia</p>
+</li>
+<li>
+<p>B1 (2100 MHz) - Europe, Asia</p>
+</li>
+<li>
+<p>B2 (1900 MHz) - Americas</p>
+</li>
+<li>
+<p>B4 (1700 MHz) - Americas</p>
+</li>
+<li>
+<p>B5 (850 MHz) - North America, APAC</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/tip.png" alt="Tip">
+</td>
+<td class="content">
+Validate the frequency bands utilized by the operators in your deployment countries before deciding on a module. You can look up the utilized frequency bands <a href="https://www.frequencycheck.com/interfaces/lte">here</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_lpwan_lte_mnb_iot">LPWAN: LTE-M/NB-IoT</h5>
+<div class="paragraph">
+<p>While utilizing LTE infrastructure both NB-IoT and LTE-M are also part of the 5G standardization. Both technologies have been specified to meet the demand for IoT use cases in terms of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Reduced cost - to enable mass production of cellular IoT devices</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Removing unnecessary LTE features for IoT such as dual carrier, high modulations</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Low power utilization - for battery powered use cases that require years of operation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Introducing power saving features such as <a href="#psm">PSM</a> and <a href="#edrx">eDRX</a></p>
+</li>
+<li>
+<p>Reducing the max. transmission power to less than 200mA to cater for battery max. current (GSM for example has 2A max power)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Wider coverage - (+14dB for LTE-M and +20dB for NB-IoT sensitivity) for rural/indoor/underground use cases</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Utilizing extended coverage feature with more retransmissions to ensure data gets delivered</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Smaller module size - to enable smaller device use cases</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Because LTE-M and NB-IoT rely on LTE infrastructure they are also deployed in a multitude of different frequency bands - a total of 26 bands have been specified for their use.
+To deploy NB-IoT and LTE-M in multiple countries and regions the modules need to support the operator frequency bands.</p>
+</div>
+<div class="paragraph">
+<p>Cellular LPWAN modules come in different versions</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>NB-IoT only or LTE-M only</p>
+</li>
+<li>
+<p>LTE-M/NB-IoT combined</p>
+</li>
+<li>
+<p>LTE-M/NB-IoT with 2G fallback and optional additional technologies (3G,4G)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As of today, roaming for NB-IoT is very limited between operators because of new charging models being implemented for NB-IoT. For LTE-M roaming usually works over regular LTE roaming - nevertheless some operators have limited the access to their LTE-M networks and the available features (PSM, eDRX).</p>
+</div>
+<div class="paragraph">
+<p>Check the EMnify <a href="https://www.emnify.com/lte-m-coverage">LTE-M coverage</a> and <a href="https://www.emnify.com/nb-iot-coverage">NB-IoT coverage</a>, availability of PSM/eDRX and proposed frequency bands <a href="https://www.emnify.com/lte-m-coverage?hsLang=en">on our Website</a>.</p>
+</div>
+<div id="PSM" class="paragraph lead">
+<p>Power-Save-Mode (PSM)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Why is cellular communication not ideal for IoT?</p>
+<div class="paragraph">
+<p>Cellular communication for smartphones usually requires low latency on downlink - in case you are being called your phone should ring right away. Because of this there are two things the device does which require power:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Continuously listening to the radio if there is an incoming call</p>
+</li>
+<li>
+<p>Transmitting location information to the network where it should be called - whenever it moves out of a tracking area and periodically every 54 minutes</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>How does Power Save Mode work?</p>
+<div class="paragraph">
+<p>For most IoT use cases a downlink-initiated channel is not required - it is usually the device that initiates the communication to send e.g., sensor data. Therefore, a Power Save Mode is introduced that allows the device to go to sleep in case it has nothing to send.</p>
+</div>
+<div class="paragraph">
+<p>The Power Save mode has the following characteristics</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Power Save Mode is like a power off period during which the module only consumes a couple of &#x03BC;A</p>
+</li>
+<li>
+<p>The device tells the network for how long it is going periodically into PSM (timer T3412 extended)</p>
+</li>
+<li>
+<p>The device/module will not be reachable during PSM from the outside in downlink</p>
+</li>
+<li>
+<p>The device can wake up the module and send data (e.g., powerkey, interrupt or pin triggered)</p>
+</li>
+<li>
+<p>When the device wakes up, it does not need to reattach and re-establish a PDN connection (unless it has moved to a different tracking area)</p>
+</li>
+<li>
+<p>After the device wakes up it stays in idle mode for a configurable time (timer T3324) to listen for downlink messages (e.g., firmware updates)</p>
+</li>
+<li>
+<p>The actual time the device is then in Power Save Mode is T3412 extended - T3324</p>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/PSM.png" alt="200" width="400">
+</div>
+<div class="title">PSM and the 3412 and T3324 timers</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/note.png" alt="Note">
+</td>
+<td class="content">
+Some modules which have a SIM enabled PIN, (e.g., u-blox SARA-R4/SARA-N4) do not go into sleep mode. The PIN is disabled on EMnify SIMs
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Roaming for Power Save mode</p>
+<div class="paragraph">
+<p>Be aware that not all NB-IoT and LTE-M networks have implemented PSM - and even when PSM is available with the local operator this does not mean that a roaming SIM can use it. This makes it difficult for devices that are moving - in case they use PSM, and the new network does not support PSM - or only other timer configurations. We therefore regularly test theavailability of PSM in our <a href="https://www.emnify.com/lte-m-coverage?hsLang=en"> LTE-M</a> and <a href="https://www.emnify.com/nb-iot-coverage">NB-IoT</a> roaming footprint.</p>
+</div>
+</li>
+<li>
+<p>AT Command calculation and examples for PSM settings</p>
+<div class="paragraph">
+<p>The 3GPP defined AT command to configure PSM is <code>AT+CPSMS</code> which sets the T3412 extended and T3324 timers.</p>
+</div>
+<div class="paragraph">
+<p>An example command is</p>
+</div>
+<div class="paragraph">
+<p><code>AT+CPSMS=1,,,01001110,00000101</code></p>
+</div>
+<div class="paragraph">
+<p>PSM will be enabled (<code>1</code>) and the desired value for T3412 extended is 140 hours (<code>01001110</code>) and the desired value for the T3324 timer is 10s (<code>01001110</code>). The network does not necessarily use the desired values but utilizes supported values that are close to the desired values. To read the effective PSM configuration use the command</p>
+</div>
+<div class="paragraph">
+<p><code>AT+CPSMS?</code></p>
+</div>
+<div class="paragraph">
+<p>There is a good calculator that translates the intended time settings for 3412 and T3324 available <a href="https://www.thalesgroup.com/en/markets/digital-identity-and-security/iot/resources/developers/psm-calculation-tool" target="read-later">from Thales</a>.</p>
+</div>
+<div class="paragraph">
+<p>Module vendors have also implemented module specific commands, e.g. Quectel</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AT+QPSMS</code> extends PSM settings</p>
+</li>
+<li>
+<p><code>AT+QCFG=”psm/enter”,1</code> used to put the module immediately into PSM when the RRC connection is released (not waiting for T3324 to expire)</p>
+</li>
+<li>
+<p><code>AT+QPSMEXTCFG</code> modem optimization command with different attributes such as making sure that PSM is randomized between different devices so they do not send data at the same time</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="eDRX" class="paragraph lead">
+<p>Extended Discontinuous Reception (eDRX)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How does eDRX work?</p>
+<div class="paragraph">
+<p>While PSM is focused on uplink-centric use cases, eDRX tries to reduce the power consumption for IoT use cases that get downlink information. Regular smartphones do not continuously listen on the radio for an incoming message. They do this only every 1.28s or 2.56s which is called DRX (discontinuous Reception). eDRX allows configuration of custom intervals of up to 40-175mins - depending on the configuration the visited network allows.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/eDRX.png" alt="200" width="400">
+</div>
+<div class="title">eDRX and the 3412 and T3324 timers</div>
+</div>
+</li>
+<li>
+<p>Roaming with eDRX</p>
+<div class="paragraph">
+<p>As with PSM - not all NB-IoT and LTE-M networks support eDRX or the same timer configuration - and even if they do this does not guarantee that a roaming SIM card can utilize eDRX. We therefore also test and publish the eDRX availability on our <a href="https://www.emnify.com/lte-m-coverage?hsLang=en" target="read-later">LTE-M</a> and <a href="https://www.emnify.com/nb-iot-coverage" target="read-later">NB-IoT</a> roaming footprint.</p>
+</div>
+</li>
+<li>
+<p><a href="#eDRX_AT_COMMANDS">AT Command examples for eDRX settings</a></p>
+<div class="paragraph">
+<p>The standard 3GPP defined AT-command to configure eDRX is <code>AT+CEDRXS</code>.</p>
+</div>
+<div class="paragraph">
+<p>As an example the below command enables (<code>1</code>) eDRX for LTE-M (<code>4</code>) and an eDRX cycle of 143.36s (<code>1000</code>).</p>
+</div>
+<div class="paragraph">
+<p><code>AT+CEDRXS=1,4,"1000"</code></p>
+</div>
+<div class="paragraph">
+<p>The setting for NB-IoT would be <code>5</code> and the timer values are shown in below table</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 0 0 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.12 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 0 1 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.24 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 0 1 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40.96 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 1 0 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.12 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 0 1 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">61.44 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 1 0 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">81.92 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 1 1 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">102.4 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 1 1 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">122.88 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 0 0 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">143.36 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 0 0 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">163.84 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 0 1 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">327.68 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 0 1 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">655,36 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 1 0 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1310.72 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 1 0 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2621.44 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 1 1 0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5242.88 seconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 1 1 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10485.76 seconds</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The network will respond with the actual effective interval.</p>
+</div>
+<div class="paragraph">
+<p><code>+CEDRXS: [4,"1000","1000","0111"]</code></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_5g_new_radio">5G (New Radio)</h5>
+<div class="paragraph">
+<p>5G is the next major technology standard after LTE - which targets 3 different applications areas:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Enhanced Mobile Broadband (eMBB)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>With faster throughput upto 1Gps+ and more capacity in a local area</p>
+</li>
+<li>
+<p>Utilizing mmWave bands (5Ghz+) for increased throughput</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Massive Machine Type communication (mMTC)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Targeted at IoT application where a multitude of devices are in the same location and need to communicate with low power</p>
+</li>
+<li>
+<p>LTE-M and NB-IoT often seen as decoupled from 5G to get earlier results will fusion with 5G mMTC</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Ultra-Reliable Low Latency Communications (URLLC)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For missing critical applications that require low latency and reliable data transmission</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>As of today, 5G is mainly adopted for eMBB use cases - using a 5G non-standalone (NSA) deployment - meaning that the air interface uses 5G technology whereas the core network is still 4G.</p>
+</div>
+<div class="paragraph">
+<p>EMnify has announced its first 5G roaming agreements in August 2020 and since then has reached agreements with more than a dozen network operators worldwide.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_iot_cloud_communication_platform">IoT Cloud Communication Platform</h3>
+<div class="paragraph">
+<p>EMnify’s platform (consisting of a mobile core network and a communication platform dedicated for IoT) has been built up cloud-natively. Being deployed in 3 AWS cloud regions within 2-3 availability zones / data centers per region increases the availability of the solution - even when one cloud data center becomes unavailable, data will still be transported over the EMnify network.</p>
+</div>
+<div class="sect3">
+<h4 id="_distributed_data_plane">Distributed Data Plane</h4>
+<div class="paragraph">
+<p>Traditional connectivity providers have a centrally located network core. All data is backhauled to the home country of the operator which means that customer data travels across the globe and distributed latency optimized application infrastructure is not possible.</p>
+</div>
+<div class="openblock float-group">
+<div class="content">
+<div class="imageblock left text-center">
+<div class="content">
+<img src="assets/traditional_operators.png" alt="200" width="450">
+</div>
+<div class="title">Traditional operators</div>
+</div>
+<div class="imageblock left text-center">
+<div class="content">
+<img src="assets/emnify_distributed_plane.png" alt="200" width="450">
+</div>
+<div class="title">EMnify</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Traditional operators vs EMnify</div>
+<p>The data plane of EMnify’s cloud communication platform is distributed across major cloud regions (Virginia/US, Ireland/Europe, Singapore/APAC) and directly connected to central peering points with the local operators.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_regional_breakout">Regional Breakout</h4>
+<div class="paragraph">
+<p>EMnify’s distributed data plane enables device data to breakout locally, keeping the customer data within the same region. Moreover, it also helps reduce network latency. You can either select a specific breakout region or the network automatically selects the breakout region closest to the device. This can be done on the EMnify Portal &#8594; Service Profile which is applicable to a group of devices.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/regional.png" alt="regional">
+</div>
+<div class="title">Regional Breakout Setting in the EMnify Portal</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_data_streamer">Data Streamer</h3>
+<div class="paragraph">
+<p>Before each device can send data to an application, it needs to communicate with the mobile network to ensure that the data is allowed to be sent over the network. This communication happens through signaling events which are usually hidden from the application.</p>
+</div>
+<div class="paragraph">
+<p>With the EMnify Data Streamer, this connectivity metadata is made available to your cloud platform or self-developed software stacks in near real-time. Using one of the many integrations provides you with complete network transparency, not only to triage and resolve issues quickly, but also to build your own application or business logic based on provided information.</p>
+</div>
+<div class="paragraph">
+<p>Moreover, this integration provides insights for IoT remote monitoring and anomaly detection or detailed information about service (data, SMS) usage and cost per device.
+Additionally, data streams can also be configured to reflect events generated by the EMnify platform when your users perform billing related updates, order SIMs or perform other operations.</p>
+</div>
+<div class="paragraph">
+<p>Use cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Connectivity metadata integrated into operational dashboards for real-time monitoring</p>
+</li>
+<li>
+<p>Allows faster triaging between device, connectivity and application issue</p>
+</li>
+<li>
+<p>Get insights about network attachment, data and roaming issues or when the device has surpassed its service limit</p>
+</li>
+<li>
+<p>Get an overview of service usage and cost per device</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can configure the type of content delivered by the data stream. You may choose between receiving usage data or event data.</p>
+</div>
+<div class="sect3">
+<h4 id="_events">Events</h4>
+<div class="paragraph">
+<p>The EMnify platform generates several types of events. Events are often used as triggers for custom business processes, for monitoring and as an input for custom billing systems. They provide information about lifecycle transitions and configuration changes. Events can be distinguished as normal/expected, unusual, and critical events through the event severity (INFO, WARN, CRITICAL).</p>
+</div>
+<div class="paragraph">
+<p>Events can be classified as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Network attachment lifecycle events (SIM attaching/detaching to a visited network, failed attachment attempts with reason)</p>
+</li>
+<li>
+<p>Data connection lifecycle events (PDP context lifecycle; SIM on-/offline, failed attempts with reason)</p>
+</li>
+<li>
+<p>SIM lifecycle events (activation, suspension, deletion)</p>
+</li>
+<li>
+<p>Limit enforcement events (cost/volume limits, prepaid volume, endpoint quota lifecycle events such as quota threshold reached/quota used up, organization-wide or endpoint specific)</p>
+</li>
+<li>
+<p>Platform authentication events (user/application authentication failed, support access granted, MFA activated/deactivated, password reset requested.)</p>
+</li>
+<li>
+<p>CloudConnect lifecycle events (resource-share created, breakout available, breakout terminated, state changed; for TGW, VPN, IPsec.)</p>
+</li>
+<li>
+<p>OpenVPN lifecycle events (authentication, connected/disconnected)</p>
+</li>
+<li>
+<p>Organization and billing config related events (Self-Signup performed, new user invited, billing config updated, organization data updated, payment could not be settled, credit card will expire.)</p>
+</li>
+<li>
+<p>Usage Tariff and Tariff Plan related events (Usage Tariff changed, end of evaluation period reached, inclusive volume booked/extended.)</p>
+</li>
+<li>
+<p>SIM order events</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Please visit the <a href="https://cdn.emnify.net/api/doc/event.html" target="_blank" rel="noopener">EMnify API Documentation</a> to learn more about the event structure.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_usage_data">Usage Data</h4>
+<div class="paragraph">
+<p>Usage data records get generated when endpoints consume data or SMS services. They provide information about the used service, visited network, volume, and cost. Usage data streams are often used for monitoring and analyzing the data consumption and as input for custom billing system.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_connection_types">Connection Types</h4>
+<div class="paragraph">
+<p>You can stream this data to your server, a third-party web-service or push the data to one of the pre-integrated cloud services.</p>
+</div>
+<div class="paragraph">
+<p>Multiple independent data streams can be created using any connection type and all of them will operate in parallel. Each data stream can be configured to push data to a separate platform for consumption and processing.</p>
+</div>
+<div class="paragraph">
+<p>For example, one stream may be connected to a network monitoring system, another can connect to a data analytics platform, and another can be synced with Amazon S3 for archiving, all at the same time.</p>
+</div>
+<div class="paragraph">
+<p>The integration guides for the Data Streamer can be found <a href="#_integration_guides">here</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_management_interfaces">Management Interfaces</h4>
+<div class="paragraph">
+<p>Data Streams can be managed by using the <a href="https://portal.emnify.com">EMnify Portal</a> or by using the <a href="https://cdn.emnify.net/api/doc/swagger.html">EMnify API</a>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/integration.png" alt="integration">
+</div>
+<div class="title">Manage Integrations through the EMnify Portal</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_security">Security</h3>
+<div class="paragraph">
+<p>Given the globally distributed nature of the devices, smaller footprints and lack of resources, it can get difficult to individually secure IoT devices.</p>
+</div>
+<div class="paragraph">
+<p>EMnify uses a SASE approach to simplify securing devices – using several services specifically to protect customer data, filtering malicious content and preventing unauthorized access.</p>
+</div>
+<div class="sect3">
+<h4 id="_why_does_iot_require_sase">Why does IoT require SASE?</h4>
+<div class="imageblock">
+<div class="content">
+<img src="assets/security_threats.png" alt="IoT security threats">
+</div>
+<div class="title">IoT security threats</div>
+</div>
+<div class="paragraph">
+<p>Secure Access Service Edge (<a href="#sase">SASE</a>) introduces a new architecture where networking and security functions are bundled in a cloud-delivered service. You can apply the same security standards across all your devices independent of the location. Moreover, you can integrate security features in your solutions right from the beginning.</p>
+</div>
+<div class="paragraph">
+<p>Some of the features that <a href="#sase">SASE</a> for IoT architecture includes are as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Dynamic Data Routing with Software-Defined Wide Area Network (SD-WAN)<br>
+EMnify utilizes a SD-WAN to route data to the closest cloud region using the <a href="#_regional_breakout">Regional Breakout</a> concept. In this way, latency and data stability is improved, and the end customer can be sure that data does not leave the continent and jurisdiction.</p>
+</li>
+<li>
+<p>Cloud Access Security Broker (CASB)<br>
+EMnify allows centrally defining policies for the devices such as: networks that can be accessed, allowed IP addresses through which authorized users can remotely access devices.
+All configuration is done in the central platform and applied wherever the device is.</p>
+</li>
+<li>
+<p>Firewall as a Service (FaaS)<br>
+EMnify provides a firewall as a Service which limits the IP addresses that are reachable for a device, making sure that the devices cannot be misused for other purposes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the following sections we will discuss some of the security features offered by EMnify.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dns">DNS</h4>
+<div class="paragraph">
+<p>When a device establishes a connection, it uses a Domain Name Service (DNS) server to resolve a hostname to an IP address to which it can send data. For example, a hostname such as <code>iot.example.com</code> will be mapped to an IP address like <code>192.0.2.1</code>.</p>
+</div>
+<div class="paragraph">
+<p>Cellular providers typically provide a DNS service. By default, EMnify routes all DNS queries over Google&#8217;s public DNS <code>8.8.8.8</code>.</p>
+</div>
+<div class="paragraph">
+<p>For some devices and modules, it is possible to configure the DNS service. For example, Quectel uses the <code>AT+QIDNSCFG</code> command, SIMcom <code>AT+CDNSCFG</code> command. This is useful to be able to use your own or private DNS servers to secure and have better control over the solution.</p>
+</div>
+<div class="paragraph">
+<p>Customers can also configure to use their own DNS, no matter if it is a public or a private one.
+The DNS settings can be changed in the Portal &#8594; Device Policies &#8594; Service Policies &#8594; More Options &#8594; DNS.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/dns_setting.png" alt="dns setting">
+</div>
+<div class="title">Custom DNS setting configuration</div>
+</div>
+<div class="paragraph">
+<p>Utilizing a private DNS server which is not reachable via the public Internet requires to set up a private network with the machine or a network where the private DNS server is located. This can be done using Cloud Connect either with Amazon Transit Gateway or IPsec. A tutorial on how to set up a DNS firewall based on a private DNS using Amazon Route 53 is available <a href="https://www.emnify.com/en/developer-hub/dns-filtering">here</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_imei_lock">IMEI Lock</h4>
+<div class="paragraph">
+<p>For device manufacturers, SIM card theft is an issue because pluggable SIM cards can be removed from a device and then used to gain free internet access. The IMEI lock feature prevents the use of SIM card in any other device by bounding the SIM to an IMEI. The <a href="#imei">IMEI</a> is a unique device identifier. When the automatic IMEI lock is configured, the EMnify platform will bind the SIM cards to the first device that establishes a data connection. All future device connections will only be allowed from this device.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cloud_connect">Cloud Connect</h3>
+<div class="paragraph">
+<p>The data traffic of regular SIM cards is secured within the mobile network – but traverses the public internet between the mobile network and the application, which makes the device and application susceptible to attacks and prohibits to easily establish a remote device session.</p>
+</div>
+<div class="paragraph">
+<p>With EMnify Cloud Connect your devices and application servers can communicate through a secure private network – with a secure tunnel being established between the EMnify platform and your cloud or on-premises application.</p>
+</div>
+<div class="paragraph">
+<p>By eliminating the use of the public internet, Cloud Connect helps you better protect your application infrastructure against attacks like DDoS, port scanning while giving you the possibility to remotely access the devices.</p>
+</div>
+<div class="sect3">
+<h4 id="_aws_intra_cloud_connect">AWS Intra-Cloud Connect</h4>
+<div class="paragraph">
+<p>EMnify&#8217;s communication platform is deployed on AWS, which simplifies integrations for customers using AWS as an infrastructure. Without having to use the public internet, the integration is directly done with AWS services. To establish a secure private network between your devices and your application you only need to attach your VPC to EMnify&#8217;s Transit Gateway.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/TGW.png" alt="EMnify Cloud Connect with AWS Transit gateway">
+</div>
+<div class="title">EMnify Cloud Connect with AWS Transit Gateway</div>
+</div>
+<div class="paragraph">
+<p>To integrate Cloud Connect into your application using Transit Gateway, you can follow this <a href="https://www.emnify.com/en/developer-hub/emnify-cloud-connect-into-aws-transit-gateway">tutorial</a> or follow this <a href="https://www.youtube.com/watch?v=Orb3Kvd9pZg">quick video</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ipsec">IPsec</h4>
+<div class="paragraph">
+<p>If your application is not on AWS but on any other cloud services or on-premise, you can utilize Cloud Connect for establishing an IPsec VPN connection.</p>
+</div>
+<div class="paragraph">
+<p>With EMnify you can set up an IPsec tunnel to securely transfer your data into your application server.</p>
+</div>
+<div class="paragraph">
+<p>To integrate Cloud Connect into your application using IPsec, you can follow this <a href="https://www.emnify.com/en/developer-hub/how-to-setup-an-ipsec-using-emnify-cloudconnect">tutorial</a>. You can also find guide to set up IPsec for Azure and Google Cloud in the <a href="#_integration_guides">Integration Guides</a> section.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_openvpn">OpenVPN</h3>
+<div class="paragraph">
+<p>EMnify&#8217;s communication platform hosts an OpenVPN service that allows to establish a private network between the device and any remote client location. The remote client can either be on the application server itself, or on any machine that wants to remotely access the device (such as operational staff).</p>
+</div>
+<div class="sect3">
+<h4 id="_openvpn_overview">OpenVPN Overview</h4>
+<div class="paragraph">
+<p>To use the OpenVPN service the IoT device does not need any private APN, OpenVPN software or dynamic DNS resolution. Through the EMnify SIM, every device will get a static private IP address which can be used to identify and address the device.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/OpenVPN.png" alt="OpenVPN">
+</div>
+<div class="title">OpenVPN System Overview</div>
+</div>
+<div class="paragraph">
+<p>At the same time the IoT device can send data through the private tunnel to the IP address of the remote machine.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_openvpn_setup">OpenVPN setup</h4>
+<div class="paragraph">
+<p>In order to set up OpenVPN on your machine the following high-level steps are required.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the EMnify Portal &#8594; Device Policies: Set the Service Policy to a VPN breakout region, e.g., <code>eu-west-1 (VPN)</code></p>
+</li>
+<li>
+<p>Portal &#8594; Integrations &#8594; OpenVPN: download the VPN configuration file for your region and operating system</p>
+</li>
+<li>
+<p>Create a <code>credentials.txt</code> with your username / password or organisation ID / application token (recommended).</p>
+</li>
+<li>
+<p>load the VPN configuration file and <code>credentials.txt</code> with your OpenVPN client</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For detailed instructions please refer to our knowledge base articles</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://support.emnify.com/hc/en-us/articles/360019625379-OpenVPN-Integration-Guide-for-MacOS">OpenVPN Integration MacOS</a></p>
+</li>
+<li>
+<p><a href="https://support.emnify.com/hc/en-us/articles/115001723273-OpenVPN-Integration-Guide-for-Windows">OpenVPN Integration Windows</a></p>
+</li>
+<li>
+<p><a href="https://support.emnify.com/hc/en-us/articles/115001724434-OpenVPN-Integration-Guide-for-Linux">OpenVPN Integration Linux</a></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sms">SMS</h3>
+<div class="paragraph">
+<p>Short Message Services (SMS) were one of the first cellular services made available after voice. SMS is still very relevant for IoT use cases – as SMS provides a simple, inexpensive way to configure the device remotely without the need for a data connection. A typical use case is the configuration of the APN setting via SMS.</p>
+</div>
+<div class="paragraph">
+<p>The EMnify platform supports:
+* Mobile originated (MO) SMS – SMS sent from the device with the EMnify SIM
+* Mobile terminated (MT) SMS – SMS that are destined for a device with the EMnify SIM
+* Peer-to-Peer (P2P) SMS – SMS sent from a device with any SIM to a device with the EMnify SIM
+* Application- to-peer (A2P) SMS – The SMS is sent and received on an application</p>
+</div>
+<div class="paragraph">
+<p>The above scenarios can be activated and deactivated in the device policies to prevent misuse (e.g. P2P SMS).</p>
+</div>
+<div class="paragraph">
+<p>You can send and receive SMSs of your devices through 3 different interfaces Portal, SMS APIs and Zapier.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/sms_options.png" alt="sms options">
+</div>
+<div class="title">SMS interfaces</div>
+</div>
+<div class="sect3">
+<h4 id="_emnify_portal">EMnify Portal</h4>
+<div class="paragraph">
+<p>In the Portal &#8594; Connected Devices you can access the SMS console and directly send SMS to the devices. The sender can be configured as well as the console will show if the SMS is delivered or not. You will see all SMSs that the device receives sends out.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/sms_console.png" alt="400" width="200">
+</div>
+<div class="title">SMS Console</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_emnify_sms_rest_api_and_webhook">EMnify SMS REST API and Webhook</h4>
+<div class="paragraph">
+<p>For sending SMS through the REST API, check out the <a href="#_sending_and_receiving_sms">Sending and receiving SMS</a> section.</p>
+</div>
+<div class="paragraph">
+<p>For receiving SMS and delivery notifications for SMS in your application, you can use the SMS webhook which can be configured under Device Policies &#8594; Service Policies &#8594; SMS Interface. Select Webhook and configure the URL and optionally, secret token to where you want the SMS to be delivered.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/sms_webhook.png" alt="200" width="400">
+</div>
+<div class="title">SMS Webhook</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/delivery_notification.png" alt="200" width="400">
+</div>
+<div class="title">Delivery notification as received in Integromat webhook for SMS with ID: 46638644</div>
+</div>
+<div class="paragraph">
+<p>When you want to send an SMS from the device to your application, your device should send the SMS to an invalid <a href="#msisdn">MSISDN</a> with 8 digits or less. The SMS will then be delivered over the webhook.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/MOSMS.png" alt="200" width="400">
+</div>
+<div class="title">Mobile originated SMS from the device as received in Integromat Webhook</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_zapier_sms_integration">Zapier SMS integration</h4>
+<div class="paragraph">
+<p>Instead of implementing the APIs in your application, EMnify and Zapier provide a no-code alternative to automate SMS workflows. Zapier has a concept of triggers and actions – when a trigger happens multiple actions can be based on it – taking content from previous steps.
+Sending SMS to your devices is available as an action in Zapier.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/sms_zap.png" alt="200" width="400">
+</div>
+<div class="title">SMS with Zapier</div>
+</div>
+<div class="paragraph">
+<p>For acting upon SMS delivery notification or SMSs that are sent from a device, you need to set up a webhook in Zapier. Create a zap using "Webhook by Zapier" and select "Catch Hook" as trigger event. You will get a custom webhook URL which will be used in the next step.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/catch_hook.png" alt="200" width="400">
+</div>
+<div class="title">Catch Hook as a trigger</div>
+</div>
+<div class="paragraph">
+<p>Now you need to enter this webhook URL in the EMnify Portal &#8594; Device Policies &#8594; Choose SMS interface as webhook and create a webhook with the URL. All SMS delivery notification and device originated SMS with this service policy will then be delivered over the webhook.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="assets/zap_webhook.png" alt="200" width="400">
+</div>
+<div class="title">EMnify Webhook as SMS interface</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_management">User Management</h3>
+<div class="paragraph">
+<p>The EMnify platform is a powerful application to control the connectivity of devices of a production system. As different types of personas (operations, finance, development, product) use the portal, EMnify offers 3 levels of access to the use and manage EMnify features and functionality.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Admin (has access to all services and user management)</p>
+</li>
+<li>
+<p>Observer (has access to limited services)</p>
+</li>
+<li>
+<p>User (has access to limited services)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Below is a table that describes the permissions for different users.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 66.6666%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1111%;">
+<col style="width: 11.1112%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Action</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">Admin</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">Observer</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">User</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">ENDPOINT MANAGEMENT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve an endpoint by ID</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update, Delete an endpoint by ID</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/uncheck.png" alt="uncheck"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve the blacklisted Operators for an Endpoint</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add, Remove Operator from Blacklist of Endpoint by ID</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/uncheck.png" alt="uncheck"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List all Endpoints</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create new endpoint</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/uncheck.png" alt="uncheck"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve connectivity information of an Endpoint</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">SIM MANAGEMENT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve SIMs by ID</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update, Delete SIMs by ID</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/uncheck.png" alt="uncheck"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List available SIM Statuses</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of available SIMs</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">SERVICE PROFILE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve list of available Countries</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve list of available Currencies</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve single Currency details by ID</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve List of available Services</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List available Traffic Limits for a Service by ID</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve Service Profiles</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create Service Profiles</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/uncheck.png" alt="uncheck"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve Service Profiles by ID</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update, Delete Service Profiles by ID</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/uncheck.png" alt="uncheck"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add, Delete services from Service Profiles</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/uncheck.png" alt="uncheck"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add, Delete Traffic Limit from Service</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/uncheck.png" alt="uncheck"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve the ESME interface types</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/uncheck.png" alt="uncheck"></span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon"><img src="assets/check.png" alt="check"></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_business_intelligence_and_analytics_reports">Business Intelligence and Analytics Reports</h3>
+<div class="paragraph">
+<p>The EMnify Portal provides detailed reports on all connectivity aspects of a device. You can analyze the data consumption, events, location of the devices and compare them to previous time periods.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Data traffic per day, week, month</p>
+</li>
+<li>
+<p>Global distribution of devices</p>
+</li>
+<li>
+<p>Data and SMS usage per device</p>
+</li>
+<li>
+<p>Live traffic reports</p>
+</li>
+<li>
+<p>Network activity</p>
+</li>
+<li>
+<p>Traffic per ratezone</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_no_code_workflow_automation">No-Code Workflow Automation</h3>
+<div class="paragraph">
+<p>Zapier is a service that allows you to connect more than 4000 applications - including EMnify - to automate workflows. With the available integrations you can automate device provisioning between EMnify and your application. For example, you can send configuration SMS to set the proper APN, when the device connects for the first time. Other use cases are scheduled or application-triggered SIM activations/deactivations so that the SIM contract starts and ends with the device subscription of your customers.
+The following events are available as triggers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All events in the Data Streamer</p>
+</li>
+<li>
+<p>Device enabled (SIM activated)</p>
+</li>
+<li>
+<p>Device disabled (SIM deactivated)</p>
+</li>
+<li>
+<p>Usage Limit Reached</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following actions are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Send SMS to device</p>
+</li>
+<li>
+<p>Create a device (SIM configuration)</p>
+</li>
+<li>
+<p>Enable a device (SIM activation)</p>
+</li>
+<li>
+<p>Block current network (blacklist the last tried network)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Using the Zapier webhook, you can also use triggers from:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SMS delivered notification</p>
+</li>
+<li>
+<p>Mobile originated (MO) SMS</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sim_life_cycle_management">SIM Life Cycle Management</h3>
+<div class="paragraph">
+<p>When selling connected devices, it is difficult to determine when devices will be in use and when not. Using SIM cards that cannot align with the device lifecycle incur unnecessary costs.</p>
+</div>
+<div class="paragraph">
+<p>EMnify SIM cards do not incur any costs unless activated.
+The SIMs have 4 different states that can be configured via the EMnify Portal or <a href="https://cdn.emnify.net/api/doc/swagger.html#/SIMs">REST API</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Issued – the SIM is not yet installed nor usable - no monthly charge is applied.</p>
+</li>
+<li>
+<p>Factory-Test - the SIM is enabled and can be used for a defined limit of data and SMS without charge before it automatically goes into active state. The SIM can stay in this state until it is used by the end customer.</p>
+</li>
+<li>
+<p>Active – the SIM is enabled, and the monthly charge is applied</p>
+</li>
+<li>
+<p>Suspended – an active SIM can be suspended when it is not used to save additional charges. The SIM can be activated anytime afterwards.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_endpoint_management_group_policies">Endpoint Management &amp; Group Policies</h3>
+<div class="paragraph">
+<p>Within the EMnify platform, there is a separation between SIM card and the device, also referred to as "endpoint". This allows you to configure policies on the device level rather than SIM level. The device policies can be applied on a device group as well as at an individual level.</p>
+</div>
+<div class="sect3">
+<h4 id="_service_policies">Service Policies</h4>
+<div class="paragraph">
+<p>Service policies define which services are available for a group of devices.
+These policies include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Available radio access types (2G,3G,4G)</p>
+</li>
+<li>
+<p>Monthly data and SMS limit</p>
+</li>
+<li>
+<p>SMS API configuration</p>
+</li>
+<li>
+<p>Custom DNS</p>
+</li>
+<li>
+<p>Breakout Region</p>
+</li>
+<li>
+<p>Available SMS service (MO/MT/P2P/A2P)</p>
+</li>
+<li>
+<p>Activation of Quota and Prepaid Management</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_coverage_policies">Coverage Policies</h4>
+<div class="paragraph">
+<p>Coverage policies define which tariff and network coverage is available for a group of devices. This enables you to optimize the tariff based on the intended coverage.</p>
+</div>
+<div class="paragraph">
+<p>The coverage policies include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The applied tariff for the group of devices</p>
+</li>
+<li>
+<p>The available networks organized in ratezones</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_individual_device_policies">Individual Device policies</h4>
+<div class="paragraph">
+<p>On a device level additional policies can be defined:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IMEI Lock</p>
+</li>
+<li>
+<p>Network Blacklist</p>
+</li>
+<li>
+<p>IP address</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the individual device policies are to be applied across multiple devices, a bulk action is also available in the portal.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rest_api">REST API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>REST APIs are one of the easiest way to integrate external services into your application. The EMnify API provides a variety of HTTP requests to integrate several EMnify services into your application. The EMnify API is based on the OpenAPI Specification OAS3. You can find the API reference <a href="https://cdn.emnify.net/api/doc/swagger.html">here</a> where you can also try out our API.</p>
+</div>
+<div class="paragraph">
+<p>The sections below will describe the services available through the EMnify API.</p>
+</div>
+<div class="sect2">
+<h3 id="_api_authentication">API Authentication</h3>
+<div class="paragraph">
+<p>To use the EMnify API, you need to authenticate with an Authentication Token. We use JWTs as the authentication token.
+Now there are two ways to retreive this token:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Authenticate with User Credentials</strong>: You can use the username and password you used while signing up for the <a href="https://portal.emnify.com">EMnify Portal</a>.</p>
+</li>
+<li>
+<p><strong>Authenticate with an Application Token</strong>: You can use the application token that you can generate in your EMnify account.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_authenticate_with_user_credentials">Authenticate with User Credentials</h4>
+<div class="paragraph">
+<p>The <code>/api/v1/authenticate</code> API is used to generate a JWT <code>auth_token</code> which authenticates subsequent API calls. The request body must provide a <code>username</code> (typically the email address used when signing up) and the <code>user password</code> and in turn will receive an <code>auth_token</code> and <code>refresh_token</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>POST <a href="https://cdn.emnify.net/api/v1/authenticate" class="bare">https://cdn.emnify.net/api/v1/authenticate</a></code></p>
+</div>
+<div class="paragraph">
+<p>Request Body</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "username": "user@domain.com",
+  "password": "2fd4e1c67a2d28fced849ee1bb76e7391b93eb12"
+}</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/note.png" alt="Note">
+</td>
+<td class="content">
+If users have signed up using the <a href="https://portal.emnify.com">EMnify Portal</a>, the password will need to be a SHA1 hashed string. The SHA1 of a password can be generated online or in the terminal via the following command: <code>echo -n 'my_password' | openssl sha1</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Response</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "auth_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use this <code>auth_token</code> as the bearer token to authenticate all API calls.
+This <code>auth_token</code> is valid for 240 minutes, so you don&#8217;t need to retreive the <code>auth_token</code> before every API call. Once the <code>auth_token</code> expires, you can use the <code>refresh_token</code> to retreive the new <code>auth_token</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_authenticate_with_an_application_token">Authenticate with an Application Token</h4>
+<div class="paragraph">
+<p>As you should not store your EMnify user credentials on your application server, you can generate an <code>application_token</code> via the <a href="https://portal.emnify.com">EMnify Portal</a> or via the API <code>/api/v1/application_token</code>. The request body should have description of the token usually used to indicate who is using the token and can have a <code>expiry_date</code> for the token.</p>
+</div>
+<div class="paragraph">
+<p><code>POST <a href="https://cdn.emnify.net/api/v1/application_token" class="bare">https://cdn.emnify.net/api/v1/application_token</a></code></p>
+</div>
+<div class="paragraph">
+<p>Request header</p>
+</div>
+<div class="paragraph">
+<p><code>Authorization: Bearer {auth_token}</code></p>
+</div>
+<div class="paragraph">
+<p>Request body</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "description": "Token with expiry date",
+  "expiry_date": "2021-10-29"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Response</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "application_token": "KAOp24TuMgjO2FpZmZ3ZFjSqpk7ea_mY8..."
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This calls returns an <code>application_token</code> which can then be used instead of the user/password combination and can be revoked at any time to get the <code>auth_token</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can alternatively generate the <code>application_token</code> in the EMnify Portal. Login in to the <a href="https://portal.emnify.com/login">EMnify Portal</a> &#8594; Integrations &#8594; Application Tokens &#8594; Add Token.</p>
+</div>
+<div class="paragraph">
+<div class="title">Generate Application Token using the EMnify Portal</div>
+<p><span class="image"><img src="assets/generate_app_token.png" alt="generate application token"></span></p>
+</div>
+<div class="paragraph">
+<p>To get the <code>auth_token</code> using the <code>application_token</code>, use the <code>/api/v1/authenticate</code> API. The <code>auth_token</code> can be then used to authenticate all subsequent API calls.</p>
+</div>
+<div class="paragraph">
+<p><code>POST <a href="https://cdn.emnify.net/api/v1/authenticate" class="bare">https://cdn.emnify.net/api/v1/authenticate</a></code></p>
+</div>
+<div class="paragraph">
+<p>Request body</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "application_token": "kNTktNTA1My00YzdhLT..."
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Response</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "auth_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unlike user and password authentication, only an <code>auth_token</code> is returned by the server and no <code>refresh_token</code> will be included in the response. This <code>auth_token</code> is valid for 240 minutes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="assets/note.png" alt="Note">
+</td>
+<td class="content">
+It is NOT advisable to generate an <code>auth_token</code> before making every API call. You should reuse the generated <code>auth_token</code> for 240 minutes after it is generated and update it after its expiration.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sending_and_receiving_sms">Sending and receiving SMS</h3>
+<div class="paragraph">
+<p>You can perform the following SMS related operations using the <code>endpoint</code> API.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>List sent and received SMS <code>GET /api/v1/endpoint/{endpoint_id}/sms</code></p>
+</li>
+<li>
+<p>Send SMS to and endpoint <code>POST /api/v1/endpoint/{endpoint_id}/sms</code></p>
+</li>
+<li>
+<p>Get details about an endpoint SMS <code>GET /api/v1/endpoint/{endpoint_id}/sms/{sms_id}</code></p>
+</li>
+<li>
+<p>Cancel a buffered SMS <code>DELETE /api/v1/endpoint/{endpoint_id}/sms/{sms_id}</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Example:  Send SMS to an Endpoint</p>
+</div>
+<div class="paragraph">
+<p><code>POST <a href="https://cdn.emnify.net/api/v1/endpoint/{endpoint_id}/sms" class="bare">https://cdn.emnify.net/api/v1/endpoint/{endpoint_id}/sms</a></code></p>
+</div>
+<div class="paragraph">
+<p>Request Body</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "source_address": 12345689,
+  "payload": "This is the message text"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Responses</p>
+</div>
+<div class="paragraph">
+<p><code>201</code></p>
+</div>
+<div class="paragraph">
+<p>The source address is the sender number that will appear on the receiving device. The payload is the actual text to be sent as SMS.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_code_samples">Code Samples</h3>
+<div class="paragraph">
+<p>Check out <a href="https://github.com/EMnify/API_Examples_JS">JavaScript Examples</a> with the EMnify API in our GitHub repository.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_integration_guides">Integration Guides</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>EMnify Services can be easily integrated with your existing infrastructures. Here are some step-by-step integration guides to help you along the process.</p>
+</div>
+<div class="sect2">
+<h3 id="_amazon_web_services">Amazon Web Services</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-aws-s3">EMnify Data Streamer with AWS S3</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-aws-kinesis">EMnify Data Streamer with AWS Kinesis</a></p>
+</li>
+<li>
+<p><a href="https://f.hubspotusercontent10.net/hubfs/4374869/Listing_Image_AWSCore.png?width=800&amp;name=Listing_Image_AWSCore.png">EMnify Integration with AWS IoT Core</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-cloud-connect-into-aws-transit-gateway">EMnify Cloud Connect integration with AWS Transit Gateway</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_microsoft_azure">Microsoft Azure</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-azure-time-series-classic">EMnify Data Streamer with Azure Time Series Classic</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-into-azure-event-hub">EMnify Data Streamer integration with Azure Event Hub</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-power-bi">EMnify Data Streamer integration with Power BI</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-and-azure-iot-hub-integration">EMnify integration with Azure IoT Hub</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-cloud-connect-azure-integration">EMnify Cloud Connect integration with Azure Netrwork Gateway using IPsec</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_google_cloud">Google Cloud</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/datastreamer-integration-google-bigquery">EMnify Data Streamer integration with Google BigQuery</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/datastreamer-integration-into-google-cloud-pubsub">EMnify Data Streamer integration with Google Cloud Pub/Sub</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-and-google-cloud-iot-core-integration">EMnify integration with Google Cloud IoT Core</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-cloudconnect-integration-to-google-cloud-platform">EMnify Cloud Connect integration with Google Cloud Platform using IPsec</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_webhooks">Webhooks</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-mcds-integromat-integration">EMnify Data Streamer webhook integration with Integromat</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/how-to-receice-email-notifications-using-automate.io">EMnify Data Streamer webhook integration with Automate.io</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_more_integrations">More Integrations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-keen.io">EMnify Data Streamer webhook integration with Keen.io</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/emnify-datastreamer-integration-for-datadog">EMnify Data Streamer webhook integration with Datadog</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/how-to-setup-an-ipsec-using-emnify-cloudconnect">EMnify Cloud Connect Integration with IPsec</a></p>
+</li>
+<li>
+<p><a href="https://www.emnify.com/en/developer-hub/ussd-integration-guide">EMnify USSD integration</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_glossary">Glossary</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="active-sim"></a>Active SIM </dt>
+<dd>
+<p>When a SIM is in the active state, the charges for the SIM are applied. The device can send and receive data and SMS.</p>
+</dd>
+<dt class="hdlist1"><a id="APN"></a>APN - Access point name </dt>
+<dd>
+<p>A gateway between a GSM, GPRS, 3G or 4G mobile network and another computer network, usually the Public Internet. The APN needs to be configured on the device. For EMnify it is <code>em</code> or <code>emnify</code>.</p>
+</dd>
+<dt class="hdlist1"><a id="app-token"></a>Application Token </dt>
+<dd>
+<p>A unique identification key used to authenticate EMnify&#8217;s APIs. Also used when authenticating the OpenVPN service.</p>
+</dd>
+<dt class="hdlist1"><a id="a2p-sms"></a>A2P SMS - Application–to–peer SMS </dt>
+<dd>
+<p>SMS between an application and a device or vice-a-versa.</p>
+</dd>
+<dt class="hdlist1"><a id="assg-sim"></a>Assigned SIM </dt>
+<dd>
+<p>SIM that has been assigned to an Endpoint.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><a id="at-creg"></a>AT+CREG AT command: gives information about the registration status and access technology of the serving cell.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="AuC"></a>AuC - Authentication center </dt>
+<dd>
+<p>a part of GSM infrastructure, validates any SIM card attempting network connection when a phone has a live network signal.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="BIC"></a>BIC - Batch Identification Code </dt>
+<dd>
+<p>a unique code for ordered SIM cards, used to register the SIM cards on the Portal.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="callback-url"></a>Callback URL </dt>
+<dd>
+<p>URL that will be called by a service to send and receive data related to an event that caused this action.</p>
+</dd>
+<dt class="hdlist1"><a id="ca-nw"></a>Carrier-agnostic network </dt>
+<dd>
+<p>A network that does not limit or prefer any specific network in a country and establishes a connection over any network transparent to the device.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="cn-status"></a>Connectivity status </dt>
+<dd>
+<p>This is the connectivity status of an <a href="#endpoint">endpoint</a> which can be set to online, attached, offline:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Online:  Device is transmitting or is able to transmit data through a data tunnel.</p>
+</li>
+<li>
+<p>Attached:  Device is attached to a network has not established a data tunnel.</p>
+</li>
+<li>
+<p>Offline:  Device isn&#8217;t attached to a network.</p>
+</li>
+<li>
+<p>Blocked:</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="data-rx"></a>Data RX </dt>
+<dd>
+<p>Data received by the device.</p>
+</dd>
+<dt class="hdlist1"><a id="data-session"></a>Data session </dt>
+<dd>
+<p>A session between opening and closing a data connection to the network.</p>
+</dd>
+<dt class="hdlist1"><a id="data-tx"></a>Data TX </dt>
+<dd>
+<p>Data transmitted by the device.</p>
+</dd>
+<dt class="hdlist1"><a id="data-usage"></a>Data Usage (volume) </dt>
+<dd>
+<p>The data that has been used by an endpoint, both transmitted and received.</p>
+</dd>
+<dt class="hdlist1"><a id="ddos"></a>DDoS </dt>
+<dd>
+<p>Distributed Denial of Service attack - an attack where the attacker sends multiple requests to a web resource with the aim of exceeding the website&#8217;s capacity to handle multiple requests and prevent the website from functioning correctly.</p>
+</dd>
+<dt class="hdlist1"><a id="dns"></a>DNS Domain Name System </dt>
+<dd>
+<p>A hierarchical decentralized naming system for computers, services, or any resource connected to the Internet or a private network to map a hostname to an IP address.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="dynamic-ip"></a>Dynamic IP </dt>
+<dd>
+<p>An IP that changes over time.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="edrx"></a> eDRX </dt>
+<dd>
+<p>Extended Discontinuous Reception is a device configuration that allows to specify the periodicity in which the device listens for incoming data on the radio. Instead of using a periodicity of 2.56ms (DRX) it can be increased up to 40mins, thus reducing power consumption.</p>
+</dd>
+<dt class="hdlist1"><a id="endpoint"></a>Endpoint </dt>
+<dd>
+<p>A representation of the device which has a SIM installed.</p>
+</dd>
+<dt class="hdlist1"><a id="endpoint-status"></a>Endpoint Status </dt>
+<dd>
+<p>The current state of the endpoint: Enabled/Disabled.</p>
+</dd>
+<dt class="hdlist1"><a id="euicc"></a>eUICC </dt>
+<dd>
+<p>Embedded Universal Integrated Circuit Card, allows hosting multiple mobile network profiles on the SIM.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="event-log"></a>Event log </dt>
+<dd>
+<p>A log that stores all Endpoint events.</p>
+</dd>
+<dt class="hdlist1"><a id="form-factor"></a>Form factor </dt>
+<dd>
+<p>Form factor of a SIM card represents the SIM card format (SIM cards vary in size (Mini vs Micro vs Nano), function (embedded vs standard) and quality (industrial grade vs standard)):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2FF : mini SIM card</p>
+</li>
+<li>
+<p>3FF : Micro SIM card</p>
+</li>
+<li>
+<p>4FF : Nano SIM card</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1"><a id="ggsn"></a>GGSN - Gateway GPRS Support node </dt>
+<dd>
+<p>Part of the GSM infrastructure, the GGSN is responsible for the interworking between the GPRS network and external packet switched networks.</p>
+</dd>
+<dt class="hdlist1"><a id="globally-distributed-infra"></a>Globally–distributed infrastructure </dt>
+<dd>
+<p>Cloud infrastructure which is distributed globally, with several local breakout points for better traffic handling.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="gsm"></a>GSM (Global System for Mobile communications) </dt>
+<dd>
+<p>a standard developed by the European Telecommunications Standards Institute to describe the protocols for second-generation digital cellular networks used by mobile devices.</p>
+</dd>
+<dt class="hdlist1"><a id="HLR"></a>HLR - Home location register </dt>
+<dd>
+<p>A part of GSM infrastructure, a database from a mobile network in which information from all mobile subscribers is stored.</p>
+</dd>
+<dt class="hdlist1"><a id="post-request"></a>HTTP POST request </dt>
+<dd>
+<p>A request method supported by the HTTP protocol which typically includes data in the request body.</p>
+</dd>
+<dt class="hdlist1"><a id="iccid"></a>ICCID - Integrated Circuit Card Identifier </dt>
+<dd>
+<p>A unique number used to identify a SIM card.</p>
+</dd>
+<dt class="hdlist1"><a id="imei"></a>IMEI - International Mobile Equipment Identification number </dt>
+<dd>
+<p>A unique number used to identify cellular modems.</p>
+</dd>
+<dt class="hdlist1"><a id="imei-lock"></a>IMEI lock </dt>
+<dd>
+<p>The practice of strictly associating a SIM to the device with a certain IMEI number.</p>
+</dd>
+<dt class="hdlist1"><a id="imsi"></a>IMSI - International mobile subscriber identity </dt>
+<dd>
+<p>A unique number used to identify a GSM subscriber.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="ipsec"></a>IPsec </dt>
+<dd>
+<p>A protocol suite for Secure Internet Protocol (IP) communications that works by authenticating and encrypting each IP packet of a communication session.</p>
+</dd>
+<dt class="hdlist1"><a id="ip-subnet"></a>IP subnet </dt>
+<dd>
+<p>A logical subdivision of an IP network.</p>
+</dd>
+<dt class="hdlist1"><a id="json"></a>JSON - JavaScript Object Notation </dt>
+<dd>
+<p>a lightweight data-interchange format. It is easier for humans to read and write compared to other formats. It is easy for machines to parse and generate.</p>
+</dd>
+<dt class="hdlist1"><a id="lac"></a>LAC - Location Area Code </dt>
+<dd>
+<p>A unique 16-digit fixed length location area identity code that identifies a phone number&#8217;s location area.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="mfa-key"></a>MFA Key </dt>
+<dd>
+<p>A combination generated by external device or a service which is used to authenticate the user.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="msisdn"></a>MSISDN - Mobile Station International Subscriber Directory Number </dt>
+<dd>
+<p>A unique number used to identify a mobile phone number internationally.</p>
+</dd>
+<dt class="hdlist1"><a id="msc"></a>MSC Mobile Switching Center </dt>
+<dd>
+<p>A part of GSM architecture which controls the network switching subsystem elements.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="ota"></a>OTA Over–the–air </dt>
+<dd>
+<p>A method of wireless distribution of the software, configuration settings or encryption keys.</p>
+</dd>
+<dt class="hdlist1"><a id="ota-provision"></a>OTA Provisioning </dt>
+<dd>
+<p>A technology which allows making changes to the SIM memory over–the–air.</p>
+</dd>
+<dt class="hdlist1"><a id="openvpn"></a>OpenVPN </dt>
+<dd>
+<p>An open–source software application that implements virtual private network (VPN) techniques for creating secure point–to–point or site–to–site connections in routed or bridged configurations and remote access facilities.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="p2psms"></a>P2P SMS Peer–to–Peer SMS  </dt>
+<dd>
+<p>SMS exchanged between devices.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="pdp"></a>PDP context </dt>
+<dd>
+<p>Data structure present on both the serving GPRS support node (SGSN) and the gateway GPRS support node (GGSN) which contains the subscriber&#8217;s session information when the subscriber has an active session.</p>
+</dd>
+<dt class="hdlist1"><a id="private-ip"></a>Private IP </dt>
+<dd>
+<p>An IP address that is not reachable from the public internet but only through a local or virtual network. Dynamic private IPs keep changing whereas static private IP addresses do not change.</p>
+</dd>
+<dt class="hdlist1"><a id="psm"></a>PSM </dt>
+<dd>
+<p>While in the Power Saving Mode (PSM) the device tells the network that it will power off for a specific time and will send periodic updates in longer-than-usual intervals. When the device comes back online, it does not need to reattach to a network but can use an already created PDP context, thus saving power.</p>
+</dd>
+<dt class="hdlist1"><a id="public-ip"></a>Public IP </dt>
+<dd>
+<p>The IP address which is accessible from the public Internet.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="rest-api"></a>RESTful API </dt>
+<dd>
+<p>The Representational State Transfer Application programming interface, which allows you to integrate services with your applications.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="sase"></a>SASE Secure Access Service Edge </dt>
+<dd>
+<p>SASE is a term coined by Gartner which combines Software Defined Networking (<a href="#sdn">SDN</a>) and Security as serves it as cloud-based Security-as-a-Service.</p>
+</dd>
+<dt class="hdlist1"><a id="sdn"></a>SDN Software–Defined Networking </dt>
+<dd>
+<p>An approach that allows network administrators to programmatically initialize, control, change, and manage network behavior dynamically via open interfaces.</p>
+</dd>
+<dt class="hdlist1"><a id="service-profile"></a>Service profile </dt>
+<dd>
+<p>A profile which defines the services and functionality of a device managed through the EMnify platform.</p>
+</dd>
+<dt class="hdlist1"><a id="sim-batch"></a>SIM batch </dt>
+<dd>
+<p>A collection of SIM cards that can be registered with a single BIC code.</p>
+</dd>
+<dt class="hdlist1"><a id="sms-firewall"></a>SMS Firewall </dt>
+<dd>
+<p>A firewall that controls the SMS flow.</p>
+</dd>
+<dt class="hdlist1"><a id="sim-hosting"></a>SIM hosting fee </dt>
+<dd>
+<p>Monthly fee for an active SIM.</p>
+</dd>
+<dt class="hdlist1"><a id="sim-profile"></a>SIM Profile </dt>
+<dd>
+<p>The MNO’s ID information which is stored in the SIM’s memory.</p>
+</dd>
+<dt class="hdlist1"><a id="sim-repo"></a>SIM repository </dt>
+<dd>
+<p>All SIMs assigned to your organization.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="smpp"></a>SMPP - Short Message Peer–to–Peer </dt>
+<dd>
+<p>A protocol used by the telecommunications industry for exchanging SMS messages between Short Message Service Centers (SMSC) and/or External Short Messaging Entities (ESME).</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="sms-console"></a>SMS console </dt>
+<dd>
+<p>An interface to send A2P SMS from the platform to the SIM card.</p>
+</dd>
+<dt class="hdlist1"><a id="sms-mo"></a>SMS MO </dt>
+<dd>
+<p>SMS originating from the device.</p>
+</dd>
+<dt class="hdlist1"><a id="sms-mt"></a>SMS MT </dt>
+<dd>
+<p>SMS terminated (received) by the device.</p>
+</dd>
+<dt class="hdlist1"><a id="source-address"></a>Source Address </dt>
+<dd>
+<p>The address of the SMS sender as displayed on the receiving device.</p>
+</dd>
+<dt class="hdlist1"><a id="static-ip"></a>Static IP </dt>
+<dd>
+<p>An IP that doesn’t change over time.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="tariff-profile"></a>Tariff profile </dt>
+<dd>
+<p>A profile which defines which networks or countries SIM should operate in.</p>
+</dd>
+<dt class="hdlist1"><a id="traffic-pooling"></a>Traffic pooling </dt>
+<dd>
+<p>A term which is used to describe the service model when various endpoints utilize the same data pool.</p>
+</dd>
+<dt class="hdlist1"><a id="Unassigned"></a>Unassigned SIM </dt>
+<dd>
+<p>SIM that had been unassigned from an Endpoint.</p>
+</dd>
+<dt class="hdlist1"><a id="usage-limit"></a>Usage limit </dt>
+<dd>
+<p>User–defined limit of consumption of a certain service (data, SMS) per endpoint.</p>
+</dd>
+<dt class="hdlist1"><a id="user-coverage"></a>User–defined coverage </dt>
+<dd>
+<p>An ability to select which operator customer’s SIM connects to.</p>
+</dd>
+<dt class="hdlist1"><a id="user-nw"></a>User–Defined Networking </dt>
+<dd>
+<p>An approach which enables user to create his own virtual mobile network, define service and security policies and provision tariff profiles and data packages.</p>
+</dd>
+<dt class="hdlist1"><a id="ussd"></a>USSD - Unstructured Supplementary Service Data </dt>
+<dd>
+<p>A protocol used to communicate with the service provider&#8217;s computers.</p>
+</dd>
+<dt class="hdlist1"><a id="ussd-gateway"></a>USSD gateway </dt>
+<dd>
+<p>The collection of hardware and software required to interconnect two or more disparate networks, including performing protocol conversion.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="vpc"></a>VPC </dt>
+<dd>
+<p>Virtual Private Cloud -
+A secure private cloud hosted within a public cloud where you can host websites, store data, run application etc.</p>
+</dd>
+<dt class="hdlist1"><a id="vpn"></a>VPN </dt>
+<dd>
+<p>Virtual Private Network.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
