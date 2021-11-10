@@ -1567,11 +1567,11 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 
 [[app-token]]Application Token :: A unique identification key used to authenticate EMnify's APIs. Also used when authenticating the OpenVPN service.
 
-[[a2p-sms]]A2P SMS - Application–to–peer SMS :: SMS between an application and a device or vice-a-versa
+[[a2p-sms]]A2P SMS - Application–to–peer SMS :: SMS between an application and a device or vice-a-versa.
 
-[[assg-sim]]Assigned SIM :: SIM that had been assigned to an Endpoint
+[[assg-sim]]Assigned SIM :: SIM that has been assigned to an Endpoint.
 
-[[at-creg]]AT+CREG AT command: gives information about the registration status and access technology of the serving cell
+[[at-creg]]AT+CREG AT command: gives information about the registration status and access technology of the serving cell.
 
 [[AuC]]AuC - Authentication center :: a part of GSM infrastructure, validates any SIM card attempting network connection when a phone has a live network signal.
 
@@ -1579,54 +1579,55 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 
 [[BIC]]BIC - Batch Identification Code :: a unique code for ordered SIM cards, used to register the SIM cards on the Portal.
 
-[[BTS]]BTS - Base Transceiver Station :: 
+// [[BTS]]BTS - Base Transceiver Station :: 
 // C
 
 [[callback-url]]Callback URL :: URL that will be called by a service to send and receive data related to an event that caused this action.
 
-[[ca-nw]]Carrier-agnostic network :: A network that provides routing consistency regardless of the roaming mobile network that the SIM is connected to.
+[[ca-nw]]Carrier-agnostic network :: A network that does not limit or prefer any specific network in a country and establishes a connection over any network transparent to the device. 
 
-[[cid-profile]]CID profile :: A generally unique number used to identify each (<<bts,BTS>>) Base transceiver station  or sector of a BTS within a (<<lac,LAC>>) Location Area Code if not within a <<gsm,GSM>> network
+// [[cid-profile]]CID profile :: A generally unique number used to identify each (<<bts,BTS>>) Base transceiver station  or sector of a BTS within a (<<lac,LAC>>) Location Area Code if not within a <<gsm,GSM>> network
 
 [[cn-status]]Connectivity status :: This is the connectivity status of an <<endpoint, endpoint>> which can be set to online, attached, offline:
 
-  - Online :  Endpoint is transmitting data
-  - Attached :  Endpoint is attached to a network but not transmitting any data
-  - Offline :  Endpoint isn't attached to a network
+  - Online:  Device is transmitting or is able to transmit data through a data tunnel.
+  - Attached:  Device is attached to a network has not established a data tunnel.
+  - Offline:  Device isn't attached to a network.
+  - Blocked: 
 
 // D
-[[data-package]]Data package :: A data bundle that can be used by all SIM cards until the end of the calendar month
+// [[data-package]]Data package :: A data bundle that can be used by all SIM cards until the end of the calendar month
 
-[[data-rx]]Data RX :: Data received by the device
+[[data-rx]]Data RX :: Data received by the device.
 
-[[data-session]]Data session :: A session between opening and closing a data connection to the network
+[[data-session]]Data session :: A session between opening and closing a data connection to the network.
 
-[[data-tx]]Data TX :: Data transmitted by the device
+[[data-tx]]Data TX :: Data transmitted by the device.
 
-[[data-usage]]Data Usage (volume) :: The data that has been used by an endpoint
+[[data-usage]]Data Usage (volume) :: The data that has been used by an endpoint, both transmitted and received.
 
 [[ddos]]DDoS :: Distributed Denial of Service attack - an attack where the attacker sends multiple requests to a web resource with the aim of exceeding the website's capacity to handle multiple requests and prevent the website from functioning correctly.
 
-[[dns]]DNS Domain Name System ::  A hierarchical decentralized naming system for computers, services, or any resource connected to the Internet or a private network
+[[dns]]DNS Domain Name System ::  A hierarchical decentralized naming system for computers, services, or any resource connected to the Internet or a private network to map a hostname to an IP address.
 
-[[dynamic-endpoint-configuration]]Dynamic endpoint reconfiguration :: Live changes to the endpoint parameters
+// [[dynamic-endpoint-configuration]]Dynamic endpoint reconfiguration :: Live changes to the endpoint parameters
 
-[[dynamic-ip]]Dynamic IP :: An IP that changes over time
+[[dynamic-ip]]Dynamic IP :: An IP that changes over time.
 
-[[dynamic-network-configuration]]Dynamic network reconfiguration :: Live changes to the network parameters
+// [[dynamic-network-configuration]]Dynamic network reconfiguration :: Live changes to the network parameters
 
 // E
 [[edrx]] eDRX :: Extended Discontinuous Reception is a device configuration that allows to specify the periodicity in which the device listens for incoming data on the radio. Instead of using a periodicity of 2.56ms (DRX) it can be increased up to 40mins, thus reducing power consumption.
 
-[[endpoint]]Endpoint :: A representation of the device which has a SIM installed
+[[endpoint]]Endpoint :: A representation of the device which has a SIM installed.
 
-[[endpoint-status]]Endpoint Status :: The current state of the endpoint: Enabled/Disabled
+[[endpoint-status]]Endpoint Status :: The current state of the endpoint: Enabled/Disabled.
 
-[[euicc]]eUICC :: Embedded Universal Integrated Circuit Card, allows hosting multiple mobile network profiles on the SIM
+[[euicc]]eUICC :: Embedded Universal Integrated Circuit Card, allows hosting multiple mobile network profiles on the SIM.
 
 // [[emnify-cloud]]EMnify’s cloud :: Deployment scenario #1, when the network core is located in a cloud
 
-[[event-log]]Event log :: A log that stores all Endpoint events
+[[event-log]]Event log :: A log that stores all Endpoint events.
 // F
 
 [[form-factor]]Form factor :: Form factor of a SIM card represents the SIM card format (SIM cards vary in size (Mini vs Micro vs Nano), function (embedded vs standard) and quality (industrial grade vs standard)):
@@ -1636,18 +1637,18 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
   - 4FF : Nano SIM card
 //  G
 
-[[ggsn]]GGSN - Gateway GPRS Support node ::  Part of the GSM infrastructure, the GGSN is responsible for the interworking between the GPRS network and external packet switched networks
+[[ggsn]]GGSN - Gateway GPRS Support node ::  Part of the GSM infrastructure, the GGSN is responsible for the interworking between the GPRS network and external packet switched networks.
 
-[[globally-distributed-infra]]Globally–distributed infrastructure :: Cloud infrastructure which is distributed globally, with several local breakout points for better traffic handling
+[[globally-distributed-infra]]Globally–distributed infrastructure :: Cloud infrastructure which is distributed globally, with several local breakout points for better traffic handling.
 
-[[global-routing-consistency]]Global Routing Consistency :: A single set of connectivity rules and settings applied when the SIM roams over various networks
+// [[global-routing-consistency]]Global Routing Consistency :: A single set of connectivity rules and settings applied when the SIM roams over various networks
 
-[[gsm]]GSM (Global System for Mobile communiations) :: a standard developed by the European Telecommunications Standards Institute to describe the protocols for second-generation (2G) digital cellular networks used by mobile devices
+[[gsm]]GSM (Global System for Mobile communications) :: a standard developed by the European Telecommunications Standards Institute to describe the protocols for second-generation digital cellular networks used by mobile devices.
 // H
 // need to check this one
 // [[hybrid-cloud]]Hybrid cloud :: deployment scenario #2, when the data transport layer is deployed locally, while the rest of the infrastructure stays in a Cloud
 
-[[HLR]]HLR - Home location register :: A part of GSM infrastructure, a database from a mobile network in which information from all mobile subscribers is stored
+[[HLR]]HLR - Home location register :: A part of GSM infrastructure, a database from a mobile network in which information from all mobile subscribers is stored.
 
 [[post-request]]HTTP POST request ::  A request method supported by the HTTP protocol which typically includes data in the request body.
 // I
@@ -1656,136 +1657,137 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 
 [[imei]]IMEI - International Mobile Equipment Identification number :: A unique number used to identify cellular modems.
 
-[[imei-lock]]IMEI lock :: The practice of strictly associating a SIM to the device with a certain IMEI number
+[[imei-lock]]IMEI lock :: The practice of strictly associating a SIM to the device with a certain IMEI number.
 
-[[imsi]]IMSI - International mobile subscriber identity :: A unique number used to identify a GSM subscriber
+[[imsi]]IMSI - International mobile subscriber identity :: A unique number used to identify a GSM subscriber.
 
-[[Inactive]]Inactive SIM :: A SIM that doesn't have any network activity at a certain time period
+// [[Inactive]]Inactive SIM :: A SIM that doesn't have any network activity at a certain time period
 
-[[ipsec]]IPsec :: A protocol suite for Secure Internet Protocol (IP) communications that works by authenticating and encrypting each IP packet of a communication session
+[[ipsec]]IPsec :: A protocol suite for Secure Internet Protocol (IP) communications that works by authenticating and encrypting each IP packet of a communication session.
 
-[[ip-subnet]]IP subnet :: A logical subdivision of an IP network
+[[ip-subnet]]IP subnet :: A logical subdivision of an IP network.
 // J
 
 [[json]]JSON - JavaScript Object Notation ::  a lightweight data-interchange format. It is easier for humans to read and write compared to other formats. It is easy for machines to parse and generate.
 // K
 // L
 
-[[lac]]LAC - Location Area Code :: A unique 16-digit fixed length location area identity code that identifies a phone number's location area
+[[lac]]LAC - Location Area Code :: A unique 16-digit fixed length location area identity code that identifies a phone number's location area.
 
 // M
-[[mfa-key]]MFA Key :: A combination generated by external device or a service which is used to authenticate the user
+[[mfa-key]]MFA Key :: A combination generated by external device or a service which is used to authenticate the user.
 
-[[mff-smd]]MFF SMD (embedded) :: SIM card embedded in the device during manufacturing
+// [[mff-smd]]MFF SMD (embedded) :: SIM card embedded in the device during manufacturing
 
-[[msisdn]]MSISDN - Mobile Station International Subscriber Directory Number :: A unique number used to identify a mobile phone number internationally
+[[msisdn]]MSISDN - Mobile Station International Subscriber Directory Number :: A unique number used to identify a mobile phone number internationally.
 
-[[msc]]MSC Mobile Switching Center :: A part of GSM architecture which controls the network switching subsystem elements
+[[msc]]MSC Mobile Switching Center :: A part of GSM architecture which controls the network switching subsystem elements.
 
 
 // N
 
-[[nfv]]NFV Network Functions Virtualization :: The concept of replacing dedicated network appliances, such as routers and firewalls, with software running on commercial off–the–shelf servers
+// [[nfv]]NFV Network Functions Virtualization :: The concept of replacing dedicated network appliances, such as routers and firewalls, with software running on commercial off–the–shelf servers
 
-[[nw-firewall]]Network–based firewall :: Firewalls which are deployed by an entire network
+// [[nw-firewall]]Network–based firewall :: Firewalls which are deployed by an entire network
 // check before making live
 // [[nw-in-a-box]]Network–in–a–box :: deployment scenario #3, when infrastructure is deployed locally as a fully self–sustained system
 
 // O
 
-[[ota]]OTA Over–the–air :: A method of wireless distribution of the software, configuration settings or encryption keys
+[[ota]]OTA Over–the–air :: A method of wireless distribution of the software, configuration settings or encryption keys.
 
-[[ota-provision]]OTA Provisioning :: A technology which allows making changes to the SIM memory over–the–air
+[[ota-provision]]OTA Provisioning :: A technology which allows making changes to the SIM memory over–the–air.
 
-[[openvpn]]OpenVPN :: An open–source software application that implements virtual private network (VPN) techniques for creating secure point–to–point or site–to–site connections in routed or bridged configurations and remote access facilities
+[[openvpn]]OpenVPN :: An open–source software application that implements virtual private network (VPN) techniques for creating secure point–to–point or site–to–site connections in routed or bridged configurations and remote access facilities.
 // Do we need this?
 // [[ocs]]OCS Online charging :: A system allowing a communications service provider to charge their customers, in real time, based on service usage
 
 // P
-[[p2psms]]P2P SMS Peer–to–Peer SMS  :: SMS exchanged between devices
+[[p2psms]]P2P SMS Peer–to–Peer SMS  :: SMS exchanged between devices.
 
-[[pcrf]]PCRF Policy control :: the software node designated in real–time to determine policy rules in a multimedia network
+// [[pcrf]]PCRF Policy control :: the software node designated in real–time to determine policy rules in a multimedia network
 
-[[pdp]]PDP context :: Data structure present on both the serving GPRS support node (SGSN) and the gateway GPRS support node (GGSN) which contains the subscriber's session information when the subscriber has an active session 
+[[pdp]]PDP context :: Data structure present on both the serving GPRS support node (SGSN) and the gateway GPRS support node (GGSN) which contains the subscriber's session information when the subscriber has an active session. 
 
-[[private-ip]]Private IP :: The IP address that is used/stored in the local network
-[[psm]]PSM :: While in the Power Saving Mode (PSM) the device tells the network that it will power off for a specific time period and will send periodic updates in longer-than-usual intervals. When the device comes back online, it does not need to reattach to a network but can use an already created PDP context, thus saving power.
+[[private-ip]]Private IP :: An IP address that is not reachable from the public internet but only through a local or virtual network. Dynamic private IPs keep changing whereas static private IP addresses do not change.
 
-[[public-ip]]Public IP :: The IP address which is accessible from the public Internet
+[[psm]]PSM :: While in the Power Saving Mode (PSM) the device tells the network that it will power off for a specific time and will send periodic updates in longer-than-usual intervals. When the device comes back online, it does not need to reattach to a network but can use an already created PDP context, thus saving power.
+
+[[public-ip]]Public IP :: The IP address which is accessible from the public Internet.
 
 // Q
 // R
 
-[[rest-api]]RESTful API ::  The Representational State Transfer Application programming interface, which allows you to integrate services with your applications
+[[rest-api]]RESTful API ::  The Representational State Transfer Application programming interface, which allows you to integrate services with your applications.
 // [[rate-zone]]Rate zone :: Countries are grouped into rate zones based on usage pricing
 
-[[release-sim]]Release SIM :: The act of unbinding a SIM from the endpoint
+// [[release-sim]]Release SIM :: The act of unbinding a SIM from the endpoint
 
-[[routing]]Routing :: The process of selecting a path for a network
+// [[routing]]Routing :: The process of selecting a path for a network
 
 // S
-[[sase]]SASE Secure Access Service Edge :: SASE is a term coined by Gartner which combines Software Defined Networking (<<sdn,SDN>>) and Security as serves it as cloud-based Security-as-a-Service
+[[sase]]SASE Secure Access Service Edge :: SASE is a term coined by Gartner which combines Software Defined Networking (<<sdn,SDN>>) and Security as serves it as cloud-based Security-as-a-Service.
 
-[[sdn]]SDN Software–Defined Networking :: An approach that allows network administrators to programmatically initialize, control, change, and manage network behavior dynamically via open interfaces
+[[sdn]]SDN Software–Defined Networking :: An approach that allows network administrators to programmatically initialize, control, change, and manage network behavior dynamically via open interfaces.
 
-[[service-profile]]Service profile :: A profile which defines the services and functionality of an endpoint
+[[service-profile]]Service profile :: A profile which defines the services and functionality of a device managed through the EMnify platform.  
 
-[[sim-batch]]SIM batch :: A collection of SIM cards that can be registered with a single BIC code
+[[sim-batch]]SIM batch :: A collection of SIM cards that can be registered with a single BIC code.
 
-[[sms-firewall]]SMS Firewall :: A firewall that controls the SMS flow
+[[sms-firewall]]SMS Firewall :: A firewall that controls the SMS flow.
 
-[[sim-hosting]]SIM hosting fee ::   Monthly fee for an active SIM
+[[sim-hosting]]SIM hosting fee ::   Monthly fee for an active SIM.
 
-[[sim-profile]]SIM Profile :: The MNO’s ID information which is stored in the SIM’s memory
+[[sim-profile]]SIM Profile :: The MNO’s ID information which is stored in the SIM’s memory.
 
-[[sim-repo]]SIM repository :: All SIMs assigned to your organization
+[[sim-repo]]SIM repository :: All SIMs assigned to your organization.
 
-[[sim-status]]SIM status :: Life cycle of a SIM card
+// [[sim-status]]SIM status :: Life cycle of a SIM card
 
-- Purchased SIMs : The SIMs purchased by the customer
-- Registered SIMs : The SIMs that the customer registered to his account, but haven’t activated yet
-- Unregistered SIMs : The SIMs that the customer did not register to his account
-- Activated SIMs: The SIMs that have been activated
-- Suspended SIMs : The SIMs that have been suspended
-- Deleted SIMs : The SIMs that have been deleted from the platform
+// - Purchased SIMs : The SIMs purchased by the customer
+// - Registered SIMs : The SIMs that the customer registered to his account, but haven’t activated yet
+// - Unregistered SIMs : The SIMs that the customer did not register to his account
+// - Activated SIMs: The SIMs that have been activated
+// - Suspended SIMs : The SIMs that have been suspended
+// - Deleted SIMs : The SIMs that have been deleted from the platform
 
-[[smpp]]SMPP - Short Message Peer–to–Peer :: A protocol used by the telecommunications industry for exchanging SMS messages between Short Message Service Centers (SMSC) and/or External Short Messaging Entities (ESME)
+[[smpp]]SMPP - Short Message Peer–to–Peer :: A protocol used by the telecommunications industry for exchanging SMS messages between Short Message Service Centers (SMSC) and/or External Short Messaging Entities (ESME).
 
-[[smsc]]SMSC - Short message service center :: A network element in the mobile telephone network that stores, forwards, converts and delivers Short SMS messages
+// [[smsc]]SMSC - Short message service center :: A network element in the mobile telephone network that stores, forwards, converts and delivers Short SMS messages
 
-[[sms-console]]SMS console :: An interface to send A2P SMS from the platform to the SIM card
+[[sms-console]]SMS console :: An interface to send A2P SMS from the platform to the SIM card.
 
-[[sms-mo]]SMS MO :: SMS originating from the device
+[[sms-mo]]SMS MO :: SMS originating from the device.
 
-[[sms-mt]]SMS MT :: SMS terminated (received) by the device
+[[sms-mt]]SMS MT :: SMS terminated (received) by the device.
 
-[[source-address]]Source Address :: The address of the SMS sender as displayed on the receiving device
+[[source-address]]Source Address :: The address of the SMS sender as displayed on the receiving device.
 
-[[static-ip]]Static IP :: An IP that doesn’t change over time
+[[static-ip]]Static IP :: An IP that doesn’t change over time.
 
 // T
-[[tariff-profile]]Tariff profile :: A profile which defines which networks or countries SIM should operate in
+[[tariff-profile]]Tariff profile :: A profile which defines which networks or countries SIM should operate in.
 
-[[traffic-pooling]]Traffic pooling ::  A term which is used to describe the service model when various endpoints utilize the same data pool
+[[traffic-pooling]]Traffic pooling ::  A term which is used to describe the service model when various endpoints utilize the same data pool.
 // U
 
-[[Unassigned]]Unassigned SIM :: SIM that had been unassigned from an Endpoint
+[[Unassigned]]Unassigned SIM :: SIM that had been unassigned from an Endpoint.
 
-[[usage-limit]]Usage limit :: User–defined limit of consumption of a certain service (data, SMS) per endpoint
+[[usage-limit]]Usage limit :: User–defined limit of consumption of a certain service (data, SMS) per endpoint.
 
-[[user-coverage]]User–defined coverage :: An ability to select which operator customer’s SIM connects to
+[[user-coverage]]User–defined coverage :: An ability to select which operator customer’s SIM connects to.
 
-[[user-nw]]User–Defined Networking :: An approach which enables user to create his own virtual mobile network, define service and security policies and provision tariff profiles and data packages
+[[user-nw]]User–Defined Networking :: An approach which enables user to create his own virtual mobile network, define service and security policies and provision tariff profiles and data packages.
 
-[[ussd]]USSD - Unstructured Supplementary Service Data :: A protocol used to communicate with the service provider's computers
+[[ussd]]USSD - Unstructured Supplementary Service Data :: A protocol used to communicate with the service provider's computers.
 
-[[ussd-gateway]]USSD gateway :: The collection of hardware and software required to interconnect two or more disparate networks, including performing protocol conversion
+[[ussd-gateway]]USSD gateway :: The collection of hardware and software required to interconnect two or more disparate networks, including performing protocol conversion.
 
 // V
 [[vpc]]VPC :: Virtual Private Cloud - 
 A secure private cloud hosted within a public cloud where you can host websites, store data, run application etc. 
 
-[[vpn]]VPN ::  Virtual Private Network
+[[vpn]]VPN ::  Virtual Private Network.
 // W
 // X
 // Y
