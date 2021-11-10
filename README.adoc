@@ -1494,8 +1494,8 @@ Responses
 
 The source address is the sender number that will appear on the receiving device. The payload is the actual text to be sent as SMS.
 
-.SMS window of the receiving device
-image::mobile_sms.jpg[100,200,align="center",sms received]
+//.SMS window of the receiving device
+//image::mobile_sms.jpg[100,200,align="center",sms received]
 
 
 // === Retrieving Events and Statistics
