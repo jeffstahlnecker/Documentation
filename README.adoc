@@ -1559,7 +1559,7 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 // add matching content from blog
 
 == Single Sign-On
-With Single Sign-On enabled members of your organization with access to the EMnify portal will be able to login using their Micosoft Business account credentials.
+With Single Sign-On enabled members of your organization with access to the EMnify portal will be able to login using their Microsoft Business account credentials.
 
 === Setup SSO with Microsoft Active Directory
 *Prerequisites:*
