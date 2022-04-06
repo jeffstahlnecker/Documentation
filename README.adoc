@@ -1557,7 +1557,88 @@ EMnify Services can be easily integrated with your existing infrastructures. Her
 // === Integrating Connectivity Status in a Portal
 
 // add matching content from blog
+
+== Single Sign-On
+With Single Sign-On enabled members of your organization with access to the EMnify portal will be able to login using their Micosoft Business account credentials.
+
+=== Setup SSO with Microsoft Active Directory
+*Prerequisites:*
+
+* An Azure Subscription with an Active Direcotry license
+* An account in the EMnify portal using the same email address as the one used to sign in to Microsoft Azure
+
+WARNING: If your email address used in the EMnify portal is not the same as the one used to login to Azure, this setup will not work. 
+
+==== SSO with Microsoft
+
+Log into Azure and navigate to Azure Active Directoring in the left sidebar.
+image:sso_azure_active_directory.png[Navigate to Azure Active Directory]
+
+At the top of the page, click on `+ Add` and then `App Registration`.
+image:sso_app_registration_s2.png["under add, click on app registration"]
+
+* Give it a *name* (i.e. `EMnify`)
+* The *Supported Account Types* should be *Multi Tenant*. This will request for a consent screen on IDP verification in the portal later. 
+* Set the Redirect URI to type `Web` with the value: `https://prod-e5.okta.com/oauth2/v1/authorize/callback`
+image:sso_app_registration_details_s3.png[Configure app registration details]
+
+Navigate to *Authentication* in the left sidebar, and in the section *Implicit grand and hybrid flows* enable `Access Tokens` and `ID Tokens`. 
+image:sso_authentication_settings_s4.png[SSO authentication settings]
+
+Go to *Token configuration* in the left sidebar, click on *Add optional claim* and under *SAML* enable to `upn` claim. Leave the option *Turn on the Microsoft Graph profile* permission unchecked.
+image:sso_token_configuration_s5.png[SSO token configuration]
+
+Head to *API permissions* in the left sidebar, click on the existing permission entry *Microsoft Graph (1)* and check the `email` and `profile` OpenID permissions.
+image:sso_api_permissions_s6.png[set api permissions]
+
+Your configuration should look like this:
+image:sso_api_permissions_s7.png[api permission configuration]
+
+In the left sidebar, go to *Expose an API* and click on `Set` and then click on `save`. 
+image:sso_expose_api_s8.png[set expose an api]
+
+After navigating to *Certificates & Secrets* in the left sidebar, click on `New client secret`.
+image:sso_new_client_s10.png[new client secret]
+
+Copy the *Value* and save it to a secure location. This value will not be shown again in the portal. Choose an expiration date and mark our calendar to generate and configure a new secret right before it expires.
+image:sso_new_client_s11.png[copy security certificate value]
+
+Navigate to *Overview* in the sidebar and copy the `Application (client) ID` field for later use in the EMnify portal. 
+image:sso_copy_application_id_s12.png[copy application id]
+
+==== Configure the EMnify Portal
+
+Login to your EMnify account, go to organization settings in the topbar, and click on *Single Sign-On*.
+image:sso_org_settings_s13.png[EMnify portal sso settings]
+
+If you do not already have SSO enabled for your account, contact support and request that it be enabled. 
+image:sso_get_support_s14.png[get support to enable sso for your account]
+
+Otherwise, click on *Add* under the Microsoft SSO provider. 
+image:sso_add_s15.png[add microsoft sso]
+
+Fill in the `Application (client) ID and the `Secret Value` that you copied earlier, then click *Create and Activate*. 
+image:sso_create_activate_s16.png[create and activate]
+
+The final step is to verify the provider. SSO will not be configured until you complete this step. Click on *Verify Integration* and follow the prompts.
+image:sso_verify_s17.png[verify the sso provider]
+
+==== Troubleshooting
+In the unlikely event that the provider could not be configured on the very first attempt, check the following:
+
+* If the user receives a ‘User cancelled social login' check if the application registration is set to Multi-tenant
+* Is the user part of the Azure Tenant
+* Is the user part of the EMnify enterprise
+* Is the user enabled
+* Try again using incognito tab
+
+
+
+
+
+
 [glossary]
+
 == Glossary
 // A
 
